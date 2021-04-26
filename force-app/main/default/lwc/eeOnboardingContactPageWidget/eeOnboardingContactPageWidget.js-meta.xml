@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>51.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>EE Onboarding Scenario Contact Page Component</masterLabel>
+    <description>Small component to help with completing certain Onboarding Scenario Automation Actions</description>
+    <targets>
+        <target object="Contact">lightning__RecordPage</target>
+    </targets>    
+</LightningComponentBundle>

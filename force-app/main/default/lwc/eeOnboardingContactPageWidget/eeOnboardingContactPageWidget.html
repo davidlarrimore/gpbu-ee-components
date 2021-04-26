@@ -1,0 +1,22 @@
+<template>
+    <lightning-card icon-name="standard:date_time" title="Demo Time Machine">
+        <div class="slds-var-m-around_x-small slds-text-align_center">
+            <lightning-progress-indicator current-step={pathStage} type="base" variant="base">
+                <lightning-progress-step label="Supervisor Wizard" value="Wizard"></lightning-progress-step>
+                <lightning-progress-step label="5 Days Before Orientation" value="5DaysBefore"></lightning-progress-step>
+                <lightning-progress-step label="Orientation" value="Activation"></lightning-progress-step>
+            </lightning-progress-indicator>
+        </div>
+        <template if:true={readyFor5DaysBefore}>
+            <div class="slds-var-m-around_x-small slds-text-align_center">
+                <lightning-button onclick={handleClickOne} label="Proceed to 5 Days Before Orientation" title="Proceed to 5 Days Before Orientation" icon-name="utility:clock" class="slds-var-m-left_x-small"></lightning-button>
+            </div>
+        </template>
+        <template if:true={readyForActivation}>
+            <div class="slds-var-m-around_x-small slds-text-align_center">
+                <lightning-button onclick={handleClickTwo} label="Proceed to Post Orientation" title="Proceed to Post Orientation" icon-name="utility:clock" class="slds-var-m-left_x-small"></lightning-button>
+            </div>
+        </template>        
+        <div slot="footer">Version: {version}</div>
+    </lightning-card> 
+</template>
