@@ -1,0 +1,7 @@
+<template>
+    <template for:each={demoSetupRecruitQuestions} for:item="question">
+        <div class="slds-var-p-around_medium lgc-bg" key={question.Id}>
+            <lightning-input type="text" label={question.Name} value={question.Default_Answer__c} onchange={handleFieldChange}></lightning-input>
+        </div>
+    </template>
+</template>
