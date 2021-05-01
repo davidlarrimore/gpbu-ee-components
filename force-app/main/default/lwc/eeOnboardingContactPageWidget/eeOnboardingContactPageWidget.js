@@ -15,15 +15,18 @@ const FIELDS = [EMPLOYMENT_STATUS_FIELD, MANAGER_FLOW_COMPLETE_FIELD, FIVE_DAYS_
 
 export default class EeOnboardingContactPageWidget extends LightningElement {
 
-    version = "2.7";   
+    version = "3.3";   
     @api recordId;
 
     @track pathStage = "Wizard";
     @track contact;
     @track readyFor5DaysBefore = false;
-    @track readyForActivation = false;
+    @track readyForOrientation = false;
     @track isActiveEmployee = false;
     
+    @track apiCallCompletedFlag = false;
+    @track apiResultsFlag = false; 
+
     flowResponse = false;
     error;
 
@@ -31,26 +34,32 @@ export default class EeOnboardingContactPageWidget extends LightningElement {
     wiredAccount({ error, data }) {
         console.log(`Running getRecord`);
         console.log(`data = ${JSON.stringify(data)}`);
+        this.apiCallCompletedFlag = true;
+
         if (data) {
             this.contact = data;
             this.error = undefined;
-
+            
             if(data.fields.Employment_Status__c.value == "New-Hire" && data.fields.Run_Five_Days_Before_Process__c.value == false){
-                this.pathStage = "Wizard";
+                this.pathStage = "5DaysBefore";
                 this.readyFor5DaysBefore = true;
+                this.apiResultsFlag = true; 
             }
     
             if(data.fields.Employment_Status__c.value == "New-Hire" && data.fields.Run_Five_Days_Before_Process__c.value == true){
-                this.pathStage = "5DaysBefore";
-                this.readyForActivation = true;
+                this.pathStage = "Orientation";
+                this.readyForOrientation = true;
+                this.apiResultsFlag = true; 
             }
     
             if(data.fields.Employment_Status__c.value == "Active"){
-                this.pathStage = "Activation";
+                this.pathStage = "EmployeeServices";
                 this.isActiveEmployee = true;
+                this.apiResultsFlag = true; 
             }
 
         } else if (error) {
+            this.apiCallCompletedFlag = true;
             this.error = error;
             this.contact = undefined;
         }
@@ -58,11 +67,15 @@ export default class EeOnboardingContactPageWidget extends LightningElement {
 
 
     handleClickOne() {
+        this.apiResultsFlag = false; 
+        this.apiCallCompletedFlag = false;
         this.onSubmit("5DaysBefore", 'Progressed to 5 Days Before. Please refresh the page.');
     }
 
     handleClickTwo() {
-        this.onSubmit("Activation", 'Employee Activated. Please refresh the page.');
+        this.apiResultsFlag = false; 
+        this.apiCallCompletedFlag = false;
+        this.onSubmit("Orientation", 'Employee Activated. Please refresh the page.');
     }
     
 
@@ -70,16 +83,24 @@ export default class EeOnboardingContactPageWidget extends LightningElement {
         console.log(`Running executeFlow`);
         executeFlow({ recordId: this.recordId, flowToRun: runThisFlow })
         .then((result) => {
+            this.apiCallCompletedFlag = true;
             console.log("Running executeFlow");
             if (result) {
                 this.flowResponse = result;
                 this.error = undefined;
 
                 if(runThisFlow == "5DaysBefore"){
-                    this.pathStage = "5DaysBefore";
+                    this.pathStage = "Orientation";
+                    this.apiResultsFlag = true; 
+                    this.readyFor5DaysBefore = false;
+                    this.readyForOrientation = true;
                 }
-                if(runThisFlow == "Activation"){
-                    this.pathStage = "Activation";
+                if(runThisFlow == "Orientation"){
+                    this.pathStage = "EmployeeServices";
+                    this.apiResultsFlag = true; 
+                    this.readyFor5DaysBefore = false;
+                    this.readyForOrientation = false;
+                    this.isActiveEmployee = true;
                 }
 
                 const evt = new ShowToastEvent({
@@ -92,6 +113,7 @@ export default class EeOnboardingContactPageWidget extends LightningElement {
             }
         })
         .catch((error) => {
+            this.apiCallCompletedFlag = true;
             console.log(
             `executeFlow had an error: ${JSON.stringify(error)}`
             );
