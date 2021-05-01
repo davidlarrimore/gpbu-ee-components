@@ -13,7 +13,7 @@ const FIELDS = [LEAD_STATUS_FIELD];
 
 export default class EeHiringRecruitPageWidget extends LightningElement {
 
-    version = "2.3";   
+    version = "2.5";   
     @api recordId;
 
     @track pathStage = "New";
@@ -70,7 +70,7 @@ export default class EeHiringRecruitPageWidget extends LightningElement {
                 this.error = undefined;
                 this.readyforConvert = false;
 
-                this.pathStage = "Applied";
+                this.pathStage = "Converted";
 
                 const evt = new ShowToastEvent({
                     title: 'Time Machine completed successfully',
