@@ -1,19 +1,19 @@
 import { LightningElement, api, wire, track } from 'lwc';
 
-import { getRecord, getFieldValue } from 'lightning/uiRecordApi';
-
+import { getRecord, getFieldValue, getRecordNotifyChange } from 'lightning/uiRecordApi';
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
-
 import LEAD_STATUS_FIELD from '@salesforce/schema/Lead.Status';
-
 import executeFlow from '@salesforce/apex/eeHiringRecruitPageWidgetHelper.callConvertRecruitToApplicantFlow';
+import { NavigationMixin } from 'lightning/navigation';
+
 
 const FIELDS = [LEAD_STATUS_FIELD];
 
 
+
 export default class EeHiringRecruitPageWidget extends LightningElement {
 
-    version = "2.5";   
+    version = "2.9";   
     @api recordId;
 
     @track pathStage = "New";
@@ -70,7 +70,7 @@ export default class EeHiringRecruitPageWidget extends LightningElement {
                 this.error = undefined;
                 this.readyforConvert = false;
 
-                this.pathStage = "Converted";
+                this.pathStage = "Applied";
 
                 const evt = new ShowToastEvent({
                     title: 'Time Machine completed successfully',
@@ -78,6 +78,8 @@ export default class EeHiringRecruitPageWidget extends LightningElement {
                     variant: 'success',
                 });
                 this.dispatchEvent(evt);
+
+                getRecordNotifyChange([{recordId: this.recordId}]);
 
             }
         })

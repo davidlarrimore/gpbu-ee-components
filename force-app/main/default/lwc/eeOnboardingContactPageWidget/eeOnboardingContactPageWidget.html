@@ -2,34 +2,31 @@
     <template if:false={apiCallCompletedFlag}>
         <lightning-spinner alternative-text="Loading" size="small"></lightning-spinner>
     </template>
-    <template if:true={apiCallCompletedFlag}>
-        <lightning-card icon-name="standard:date_time" title="Demo Time Machine">
-            <div slot="actions">Version: {version}</div>
-            <div class="slds-var-m-around_x-small slds-text-align_center">
-                <lightning-progress-indicator current-step={pathStage} type="base" variant="base">
-                    <lightning-progress-step label="Supervisor Wizard" value="Wizard"></lightning-progress-step>
-                    <lightning-progress-step label="5 Days Before Orientation" value="5DaysBefore"></lightning-progress-step>
-                    <lightning-progress-step label="Orientation" value="Orientation"></lightning-progress-step>
-                    <lightning-progress-step label="Employee Services" value="EmployeeServices"></lightning-progress-step>
-                </lightning-progress-indicator>
-            </div>       
-            <div slot="footer">
-                <template if:true={readyFor5DaysBefore}>
-                    <div class="slds-var-m-around_x-small slds-text-align_center">
-                        <lightning-button onclick={handleClickOne} label="Proceed to 5 Days Before Orientation" title="Proceed to 5 Days Before Orientation" icon-name="utility:clock" class="slds-var-m-left_x-small"></lightning-button>
-                    </div>
-                </template>
-                <template if:true={readyForOrientation}>
-                    <div class="slds-var-m-around_x-small slds-text-align_center">
-                        <lightning-button onclick={handleClickTwo} label="Proceed to Post Orientation" title="Proceed to Post Orientation" icon-name="utility:clock" class="slds-var-m-left_x-small"></lightning-button>
-                    </div>
-                </template> 
-                <template if:true={isActiveEmployee}>
-                    <div class="slds-text-longform slds-text-align_center slds-text-color_weak">
-                        <p>It looks like you are at the right destination.</p>
-                    </div>
-                </template>                 
-            </div>
-        </lightning-card> 
-    </template>
+    <lightning-card icon-name="standard:date_time" title="Demo Time Machine">
+        <div slot="actions">Version: {version}</div>
+        <div class="slds-var-m-around_x-small slds-text-align_center">
+            <lightning-progress-indicator current-step={pathStage} type="base" variant="base">
+                <lightning-progress-step label="Supervisor Wizard" value="Wizard"></lightning-progress-step>
+                <lightning-progress-step label="Pre-orientation" value="5DaysBefore"></lightning-progress-step>
+                <lightning-progress-step label="Orientation" value="Orientation"></lightning-progress-step>
+            </lightning-progress-indicator>
+        </div>       
+        <div slot="footer">
+            <template if:true={readyFor5DaysBefore}>
+                <div class="slds-var-m-around_x-small slds-text-align_center">
+                    <lightning-button onclick={handleClickOne} label="Start Pre-orientation" title="Start Pre-orientation" icon-name="utility:clock" class="slds-var-m-left_x-small"></lightning-button>
+                </div>
+            </template>
+            <template if:true={readyForOrientation}>
+                <div class="slds-var-m-around_x-small slds-text-align_center">
+                    <lightning-button onclick={handleClickTwo} label="Start Orientation" title="Start Orientation" icon-name="utility:clock" class="slds-var-m-left_x-small"></lightning-button>
+                </div>
+            </template> 
+            <template if:true={isActiveEmployee}>
+                <div class="slds-text-longform slds-text-align_center slds-text-color_weak">
+                    <p>It looks like you are at the right destination.</p>
+                </div>
+            </template>                 
+        </div>
+    </lightning-card> 
 </template>

@@ -1,6 +1,6 @@
 import { LightningElement, api, wire, track } from 'lwc';
 
-import { getRecord, getFieldValue } from 'lightning/uiRecordApi';
+import { getRecord, getFieldValue, getRecordNotifyChange } from 'lightning/uiRecordApi';
 
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 
@@ -15,7 +15,7 @@ const FIELDS = [EMPLOYMENT_STATUS_FIELD, MANAGER_FLOW_COMPLETE_FIELD, FIVE_DAYS_
 
 export default class EeOnboardingContactPageWidget extends LightningElement {
 
-    version = "3.3";   
+    version = "4.1";   
     @api recordId;
 
     @track pathStage = "Wizard";
@@ -40,20 +40,35 @@ export default class EeOnboardingContactPageWidget extends LightningElement {
             this.contact = data;
             this.error = undefined;
             
-            if(data.fields.Employment_Status__c.value == "New-Hire" && data.fields.Run_Five_Days_Before_Process__c.value == false){
+            if(data.fields.Employment_Status__c.value == "New-Hire" && data.fields.New_Hire_Manager_Flow_Complete__c.value == false){
+                this.pathStage = "Wizard";
+                this.readyFor5DaysBefore = false;
+                this.readyForOrientation = false;
+                this.apiResultsFlag = true; 
+                this.isActiveEmployee = true;
+            }
+
+            if(data.fields.Employment_Status__c.value == "New-Hire" && data.fields.New_Hire_Manager_Flow_Complete__c.value == true){
                 this.pathStage = "5DaysBefore";
                 this.readyFor5DaysBefore = true;
+                this.readyForOrientation = false;
+                this.isActiveEmployee = false;
                 this.apiResultsFlag = true; 
             }
     
             if(data.fields.Employment_Status__c.value == "New-Hire" && data.fields.Run_Five_Days_Before_Process__c.value == true){
                 this.pathStage = "Orientation";
+                this.readyFor5DaysBefore = false;
                 this.readyForOrientation = true;
+                this.isActiveEmployee = false;
                 this.apiResultsFlag = true; 
             }
+
     
             if(data.fields.Employment_Status__c.value == "Active"){
-                this.pathStage = "EmployeeServices";
+                this.pathStage = "Orientation";
+                this.readyFor5DaysBefore = false;
+                this.readyForOrientation = false;
                 this.isActiveEmployee = true;
                 this.apiResultsFlag = true; 
             }
@@ -95,8 +110,9 @@ export default class EeOnboardingContactPageWidget extends LightningElement {
                     this.readyFor5DaysBefore = false;
                     this.readyForOrientation = true;
                 }
+
                 if(runThisFlow == "Orientation"){
-                    this.pathStage = "EmployeeServices";
+                    this.pathStage = "Orientation";
                     this.apiResultsFlag = true; 
                     this.readyFor5DaysBefore = false;
                     this.readyForOrientation = false;
@@ -109,6 +125,8 @@ export default class EeOnboardingContactPageWidget extends LightningElement {
                     variant: 'success',
                 });
                 this.dispatchEvent(evt);
+
+                getRecordNotifyChange([{recordId: this.recordId}]);
 
             }
         })

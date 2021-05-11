@@ -2,7 +2,6 @@
     <template if:false={apiCallCompletedFlag}>
         <lightning-spinner alternative-text="Loading" size="small"></lightning-spinner>
     </template>
-    <template if:true={apiCallCompletedFlag}>
         <lightning-card icon-name="standard:date_time" title="Demo Time Machine">
             <div slot="actions">Version: {version}</div>
             <div class="slds-var-m-around_x-small slds-text-align_center">
@@ -10,7 +9,6 @@
                     <lightning-progress-step label="New" value="New"></lightning-progress-step>
                     <lightning-progress-step label="Active" value="Active"></lightning-progress-step>
                     <lightning-progress-step label="Applied" value="Applied"></lightning-progress-step>
-                    <lightning-progress-step label="Converted" value="Converted"></lightning-progress-step>
                 </lightning-progress-indicator>
             </div>      
             <div slot="footer">
@@ -26,5 +24,4 @@
                 </template> 
             </div>
         </lightning-card> 
-    </template>
 </template>
