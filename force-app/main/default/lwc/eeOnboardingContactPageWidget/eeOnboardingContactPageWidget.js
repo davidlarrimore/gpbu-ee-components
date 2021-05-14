@@ -8,7 +8,7 @@ import EMPLOYMENT_STATUS_FIELD from '@salesforce/schema/Contact.Employment_Statu
 import MANAGER_FLOW_COMPLETE_FIELD from '@salesforce/schema/Contact.New_Hire_Manager_Flow_Complete__c';
 import FIVE_DAYS_BEFORE_COMPLETE_FIELD from '@salesforce/schema/Contact.Run_Five_Days_Before_Process__c';
 
-import executeFlow from '@salesforce/apex/eeOnboardingWidgetHelper.call5DaysBeforeFlow';
+import executeFlow from '@salesforce/apex/eeLWCHelper.call5DaysBeforeFlow';
 
 
 const FIELDS = [EMPLOYMENT_STATUS_FIELD, MANAGER_FLOW_COMPLETE_FIELD, FIVE_DAYS_BEFORE_COMPLETE_FIELD];

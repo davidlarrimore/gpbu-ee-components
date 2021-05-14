@@ -1,7 +1,7 @@
 import { LightningElement, api, track } from 'lwc';
 
 
-import getDemoSetupRecruitQuestion from '@salesforce/apex/eeFlowRecruitQuestionFormHelper.getRecruitQuestions';
+import getDemoSetupRecruitQuestion from '@salesforce/apex/eeLWCHelper.getRecruitQuestions';
 
 
 export default class EeFlowRecruitQuestionForm extends LightningElement {

@@ -3,7 +3,7 @@ import { LightningElement, api, wire, track } from 'lwc';
 import { getRecord, getFieldValue, getRecordNotifyChange } from 'lightning/uiRecordApi';
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 import LEAD_STATUS_FIELD from '@salesforce/schema/Lead.Status';
-import executeFlow from '@salesforce/apex/eeHiringRecruitPageWidgetHelper.callConvertRecruitToApplicantFlow';
+import executeFlow from '@salesforce/apex/eeLWCHelper.callConvertRecruitToApplicantFlow';
 import { NavigationMixin } from 'lightning/navigation';
 
 

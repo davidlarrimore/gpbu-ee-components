@@ -1,0 +1,21 @@
+<template>
+        <lightning-card>
+            <template if:false={apiCallCompletedFlag}>
+                <lightning-spinner alternative-text="Loading" size="small"></lightning-spinner>
+            </template>
+            <template if:true={demoSetup}>
+                <template if:true={apiCallCompletedFlag}>
+                    <template if:true={apiResultsFlag}>
+                        <div class="slds-var-m-around_x-small slds-text-align_center">
+                            <img src={imageURL} alt={imageTitle}></img>
+                        </div>
+                    </template>
+                    <template if:false={apiResultsFlag}>
+                        <div class="slds-var-m-around_x-small slds-text-align_center">
+                            Heyy.....sooo....Unfortunatley, I could not find an Asset file with the <i>Employee Photo Asset File Name</i> of "{demoSetup.fields.Employee_Photo_Asset_File_Name__c.value}"
+                        </div>
+                    </template>                
+                </template>                  
+            </template>
+        </lightning-card>     
+</template>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>51.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>EE Demo Component Profile Image Card</masterLabel>
+    <description>Component to show the Employee Profile Image</description>
+    <targets>
+        <target object="Demo_Setup__c">lightning__RecordPage</target>
+    </targets>  
+</LightningComponentBundle>
