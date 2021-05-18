@@ -13,6 +13,34 @@ public with sharing class eeLWCHelper {
         return null;
      }
 
+     @AuraEnabled
+     public static ContentAsset getContentAsset(String contentDocumentId) {
+         System.debug('Running eeLWCHelper getContentAsset');
+         System.debug('contentDocumentId = "' + contentDocumentId + '"');   
+ 
+         List<ContentAsset> contentAssets = [SELECT Id, DeveloperName FROM ContentAsset WHERE ContentDocumentId = :contentDocumentId];
+         if(contentAssets.size() > 0){
+             return contentAssets[0];
+         }
+ 
+         return null;
+      }
+ 
+      @AuraEnabled
+      public static ContentAsset getContentAssetFromDocument(String title) {
+          System.debug('Running eeLWCHelper getContentAssetFromDocument');
+          System.debug('title = "' + title + '"');   
+  
+
+          List<ContentDocument> contentDocuments = [SELECT Id, LatestPublishedVersionId FROM ContentDocument WHERE Title = :title];
+          if(contentDocuments.size() > 0){
+              List<ContentAsset> contentAssets = [SELECT Id, DeveloperName FROM ContentAsset WHERE ContentDocumentId = :contentDocuments[0].Id];
+              if(contentAssets.size() > 0){
+                  return contentAssets[0];
+              }
+          }
+          return null;
+       }
 
      @AuraEnabled
      public static boolean call5DaysBeforeFlow(String recordId, String flowToRun) {
