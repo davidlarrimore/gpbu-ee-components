@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Score__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(  ISPICKVAL(Raiting__c,&apos;Not Qualified&apos;), 0,
+  IF(  ISPICKVAL(Raiting__c,&apos;Partially Qualified&apos;), 2,
+    IF(  ISPICKVAL(Raiting__c,&apos;Qualified&apos;), 3,
+      IF(  ISPICKVAL(Raiting__c,&apos;Well Qualified&apos;), 4, 
+       IF(  ISPICKVAL(Raiting__c,&apos;Highly Qualified&apos;), 5, 0)
+      )
+    )
+  )
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Score</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

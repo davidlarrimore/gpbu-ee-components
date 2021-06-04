@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Grade__c</fullName>
+    <businessStatus>DeprecateCandidate</businessStatus>
+    <externalId>false</externalId>
+    <inlineHelpText>OLD - being phased out and replaced with Grade_or_Level__c</inlineHelpText>
+    <label>Grade</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetName>Job_Grades</valueSetName>
+    </valueSet>
+    <visibleLines>6</visibleLines>
+</CustomField>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Gross_Pay__c</fullName>
+    <description>Auto-calculated from Gross_Pay_Per_Pay_Period__c field on the employee contact record</description>
+    <externalId>false</externalId>
+    <formula>Employee__r.Gross_Pay_per_Period__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Auto-calculated from Gross_Pay_Per_Pay_Period__c field on the employee contact record</inlineHelpText>
+    <label>Gross Pay</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

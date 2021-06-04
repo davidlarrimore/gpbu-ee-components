@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Position_Occupied__c</fullName>
+    <description>An employee&apos;s position in the Competitive Service, Excepted Service, or the Senior Executive Service; https://dw.opm.gov/datastandards/dataStandard/1507?index=P</description>
+    <externalId>false</externalId>
+    <inlineHelpText>An employee&apos;s position in the Competitive Service, Excepted Service, or the Senior Executive Service; https://dw.opm.gov/datastandards/dataStandard/1507?index=P</inlineHelpText>
+    <label>Position Occupied</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetName>Position_Occupied</valueSetName>
+    </valueSet>
+</CustomField>

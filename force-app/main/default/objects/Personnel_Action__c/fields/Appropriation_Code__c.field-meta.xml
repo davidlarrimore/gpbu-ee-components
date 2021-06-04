@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Appropriation_Code__c</fullName>
+    <description>Appropriation code associated with a position; https://dw.opm.gov/datastandards/dataStandard/1400?index=A</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Appropriation code associated with a position; https://dw.opm.gov/datastandards/dataStandard/1400?index=A</inlineHelpText>
+    <label>Appropriation Code</label>
+    <length>155</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>No Formal</fullName>
+        <default>false</default>
+        <label>No Formal</label>
+    </customValue>
+    <customValue>
+        <fullName>Home Schooled</fullName>
+        <default>false</default>
+        <label>Home Schooled</label>
+    </customValue>
+    <customValue>
+        <fullName>GED</fullName>
+        <default>false</default>
+        <label>GED</label>
+    </customValue>
+    <customValue>
+        <fullName>Currently in High School</fullName>
+        <default>false</default>
+        <label>Currently in High School</label>
+    </customValue>
+    <customValue>
+        <fullName>High School Graduate</fullName>
+        <default>false</default>
+        <label>High School Graduate</label>
+    </customValue>
+    <customValue>
+        <fullName>College Enrolled</fullName>
+        <default>false</default>
+        <label>College Enrolled</label>
+    </customValue>
+    <customValue>
+        <fullName>College Graduate</fullName>
+        <default>false</default>
+        <label>College Graduate</label>
+    </customValue>
+    <customValue>
+        <fullName>Some Graduate School</fullName>
+        <default>false</default>
+        <label>Some Graduate School</label>
+    </customValue>
+    <customValue>
+        <fullName>Graduate Degree</fullName>
+        <default>false</default>
+        <label>Graduate Degree</label>
+    </customValue>
+    <masterLabel>Education Level</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Control_Number__c</fullName>
+    <description>Used for the Apply on USAJobs button... you can find a control number on a USAJobs job posting, enter it in this field, and the USAJobs button will redirect you to that posting when you click on it.</description>
+    <externalId>false</externalId>
+    <label>Control Number</label>
+    <length>25</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

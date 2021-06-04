@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>NAME</columns>
+    <columns>Mid_Year_Rating__c</columns>
+    <columns>Mid_Year_Score__c</columns>
+    <columns>Year_End_Rating__c</columns>
+    <columns>Year_End_Score__c</columns>
+    <columns>Final_Score__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>All</label>
+</ListView>

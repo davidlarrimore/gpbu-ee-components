@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Inactive</fullName>
+        <default>true</default>
+        <label>Inactive</label>
+    </customValue>
+    <customValue>
+        <fullName>New-Hire</fullName>
+        <default>false</default>
+        <label>New-Hire</label>
+    </customValue>
+    <customValue>
+        <fullName>Active</fullName>
+        <default>false</default>
+        <label>Active</label>
+    </customValue>
+    <description>Status states for Active and Inactive</description>
+    <masterLabel>Employment Status</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

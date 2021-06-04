@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Demo_Setup</fullName>
+    <fields>Name</fields>
+    <fields>Starting_Phase__c</fields>
+    <fields>Recruit__c</fields>
+    <fields>Applicant__c</fields>
+    <fields>Contact__c</fields>
+    <label>Demo Setup</label>
+</CompactLayout>

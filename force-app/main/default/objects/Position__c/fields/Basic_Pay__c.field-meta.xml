@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Basic_Pay__c</fullName>
+    <description>Sum of all fixed pay amounts paid on a regular and recurring basis (i.e., each pay period), subject to applicable pay caps. This includes adjusted basic pay (sum of basic pay + any applicable basic pay supplement) and any fixed-amount allowances and differentials that are paid on a regular and recurring basis (e.g., post differentials and cost-of-living allowances). Also includes standby duty premium pay, administratively uncontrollable overtime pay, law enforcement availability pay, and regular overtime pay for firefighters paid under 5 U.S.C. 5545b. Express amount using same pay basis as used for basic pay rate. Total Salary Rate is not limited to retirement-creditable basic pay; https://dw.opm.gov/datastandards/dataStandard/1584?index=T</description>
+    <externalId>false</externalId>
+    <inlineHelpText>https://dw.opm.gov/datastandards/dataStandard/1584?index=T</inlineHelpText>
+    <label>Basic Pay</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

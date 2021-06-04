@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Administrative</fullName>
+        <default>false</default>
+        <label>Administrative</label>
+    </customValue>
+    <customValue>
+        <fullName>Agricultural Specialist</fullName>
+        <default>false</default>
+        <label>Agricultural Specialist</label>
+    </customValue>
+    <customValue>
+        <fullName>Air Enforcement Agent</fullName>
+        <default>false</default>
+        <label>Air Enforcement Agent</label>
+    </customValue>
+    <customValue>
+        <fullName>Air Interdiction Agent</fullName>
+        <default>false</default>
+        <label>Air Interdiction Agent</label>
+    </customValue>
+    <customValue>
+        <fullName>Border Patrol Agent</fullName>
+        <default>false</default>
+        <label>Border Patrol Agent</label>
+    </customValue>
+    <customValue>
+        <fullName>CBP Officer</fullName>
+        <default>false</default>
+        <label>CBP Officer</label>
+    </customValue>
+    <customValue>
+        <fullName>Chemistry</fullName>
+        <default>false</default>
+        <label>Chemistry</label>
+    </customValue>
+    <customValue>
+        <fullName>City Carrier Assistant</fullName>
+        <default>false</default>
+        <label>City Carrier Assistant</label>
+    </customValue>
+    <customValue>
+        <fullName>Cybersecurity</fullName>
+        <default>false</default>
+        <label>Cybersecurity</label>
+    </customValue>
+    <customValue>
+        <fullName>Epidemiology</fullName>
+        <default>false</default>
+        <label>Epidemiology</label>
+    </customValue>
+    <customValue>
+        <fullName>Forestry Technician</fullName>
+        <default>false</default>
+        <label>Forestry Technician</label>
+    </customValue>
+    <customValue>
+        <fullName>Geology</fullName>
+        <default>false</default>
+        <label>Geology</label>
+    </customValue>
+    <customValue>
+        <fullName>Information Security</fullName>
+        <default>false</default>
+        <label>Information Security</label>
+    </customValue>
+    <customValue>
+        <fullName>Marine Interdiction Agent</fullName>
+        <default>false</default>
+        <label>Marine Interdiction Agent</label>
+    </customValue>
+    <customValue>
+        <fullName>Operations Industrial Engineers</fullName>
+        <default>false</default>
+        <label>Operations Industrial Engineers</label>
+    </customValue>
+    <customValue>
+        <fullName>Program Analysis</fullName>
+        <default>true</default>
+        <label>Program Analysis</label>
+    </customValue>
+    <customValue>
+        <fullName>Rural Carrier Associate</fullName>
+        <default>false</default>
+        <label>Rural Carrier Associate</label>
+    </customValue>
+    <customValue>
+        <fullName>Sales</fullName>
+        <default>false</default>
+        <label>Sales</label>
+    </customValue>
+    <customValue>
+        <fullName>Salesforce Systems Engineer</fullName>
+        <default>false</default>
+        <label>Salesforce Systems Engineer</label>
+    </customValue>
+    <customValue>
+        <fullName>Tractor-Trailer Operator</fullName>
+        <default>false</default>
+        <label>Tractor-Trailer Operator</label>
+    </customValue>
+    <masterLabel>Area of Interest</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

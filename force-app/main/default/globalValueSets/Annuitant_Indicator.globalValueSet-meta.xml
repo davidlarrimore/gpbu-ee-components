@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>0 - Reemployed CSRS annuitant not subject to salary reduction</fullName>
+        <default>false</default>
+        <label>0 - Reemployed CSRS annuitant not subject to salary reduction</label>
+    </customValue>
+    <customValue>
+        <fullName>1 - Reemployed CSRS annuitant</fullName>
+        <default>false</default>
+        <label>1 - Reemployed CSRS annuitant</label>
+    </customValue>
+    <customValue>
+        <fullName>2 - Retired uniformed service officer</fullName>
+        <default>false</default>
+        <label>2 - Retired uniformed service officer</label>
+    </customValue>
+    <customValue>
+        <fullName>3 - Retired uniformed service enlisted member</fullName>
+        <default>false</default>
+        <label>3 - Retired uniformed service enlisted member</label>
+    </customValue>
+    <customValue>
+        <fullName>4 - Retired uniformed service officer and reemployed CSRS annuitant</fullName>
+        <default>false</default>
+        <label>4 - Retired uniformed service officer and reemployed CSRS annuitant</label>
+    </customValue>
+    <customValue>
+        <fullName>5 - Retired uniformed service enlisted member and reemployed CSRS annuitant</fullName>
+        <default>false</default>
+        <label>5 - Retired uniformed service enlisted member and reemployed CSRS annuitant</label>
+    </customValue>
+    <customValue>
+        <fullName>6 - Reemployed CSRS annuitant not subject to salary reduction</fullName>
+        <default>false</default>
+        <label>6 - Reemployed CSRS annuitant not subject to salary reduction</label>
+    </customValue>
+    <customValue>
+        <fullName>7 - Retired uniformed service officer and reemployed CSRS annuitant not subject to salary reduction</fullName>
+        <default>false</default>
+        <label>7 - Retired uniformed service officer and reemployed CSRS annuitant not subject to salary reduction</label>
+    </customValue>
+    <customValue>
+        <fullName>8 - Retired uniformed service enlisted member and reemployed CSRS annuitant not subject to salary reduction</fullName>
+        <default>false</default>
+        <label>8 - Retired uniformed service enlisted member and reemployed CSRS annuitant not subject to salary reduction</label>
+    </customValue>
+    <customValue>
+        <fullName>9 - Not applicable.  None of the above codes apply.</fullName>
+        <default>false</default>
+        <label>9 - Not applicable.  None of the above codes apply.</label>
+    </customValue>
+    <customValue>
+        <fullName>A - Reemployed FERS annuitant</fullName>
+        <default>false</default>
+        <label>A - Reemployed FERS annuitant</label>
+    </customValue>
+    <customValue>
+        <fullName>B - Former FERS annuitant</fullName>
+        <default>false</default>
+        <label>B - Former FERS annuitant</label>
+    </customValue>
+    <customValue>
+        <fullName>C - Retired uniformed service officer and reemployed FERS annuitant</fullName>
+        <default>false</default>
+        <label>C - Retired uniformed service officer and reemployed FERS annuitant</label>
+    </customValue>
+    <customValue>
+        <fullName>D - Retired uniformed service officer and former FERS annuitant</fullName>
+        <default>false</default>
+        <label>D - Retired uniformed service officer and former FERS annuitant</label>
+    </customValue>
+    <customValue>
+        <fullName>E - Retired uniformed service enlisted member and reemployed FERS annuitant</fullName>
+        <default>false</default>
+        <label>E - Retired uniformed service enlisted member and reemployed FERS annuitant</label>
+    </customValue>
+    <customValue>
+        <fullName>F - Retired uniformed service enlisted member and former FERS annuitant</fullName>
+        <default>false</default>
+        <label>F - Retired uniformed service enlisted member and former FERS annuitant</label>
+    </customValue>
+    <customValue>
+        <fullName>G - Reemployed FERS annuitant not subject to salary reduction</fullName>
+        <default>false</default>
+        <label>G - Reemployed FERS annuitant not subject to salary reduction</label>
+    </customValue>
+    <customValue>
+        <fullName>H - Retired uniformed service officer and reemployed FERS annuitant not subject to salary reduction</fullName>
+        <default>false</default>
+        <label>H - Retired uniformed service officer and reemployed FERS annuitant not subject to salary reduction</label>
+    </customValue>
+    <customValue>
+        <fullName>J - Retired uniformed service enlisted member and reemployed FERS annuitant not subject to salary reduction</fullName>
+        <default>false</default>
+        <label>J - Retired uniformed service enlisted member and reemployed FERS annuitant not subject to salary reduction</label>
+    </customValue>
+    <customValue>
+        <fullName>K - Reemployed FERS annuitant not subject to salary reduction</fullName>
+        <default>false</default>
+        <label>K - Reemployed FERS annuitant not subject to salary reduction</label>
+    </customValue>
+    <customValue>
+        <fullName>M - Former FERS Phased Retiree</fullName>
+        <default>false</default>
+        <label>M - Former FERS Phased Retiree</label>
+    </customValue>
+    <customValue>
+        <fullName>N - Former FERS Phased Retiree who is also a Retired Uniform Service Officer</fullName>
+        <default>false</default>
+        <label>N - Former FERS Phased Retiree who is also a Retired Uniform Service Officer</label>
+    </customValue>
+    <customValue>
+        <fullName>P - Former FERS Phased Retiree who is also a Retired Uniform Service Enlisted</fullName>
+        <default>false</default>
+        <label>P - Former FERS Phased Retiree who is also a Retired Uniform Service Enlisted</label>
+    </customValue>
+    <customValue>
+        <fullName>W - Former CSRS Phased Retiree</fullName>
+        <default>false</default>
+        <label>W - Former CSRS Phased Retiree</label>
+    </customValue>
+    <customValue>
+        <fullName>X - Former CSRS Phased Retiree who is also a retired uniform service officer</fullName>
+        <default>false</default>
+        <label>X - Former CSRS Phased Retiree who is also a retired uniform service officer</label>
+    </customValue>
+    <customValue>
+        <fullName>Y - Former CSRS Phased Retiree who is also a retired uniform service enlisted</fullName>
+        <default>false</default>
+        <label>Y - Former CSRS Phased Retiree who is also a retired uniform service enlisted</label>
+    </customValue>
+    <masterLabel>Annuitant Indicator</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

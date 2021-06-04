@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BUS_Code__c</fullName>
+    <description>Bargaining Unit Status (BUS) Code</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Bargaining Unit Status (BUS) Code</inlineHelpText>
+    <label>BUS Code</label>
+    <length>155</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>51.0</apiVersion>
+    <assignments>
+        <name>Set_Complete_Bargaining_Unit_Review_Assignemtn</name>
+        <label>Set Complete Bargaining Unit Review Assignemtn</label>
+        <locationX>50</locationX>
+        <locationY>671</locationY>
+        <assignmentItems>
+            <assignToReference>Get_Case.Bargaining_Unit_Review_Completed__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Case_Record</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Set_Complete_Chief_Council_Review_Assignment</name>
+        <label>Set Complete Chief Council Review Assignment</label>
+        <locationX>842</locationX>
+        <locationY>671</locationY>
+        <assignmentItems>
+            <assignToReference>Get_Case.Chief_Council_Review_Completed__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Case_Record</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Set_Complete_EEO_Review_Assignment</name>
+        <label>Set Complete EEO Review Assignment</label>
+        <locationX>1370</locationX>
+        <locationY>671</locationY>
+        <assignmentItems>
+            <assignToReference>Get_Case.EEO_Review_Completed__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Case_Record</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Set_Complete_Reasonable_Accommodations_Assignment</name>
+        <label>Set Complete Reasonable Accommodations Assignment</label>
+        <locationX>314</locationX>
+        <locationY>671</locationY>
+        <assignmentItems>
+            <assignToReference>Get_Case.Reasonable_Accommodation_Review_Complete__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Case_Record</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Set_Complete_Senior_Leader_Review_Assignment</name>
+        <label>Set Complete Senior Leader Review Assignment</label>
+        <locationX>578</locationX>
+        <locationY>671</locationY>
+        <assignmentItems>
+            <assignToReference>Get_Case.Senior_Leader_Review_Completed__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Case_Record</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Set_Complete_Supervisory_Review_Assignment</name>
+        <label>Set Complete Supervisory Review Assignment</label>
+        <locationX>1106</locationX>
+        <locationY>671</locationY>
+        <assignmentItems>
+            <assignToReference>Get_Case.Supervisor_Review_Completed__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Case_Record</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>Case_Type_Decision</name>
+        <label>Case Type Decision</label>
+        <locationX>1370</locationX>
+        <locationY>431</locationY>
+        <defaultConnectorLabel>Is not ER Case</defaultConnectorLabel>
+        <rules>
+            <name>is_ER_Case</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Case.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>ER_Case_Request</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Task_Type</targetReference>
+            </connector>
+            <label>is ER Case</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Task_Type</name>
+        <label>Task Type</label>
+        <locationX>842</locationX>
+        <locationY>551</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Complete_Bargaining_Unit_Review</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Subject</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Complete Bargaining Unit Review</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_Complete_Bargaining_Unit_Review_Assignemtn</targetReference>
+            </connector>
+            <label>Complete Bargaining Unit Review</label>
+        </rules>
+        <rules>
+            <name>Complete_Reasonable_Accommodations</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Subject</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Complete Reasonable Accommodations</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_Complete_Reasonable_Accommodations_Assignment</targetReference>
+            </connector>
+            <label>Complete Reasonable Accommodations Review</label>
+        </rules>
+        <rules>
+            <name>Complete_Senior_Leader_Review</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Subject</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Complete Senior Leader Review</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_Complete_Senior_Leader_Review_Assignment</targetReference>
+            </connector>
+            <label>Complete Senior Leader Review</label>
+        </rules>
+        <rules>
+            <name>Complete_Chief_Council_Review</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Subject</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Complete Chief Council Review</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_Complete_Chief_Council_Review_Assignment</targetReference>
+            </connector>
+            <label>Complete Chief Council Review</label>
+        </rules>
+        <rules>
+            <name>Complete_Supervisory_Review</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Subject</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Complete Supervisory Review</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_Complete_Supervisory_Review_Assignment</targetReference>
+            </connector>
+            <label>Complete Supervisory Review</label>
+        </rules>
+        <rules>
+            <name>Complete_EEO_Review</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Subject</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Complete EEO Review</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_Complete_EEO_Review_Assignment</targetReference>
+            </connector>
+            <label>Complete EEO Review</label>
+        </rules>
+    </decisions>
+    <formulas>
+        <name>varFormulaNextWeekDate</name>
+        <dataType>Date</dataType>
+        <expression>TODAY()+7</expression>
+    </formulas>
+    <formulas>
+        <name>varFormulaNextWeekDateTime</name>
+        <dataType>DateTime</dataType>
+        <expression>NOW()+7</expression>
+    </formulas>
+    <interviewLabel>Employee Relations - Task Update Flow {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Employee Relations Autolaunch - Task Update Flow</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_Case</name>
+        <label>Get Case</label>
+        <locationX>1370</locationX>
+        <locationY>311</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Case_Type_Decision</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.WhatId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Case</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <name>Update_Case_Record</name>
+        <label>Update Case Record</label>
+        <locationX>842</locationX>
+        <locationY>887</locationY>
+        <inputReference>Get_Case</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>1244</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_Case</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Status</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Completed</stringValue>
+            </value>
+        </filters>
+        <object>Task</object>
+        <recordTriggerType>Update</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <variables>
+        <name>Tasks</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Task</objectType>
+    </variables>
+</Flow>

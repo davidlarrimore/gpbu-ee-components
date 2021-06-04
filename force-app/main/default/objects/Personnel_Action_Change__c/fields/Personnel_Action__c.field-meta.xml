@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Personnel_Action__c</fullName>
+    <externalId>false</externalId>
+    <label>Personnel Action</label>
+    <referenceTo>Personnel_Action__c</referenceTo>
+    <relationshipLabel>Personnel Action Change</relationshipLabel>
+    <relationshipName>Personnel_Action_Change</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackFeedHistory>true</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>GovFuture_Letterhead</letterhead>
+    <name>Case: AGLearn Escalation template</name>
+    <style>freeForm</style>
+    <subject>GFLearn Case # {!Case.CaseNumber}  has been escalated.</subject>
+    <textOnly>Dear {!Contact.OwnerFirstName},
+
+A new GFLearn request for {!Contact.FirstName} {!Contact.LastName} is now overdue. Please grant access for the new employee using the GFLearn portal. This request should be completed within 5 days.
+
+Description:
+
+IT needs the level of access required to for this new employee. Please login to the case and provide the requested information.
+
+Please click on the link below  or copy/paste into your browser to open case {!Case.CaseNumber}.
+
+{!Case.Link}
+
+Regards,
+
+Gov of the Future Onboarding Support</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

@@ -2,7 +2,7 @@ echo "*** Creating PKG Directory ..."
 mkdir mdapipkg
 
 echo "*** pulling change set ..."
-sfdx force:mdapi:retrieve -s -r ./mdapipkg -p "visitor_management" -u ee -w 10
+sfdx force:mdapi:retrieve -s -r ./mdapipkg -p "ee_flows_new" -u ee -w 10
 
 echo "*** Cleaning up ..."
 cd mdapipkg
@@ -17,8 +17,8 @@ echo "*** Removing pkg directory ..."
 rm -r ./mdapipkg
 
 
-echo "*** Pushing metadata to scratch org ..."
-sfdx force:source:deploy -p force-app -u eeScratch
+#echo "*** Pushing metadata to scratch org ..."
+#sfdx force:source:deploy -p force-app -u eeScratch
 
-echo "*** Getting Data ..."
-sfdx sfdmu:run --sourceusername CrisisManagementProd --targetusername eeScratch --path ./data/
+#echo "*** Getting Data ..."
+#sfdx sfdmu:run --sourceusername CrisisManagementProd --targetusername ee --path ./data/

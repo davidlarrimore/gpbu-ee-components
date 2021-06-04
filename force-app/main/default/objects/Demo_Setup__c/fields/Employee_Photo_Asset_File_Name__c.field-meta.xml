@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Employee_Photo_Asset_File_Name__c</fullName>
+    <defaultValue>&apos;Generic Contact Profile Image&apos;</defaultValue>
+    <description>&quot;Title&quot; Of the Asset File to be used at the Employee Photo.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>&quot;Title&quot; Of the Asset File to be used at the Employee Photo.</inlineHelpText>
+    <label>Employee Photo Asset File Name</label>
+    <length>255</length>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>
