@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Occupational_Group_or_Family__c</fullName>
+    <externalId>false</externalId>
+    <label>Occupational Group or Family</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>0000 - MISCELLANEOUS OCCUPATIONS</fullName>
+                <default>false</default>
+                <label>0000 - MISCELLANEOUS OCCUPATIONS</label>
+            </value>
+            <value>
+                <fullName>0100 - SOCIAL SCIENCE, PSYCHOLOGY, AND WELFARE</fullName>
+                <default>false</default>
+                <label>0100 - SOCIAL SCIENCE, PSYCHOLOGY, AND WELFARE</label>
+            </value>
+            <value>
+                <fullName>0200 - HUMAN RESOURCES MANAGEMENT</fullName>
+                <default>false</default>
+                <label>0200 - HUMAN RESOURCES MANAGEMENT</label>
+            </value>
+            <value>
+                <fullName>0300 - GENERAL ADMINISTRATIVE, CLERICAL, AND OFFICE SERVICES</fullName>
+                <default>false</default>
+                <label>0300 - GENERAL ADMINISTRATIVE, CLERICAL, AND OFFICE SERVICES</label>
+            </value>
+            <value>
+                <fullName>0400 - NATURAL RESOURCES MANAGEMENT AND BIOLOGICAL SCIENCES</fullName>
+                <default>false</default>
+                <label>0400 - NATURAL RESOURCES MANAGEMENT AND BIOLOGICAL SCIENCES</label>
+            </value>
+            <value>
+                <fullName>0500 - ACCOUNTING AND BUDGET</fullName>
+                <default>false</default>
+                <label>0500 - ACCOUNTING AND BUDGET</label>
+            </value>
+            <value>
+                <fullName>0600 - MEDICAL, HOSPITAL, DENTAL, AND PUBLIC HEALTH</fullName>
+                <default>false</default>
+                <label>0600 - MEDICAL, HOSPITAL, DENTAL, AND PUBLIC HEALTH</label>
+            </value>
+            <value>
+                <fullName>0700 - VETERINARY MEDICAL SCIENCE</fullName>
+                <default>false</default>
+                <label>0700 - VETERINARY MEDICAL SCIENCE</label>
+            </value>
+            <value>
+                <fullName>0800 - ENGINEERING AND ARCHITECTURE</fullName>
+                <default>false</default>
+                <label>0800 - ENGINEERING AND ARCHITECTURE</label>
+            </value>
+            <value>
+                <fullName>0900 - LEGAL AND KINDRED</fullName>
+                <default>false</default>
+                <label>0900 - LEGAL AND KINDRED</label>
+            </value>
+            <value>
+                <fullName>1000 - INFORMATION AND ARTS</fullName>
+                <default>false</default>
+                <label>1000 - INFORMATION AND ARTS</label>
+            </value>
+            <value>
+                <fullName>1100 - BUSINESS AND INDUSTRY</fullName>
+                <default>false</default>
+                <label>1100 - BUSINESS AND INDUSTRY</label>
+            </value>
+            <value>
+                <fullName>1200 - COPYRIGHT, PATENT, AND TRADEMARK</fullName>
+                <default>false</default>
+                <label>1200 - COPYRIGHT, PATENT, AND TRADEMARK</label>
+            </value>
+            <value>
+                <fullName>1300 - PHYSICAL SCIENCES</fullName>
+                <default>false</default>
+                <label>1300 - PHYSICAL SCIENCES</label>
+            </value>
+            <value>
+                <fullName>1400 - LIBRARY AND ARCHIVES</fullName>
+                <default>false</default>
+                <label>1400 - LIBRARY AND ARCHIVES</label>
+            </value>
+            <value>
+                <fullName>1500 - MATHEMATICAL SCIENCES</fullName>
+                <default>false</default>
+                <label>1500 - MATHEMATICAL SCIENCES</label>
+            </value>
+            <value>
+                <fullName>1600 - EQUIPMENT, FACILITIES, AND SERVICES</fullName>
+                <default>false</default>
+                <label>1600 - EQUIPMENT, FACILITIES, AND SERVICES</label>
+            </value>
+            <value>
+                <fullName>1700 - EDUCATION</fullName>
+                <default>false</default>
+                <label>1700 - EDUCATION</label>
+            </value>
+            <value>
+                <fullName>1800 - INSPECTION, INVESTIGATION, ENFORCEMENT, AND COMPLIANCE</fullName>
+                <default>false</default>
+                <label>1800 - INSPECTION, INVESTIGATION, ENFORCEMENT, AND COMPLIANCE</label>
+            </value>
+            <value>
+                <fullName>1900 - QUALITY ASSURANCE, INSPECTION, AND GRADING</fullName>
+                <default>false</default>
+                <label>1900 - QUALITY ASSURANCE, INSPECTION, AND GRADING</label>
+            </value>
+            <value>
+                <fullName>2000 - SUPPLY</fullName>
+                <default>false</default>
+                <label>2000 - SUPPLY</label>
+            </value>
+            <value>
+                <fullName>2100 - TRANSPORTATION</fullName>
+                <default>false</default>
+                <label>2100 - TRANSPORTATION</label>
+            </value>
+            <value>
+                <fullName>2200 - INFORMATION MANAGEMENT</fullName>
+                <default>false</default>
+                <label>2200 - INFORMATION MANAGEMENT</label>
+            </value>
+            <value>
+                <fullName>2500 - WIRE COMMUNICATIONS EQUIPMENT INSTALLATION AND MAINTENANCE</fullName>
+                <default>false</default>
+                <label>2500 - WIRE COMMUNICATIONS EQUIPMENT INSTALLATION AND MAINTENANCE</label>
+            </value>
+            <value>
+                <fullName>2600 - ELECTRONIC EQUIPMENT INSTALLATION AND MAINTENANCE</fullName>
+                <default>false</default>
+                <label>2600 - ELECTRONIC EQUIPMENT INSTALLATION AND MAINTENANCE</label>
+            </value>
+            <value>
+                <fullName>2800 - ELECTRICAL AND INSTALLATION AND MAINTENANCE</fullName>
+                <default>false</default>
+                <label>2800 - ELECTRICAL AND INSTALLATION AND MAINTENANCE</label>
+            </value>
+            <value>
+                <fullName>3100 - FABRIC AND LEATHER WORK</fullName>
+                <default>false</default>
+                <label>3100 - FABRIC AND LEATHER WORK</label>
+            </value>
+            <value>
+                <fullName>3300 - INSTRUMENT WORK</fullName>
+                <default>false</default>
+                <label>3300 - INSTRUMENT WORK</label>
+            </value>
+            <value>
+                <fullName>3400 - MACHINE TOOL WORK</fullName>
+                <default>false</default>
+                <label>3400 - MACHINE TOOL WORK</label>
+            </value>
+            <value>
+                <fullName>3500 - GENERAL SERVICES AND SUPPORT WORK</fullName>
+                <default>false</default>
+                <label>3500 - GENERAL SERVICES AND SUPPORT WORK</label>
+            </value>
+            <value>
+                <fullName>3600 - STRUCTURAL AND FINISHING WORK</fullName>
+                <default>false</default>
+                <label>3600 - STRUCTURAL AND FINISHING WORK</label>
+            </value>
+            <value>
+                <fullName>3700 - METAL PROCESSING</fullName>
+                <default>false</default>
+                <label>3700 - METAL PROCESSING</label>
+            </value>
+            <value>
+                <fullName>3800 - METAL WORK</fullName>
+                <default>false</default>
+                <label>3800 - METAL WORK</label>
+            </value>
+            <value>
+                <fullName>3900 - MOTION PICTURE, RADIO, TELEVISION, AND SOUND EQUIPMENT OPERATION</fullName>
+                <default>false</default>
+                <label>3900 - MOTION PICTURE, RADIO, TELEVISION, AND SOUND EQUIPMENT OPERATION</label>
+            </value>
+            <value>
+                <fullName>4000 - LENS AND CRYSTAL WORK</fullName>
+                <default>false</default>
+                <label>4000 - LENS AND CRYSTAL WORK</label>
+            </value>
+            <value>
+                <fullName>4100 - PAINTING AND PAPERHANGING</fullName>
+                <default>false</default>
+                <label>4100 - PAINTING AND PAPERHANGING</label>
+            </value>
+            <value>
+                <fullName>4200 - PLUMBING AND PIPEFITTING</fullName>
+                <default>false</default>
+                <label>4200 - PLUMBING AND PIPEFITTING</label>
+            </value>
+            <value>
+                <fullName>4300 - PLIABLE MATERIALS WORK</fullName>
+                <default>false</default>
+                <label>4300 - PLIABLE MATERIALS WORK</label>
+            </value>
+            <value>
+                <fullName>4400 - PRINTING</fullName>
+                <default>false</default>
+                <label>4400 - PRINTING</label>
+            </value>
+            <value>
+                <fullName>4600 - WOOD WORK</fullName>
+                <default>false</default>
+                <label>4600 - WOOD WORK</label>
+            </value>
+            <value>
+                <fullName>4700 - GENERAL MAINTENANCE AND OPERATIONS WORK</fullName>
+                <default>false</default>
+                <label>4700 - GENERAL MAINTENANCE AND OPERATIONS WORK</label>
+            </value>
+            <value>
+                <fullName>4800 - GENERAL EQUIPMENT AND MAINTENANCE</fullName>
+                <default>false</default>
+                <label>4800 - GENERAL EQUIPMENT AND MAINTENANCE</label>
+            </value>
+            <value>
+                <fullName>5000 - PLANT AND ANIMAL WORK</fullName>
+                <default>false</default>
+                <label>5000 - PLANT AND ANIMAL WORK</label>
+            </value>
+            <value>
+                <fullName>5200 - MISCLLANEOUS OCCUPATIONS</fullName>
+                <default>false</default>
+                <label>5200 - MISCLLANEOUS OCCUPATIONS</label>
+            </value>
+            <value>
+                <fullName>5300 - INDUSTRIAL EQUIPMENT MAINTENANCE</fullName>
+                <default>false</default>
+                <label>5300 - INDUSTRIAL EQUIPMENT MAINTENANCE</label>
+            </value>
+            <value>
+                <fullName>5400 - INDUSTRIAL EQUIPMENT OPERATION</fullName>
+                <default>false</default>
+                <label>5400 - INDUSTRIAL EQUIPMENT OPERATION</label>
+            </value>
+            <value>
+                <fullName>5700 - TRANSPORTATION/MOBILE EQUIPMENT OPERATION</fullName>
+                <default>false</default>
+                <label>5700 - TRANSPORTATION/MOBILE EQUIPMENT OPERATION</label>
+            </value>
+            <value>
+                <fullName>5800 - TRANSPORTATION/MOBILE EQUIPMENT MAINTENANCE</fullName>
+                <default>false</default>
+                <label>5800 - TRANSPORTATION/MOBILE EQUIPMENT MAINTENANCE</label>
+            </value>
+            <value>
+                <fullName>6500 - AMMUNITION, EXPLOSIVES, AND TOXIC MATERIALS WORK</fullName>
+                <default>false</default>
+                <label>6500 - AMMUNITION, EXPLOSIVES, AND TOXIC MATERIALS WORK</label>
+            </value>
+            <value>
+                <fullName>6600 - ARMAMENT WORK</fullName>
+                <default>false</default>
+                <label>6600 - ARMAMENT WORK</label>
+            </value>
+            <value>
+                <fullName>6900 - WAREHOUSING AND STOCK HANDLING</fullName>
+                <default>false</default>
+                <label>6900 - WAREHOUSING AND STOCK HANDLING</label>
+            </value>
+            <value>
+                <fullName>7000 - PACKING AND PROCESSING</fullName>
+                <default>false</default>
+                <label>7000 - PACKING AND PROCESSING</label>
+            </value>
+            <value>
+                <fullName>7300 - LAUNDRY, DRY CLEANING, AND PRESSING</fullName>
+                <default>false</default>
+                <label>7300 - LAUNDRY, DRY CLEANING, AND PRESSING</label>
+            </value>
+            <value>
+                <fullName>7400 - FOOD PREPARATION AND SERVING</fullName>
+                <default>false</default>
+                <label>7400 - FOOD PREPARATION AND SERVING</label>
+            </value>
+            <value>
+                <fullName>7600 - PERSONAL SERVICES</fullName>
+                <default>false</default>
+                <label>7600 - PERSONAL SERVICES</label>
+            </value>
+            <value>
+                <fullName>8200 - FLUID SYSTEMS MAINTENANCE</fullName>
+                <default>false</default>
+                <label>8200 - FLUID SYSTEMS MAINTENANCE</label>
+            </value>
+            <value>
+                <fullName>8600 - ENGINE OVERHAUL</fullName>
+                <default>false</default>
+                <label>8600 - ENGINE OVERHAUL</label>
+            </value>
+            <value>
+                <fullName>8800 - AIRCRAFT OVERHAUL</fullName>
+                <default>false</default>
+                <label>8800 - AIRCRAFT OVERHAUL</label>
+            </value>
+            <value>
+                <fullName>9000 - FILM PROCESSING</fullName>
+                <default>false</default>
+                <label>9000 - FILM PROCESSING</label>
+            </value>
+            <value>
+                <fullName>9900 - VESSEL JOBS</fullName>
+                <default>false</default>
+                <label>9900 - VESSEL JOBS</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

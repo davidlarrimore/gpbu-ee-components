@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Recruiter_Owner_User__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Which user should be assigned as the owner of the recruit/lead record when it is created? This is typically the recruiter/HR specialist.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Which user should be assigned as the owner of the recruit/lead record when it is created? This is typically the recruiter/HR specialist.</inlineHelpText>
+    <label>Recruiter/Owner (User)</label>
+    <referenceTo>User</referenceTo>
+    <relationshipName>Demo_Setup</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

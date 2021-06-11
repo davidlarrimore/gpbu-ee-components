@@ -280,6 +280,12 @@
             </value>
         </inputAssignments>
         <inputAssignments>
+            <field>OwnerId</field>
+            <value>
+                <elementReference>Get_Contact_Record.User_Record__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
             <field>Priority</field>
             <value>
                 <stringValue>Normal</stringValue>
@@ -330,6 +336,12 @@
             <field>Onboarding_Task_Type__c</field>
             <value>
                 <stringValue>Flow</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>OwnerId</field>
+            <value>
+                <elementReference>Get_Contact_Record.User_Record__c</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>

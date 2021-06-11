@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>None</fullName>
+        <default>true</default>
+        <label>None</label>
+    </customValue>
+    <customValue>
+        <fullName>Confidential</fullName>
+        <default>false</default>
+        <label>Confidential</label>
+    </customValue>
+    <customValue>
+        <fullName>Secret</fullName>
+        <default>false</default>
+        <label>Secret</label>
+    </customValue>
+    <customValue>
+        <fullName>Top Secret</fullName>
+        <default>false</default>
+        <label>Top Secret</label>
+    </customValue>
+    <customValue>
+        <fullName>Top Secret/SCI</fullName>
+        <default>false</default>
+        <label>Top Secret/SCI</label>
+    </customValue>
+    <customValue>
+        <fullName>Q (DoE)</fullName>
+        <default>false</default>
+        <label>Q (DoE)</label>
+    </customValue>
+    <customValue>
+        <fullName>L (DoE)</fullName>
+        <default>false</default>
+        <label>L (DoE)</label>
+    </customValue>
+    <masterLabel>Security Level</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

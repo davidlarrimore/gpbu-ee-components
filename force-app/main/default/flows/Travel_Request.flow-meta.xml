@@ -3,13 +3,14 @@
     <actionCalls>
         <name>Submit_Travel_Request_for_Approval</name>
         <label>Submit Travel Request for Approval</label>
-        <locationX>50</locationX>
-        <locationY>3134</locationY>
+        <locationX>522</locationX>
+        <locationY>3182</locationY>
         <actionName>submit</actionName>
         <actionType>submit</actionType>
         <connector>
             <targetReference>screen08_0</targetReference>
         </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
         <inputParameters>
             <name>objectId</name>
             <value>
@@ -23,8 +24,8 @@
         <description>Initialize Variable Settings</description>
         <name>Initialize_Variable_Settings</name>
         <label>Initialize Variable Settings</label>
-        <locationX>182</locationX>
-        <locationY>158</locationY>
+        <locationX>345</locationX>
+        <locationY>197</locationY>
         <assignmentItems>
             <assignToReference>PathIndicatorOptions</assignToReference>
             <operator>Assign</operator>
@@ -33,14 +34,14 @@
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>Get_Employee_User_Record</targetReference>
+            <targetReference>GetCaseTravelRequestRecordTypeId</targetReference>
         </connector>
     </assignments>
     <assignments>
         <name>Save_ID_of_Travel_Request_Created</name>
         <label>Save ID of Travel Request Created</label>
-        <locationX>182</locationX>
-        <locationY>1718</locationY>
+        <locationX>654</locationX>
+        <locationY>1766</locationY>
         <assignmentItems>
             <assignToReference>Travel_Request_ID_Created</assignToReference>
             <operator>Assign</operator>
@@ -55,8 +56,8 @@
     <assignments>
         <name>Set_Fields_for_Destination_Itinerary_Point</name>
         <label>Set Fields for Destination Itinerary Point</label>
-        <locationX>182</locationX>
-        <locationY>2774</locationY>
+        <locationX>654</locationX>
+        <locationY>2822</locationY>
         <assignmentItems>
             <assignToReference>Case_Travel_Request_Itinerary_Point.Name</assignToReference>
             <operator>Assign</operator>
@@ -141,8 +142,8 @@
     <assignments>
         <name>Set_Fields_for_Leg_1_Itinerary_Point</name>
         <label>Set Fields for Leg 1 Itinerary Point</label>
-        <locationX>182</locationX>
-        <locationY>2078</locationY>
+        <locationX>654</locationX>
+        <locationY>2126</locationY>
         <assignmentItems>
             <assignToReference>Case_Travel_Request_Itinerary_Point.Name</assignToReference>
             <operator>Assign</operator>
@@ -234,8 +235,8 @@
     <assignments>
         <name>Set_Fields_for_Leg_2_Itinerary_Point</name>
         <label>Set Fields for Leg 2 Itinerary Point</label>
-        <locationX>270</locationX>
-        <locationY>2438</locationY>
+        <locationX>742</locationX>
+        <locationY>2486</locationY>
         <assignmentItems>
             <assignToReference>Case_Travel_Request_Itinerary_Point.Name</assignToReference>
             <operator>Assign</operator>
@@ -327,8 +328,8 @@
     <assignments>
         <name>Set_Fields_for_Origin_Itinerary_Point</name>
         <label>Set Fields for Origin Itinerary Point</label>
-        <locationX>182</locationX>
-        <locationY>1838</locationY>
+        <locationX>654</locationX>
+        <locationY>1886</locationY>
         <assignmentItems>
             <assignToReference>Case_Travel_Request_Itinerary_Point.Name</assignToReference>
             <operator>Assign</operator>
@@ -406,13 +407,13 @@
     <assignments>
         <name>Set_Fields_New_Travel_Request</name>
         <label>Set Fields New Travel Request</label>
-        <locationX>182</locationX>
-        <locationY>1478</locationY>
+        <locationX>654</locationX>
+        <locationY>1526</locationY>
         <assignmentItems>
             <assignToReference>Case_Travel_Request.RecordTypeId</assignToReference>
             <operator>Assign</operator>
             <value>
-                <stringValue>0125G000001E2T9QAK</stringValue>
+                <elementReference>CaseTravelRequestRecordTypeId</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
@@ -520,8 +521,8 @@
     <decisions>
         <name>Add_Leg_2_if_City_is_not_null_or_blank_0</name>
         <label>Add Leg 2 if City is not null or blank</label>
-        <locationX>182</locationX>
-        <locationY>2318</locationY>
+        <locationX>654</locationX>
+        <locationY>2366</locationY>
         <defaultConnector>
             <targetReference>Set_Fields_for_Leg_2_Itinerary_Point</targetReference>
         </defaultConnector>
@@ -545,8 +546,8 @@
     <decisions>
         <name>User_Wants_to_Submit_Travel_Request_for_Approval</name>
         <label>User Wants to Submit Travel Request for Approval</label>
-        <locationX>182</locationX>
-        <locationY>3014</locationY>
+        <locationX>654</locationX>
+        <locationY>3062</locationY>
         <defaultConnector>
             <targetReference>screen08_0</targetReference>
         </defaultConnector>
@@ -617,7 +618,7 @@ IF(NOT(ISBLANK({!Get_Employee_Contact_Record.MailingState})),       {!Get_Employ
     <processMetadataValues>
         <name>CanvasMode</name>
         <value>
-            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
         </value>
     </processMetadataValues>
     <processMetadataValues>
@@ -630,8 +631,8 @@ IF(NOT(ISBLANK({!Get_Employee_Contact_Record.MailingState})),       {!Get_Employ
     <recordCreates>
         <name>Create_Destination_Itinerary</name>
         <label>Create Destination Itinerary</label>
-        <locationX>182</locationX>
-        <locationY>2894</locationY>
+        <locationX>654</locationX>
+        <locationY>2942</locationY>
         <connector>
             <targetReference>User_Wants_to_Submit_Travel_Request_for_Approval</targetReference>
         </connector>
@@ -640,8 +641,8 @@ IF(NOT(ISBLANK({!Get_Employee_Contact_Record.MailingState})),       {!Get_Employ
     <recordCreates>
         <name>Create_Leg_1_Itinerary</name>
         <label>Create Leg 1 Itinerary</label>
-        <locationX>182</locationX>
-        <locationY>2198</locationY>
+        <locationX>654</locationX>
+        <locationY>2246</locationY>
         <connector>
             <targetReference>Add_Leg_2_if_City_is_not_null_or_blank_0</targetReference>
         </connector>
@@ -650,8 +651,8 @@ IF(NOT(ISBLANK({!Get_Employee_Contact_Record.MailingState})),       {!Get_Employ
     <recordCreates>
         <name>Create_Leg_2_Itinerary</name>
         <label>Create Leg 2 Itinerary</label>
-        <locationX>270</locationX>
-        <locationY>2558</locationY>
+        <locationX>742</locationX>
+        <locationY>2606</locationY>
         <connector>
             <targetReference>Set_Fields_for_Destination_Itinerary_Point</targetReference>
         </connector>
@@ -660,8 +661,8 @@ IF(NOT(ISBLANK({!Get_Employee_Contact_Record.MailingState})),       {!Get_Employ
     <recordCreates>
         <name>Create_New_Travel_Request</name>
         <label>Create New Travel Request</label>
-        <locationX>182</locationX>
-        <locationY>1598</locationY>
+        <locationX>654</locationX>
+        <locationY>1646</locationY>
         <connector>
             <targetReference>Save_ID_of_Travel_Request_Created</targetReference>
         </connector>
@@ -670,8 +671,8 @@ IF(NOT(ISBLANK({!Get_Employee_Contact_Record.MailingState})),       {!Get_Employ
     <recordCreates>
         <name>Create_Origin_Itinerary</name>
         <label>Create Origin Itinerary</label>
-        <locationX>182</locationX>
-        <locationY>1958</locationY>
+        <locationX>654</locationX>
+        <locationY>2006</locationY>
         <connector>
             <targetReference>Set_Fields_for_Leg_1_Itinerary_Point</targetReference>
         </connector>
@@ -680,8 +681,8 @@ IF(NOT(ISBLANK({!Get_Employee_Contact_Record.MailingState})),       {!Get_Employ
     <recordLookups>
         <name>Get_Employee_Contact_Record</name>
         <label>Get Employee Contact Record</label>
-        <locationX>182</locationX>
-        <locationY>398</locationY>
+        <locationX>654</locationX>
+        <locationY>446</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Get_Supervisor_Record</targetReference>
@@ -708,8 +709,8 @@ IF(NOT(ISBLANK({!Get_Employee_Contact_Record.MailingState})),       {!Get_Employ
     <recordLookups>
         <name>Get_Employee_User_Record</name>
         <label>Get Employee User Record</label>
-        <locationX>182</locationX>
-        <locationY>278</locationY>
+        <locationX>747</locationX>
+        <locationY>330</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Get_Employee_Contact_Record</targetReference>
@@ -729,8 +730,8 @@ IF(NOT(ISBLANK({!Get_Employee_Contact_Record.MailingState})),       {!Get_Employ
     <recordLookups>
         <name>Get_Supervisor_Record</name>
         <label>Get Supervisor Record</label>
-        <locationX>182</locationX>
-        <locationY>518</locationY>
+        <locationX>654</locationX>
+        <locationY>566</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>screen01</targetReference>
@@ -747,13 +748,36 @@ IF(NOT(ISBLANK({!Get_Employee_Contact_Record.MailingState})),       {!Get_Employ
         <object>User</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
+    <recordLookups>
+        <name>GetCaseTravelRequestRecordTypeId</name>
+        <label>GetCaseTravelRequestRecordTypeId</label>
+        <locationX>543</locationX>
+        <locationY>260</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_Employee_User_Record</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Name</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Travel Request</stringValue>
+            </value>
+        </filters>
+        <object>RecordType</object>
+        <outputAssignments>
+            <assignToReference>CaseTravelRequestRecordTypeId</assignToReference>
+            <field>Id</field>
+        </outputAssignments>
+    </recordLookups>
     <runInMode>SystemModeWithoutSharing</runInMode>
     <screens>
         <description>Screen that will show the &quot;Before You Begin&quot; content.</description>
         <name>screen01</name>
         <label>Before you Begin</label>
-        <locationX>182</locationX>
-        <locationY>638</locationY>
+        <locationX>654</locationX>
+        <locationY>686</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -781,6 +805,7 @@ IF(NOT(ISBLANK({!Get_Employee_Contact_Record.MailingState})),       {!Get_Employ
                     <elementReference>PathIndicatorOptions</elementReference>
                 </value>
             </inputParameters>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
             <storeOutputAutomatically>true</storeOutputAutomatically>
         </fields>
@@ -793,6 +818,7 @@ IF(NOT(ISBLANK({!Get_Employee_Contact_Record.MailingState})),       {!Get_Employ
             <name>screen01ContinueTextHR</name>
             <extensionName>c:horizontalRuleFSC</extensionName>
             <fieldType>ComponentInstance</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
             <storeOutputAutomatically>true</storeOutputAutomatically>
         </fields>
@@ -807,8 +833,8 @@ IF(NOT(ISBLANK({!Get_Employee_Contact_Record.MailingState})),       {!Get_Employ
     <screens>
         <name>screen02</name>
         <label>Travel Overview</label>
-        <locationX>182</locationX>
-        <locationY>758</locationY>
+        <locationX>654</locationX>
+        <locationY>806</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -836,6 +862,7 @@ IF(NOT(ISBLANK({!Get_Employee_Contact_Record.MailingState})),       {!Get_Employ
                     <elementReference>PathIndicatorOptions</elementReference>
                 </value>
             </inputParameters>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
             <storeOutputAutomatically>true</storeOutputAutomatically>
         </fields>
@@ -843,6 +870,7 @@ IF(NOT(ISBLANK({!Get_Employee_Contact_Record.MailingState})),       {!Get_Employ
             <name>screen02ContinueTextHR</name>
             <extensionName>c:horizontalRuleFSC</extensionName>
             <fieldType>ComponentInstance</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
             <storeOutputAutomatically>true</storeOutputAutomatically>
         </fields>
@@ -873,8 +901,8 @@ IF(NOT(ISBLANK({!Get_Employee_Contact_Record.MailingState})),       {!Get_Employ
     <screens>
         <name>screen03</name>
         <label>Travel Itinerary</label>
-        <locationX>182</locationX>
-        <locationY>878</locationY>
+        <locationX>654</locationX>
+        <locationY>926</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -902,6 +930,7 @@ IF(NOT(ISBLANK({!Get_Employee_Contact_Record.MailingState})),       {!Get_Employ
                     <elementReference>PathIndicatorOptions</elementReference>
                 </value>
             </inputParameters>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
             <storeOutputAutomatically>true</storeOutputAutomatically>
         </fields>
@@ -909,6 +938,7 @@ IF(NOT(ISBLANK({!Get_Employee_Contact_Record.MailingState})),       {!Get_Employ
             <name>screen03ContinueTextHR</name>
             <extensionName>c:horizontalRuleFSC</extensionName>
             <fieldType>ComponentInstance</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
             <storeOutputAutomatically>true</storeOutputAutomatically>
         </fields>
@@ -951,8 +981,8 @@ IF(NOT(ISBLANK({!Get_Employee_Contact_Record.MailingState})),       {!Get_Employ
     <screens>
         <name>screen04</name>
         <label>Travel Modes</label>
-        <locationX>182</locationX>
-        <locationY>998</locationY>
+        <locationX>654</locationX>
+        <locationY>1046</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -980,6 +1010,7 @@ IF(NOT(ISBLANK({!Get_Employee_Contact_Record.MailingState})),       {!Get_Employ
                     <elementReference>PathIndicatorOptions</elementReference>
                 </value>
             </inputParameters>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
             <storeOutputAutomatically>true</storeOutputAutomatically>
         </fields>
@@ -987,6 +1018,7 @@ IF(NOT(ISBLANK({!Get_Employee_Contact_Record.MailingState})),       {!Get_Employ
             <name>screen04ContinueTextHR</name>
             <extensionName>c:horizontalRuleFSC</extensionName>
             <fieldType>ComponentInstance</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
             <storeOutputAutomatically>true</storeOutputAutomatically>
         </fields>
@@ -1050,8 +1082,8 @@ IF(NOT(ISBLANK({!Get_Employee_Contact_Record.MailingState})),       {!Get_Employ
     <screens>
         <name>screen05</name>
         <label>Travel Leg #1</label>
-        <locationX>182</locationX>
-        <locationY>1118</locationY>
+        <locationX>654</locationX>
+        <locationY>1166</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -1079,6 +1111,7 @@ IF(NOT(ISBLANK({!Get_Employee_Contact_Record.MailingState})),       {!Get_Employ
                     <elementReference>PathIndicatorOptions</elementReference>
                 </value>
             </inputParameters>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
             <storeOutputAutomatically>true</storeOutputAutomatically>
         </fields>
@@ -1086,6 +1119,7 @@ IF(NOT(ISBLANK({!Get_Employee_Contact_Record.MailingState})),       {!Get_Employ
             <name>screen05ContinueTextHR</name>
             <extensionName>c:horizontalRuleFSC</extensionName>
             <fieldType>ComponentInstance</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
             <storeOutputAutomatically>true</storeOutputAutomatically>
         </fields>
@@ -1145,8 +1179,8 @@ IF(NOT(ISBLANK({!Get_Employee_Contact_Record.MailingState})),       {!Get_Employ
     <screens>
         <name>screen06</name>
         <label>Travel Leg #2</label>
-        <locationX>182</locationX>
-        <locationY>1238</locationY>
+        <locationX>654</locationX>
+        <locationY>1286</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -1174,6 +1208,7 @@ IF(NOT(ISBLANK({!Get_Employee_Contact_Record.MailingState})),       {!Get_Employ
                     <elementReference>PathIndicatorOptions</elementReference>
                 </value>
             </inputParameters>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
             <storeOutputAutomatically>true</storeOutputAutomatically>
         </fields>
@@ -1181,6 +1216,7 @@ IF(NOT(ISBLANK({!Get_Employee_Contact_Record.MailingState})),       {!Get_Employ
             <name>screen06ContinueTextHR</name>
             <extensionName>c:horizontalRuleFSC</extensionName>
             <fieldType>ComponentInstance</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
             <storeOutputAutomatically>true</storeOutputAutomatically>
         </fields>
@@ -1246,8 +1282,8 @@ IF(NOT(ISBLANK({!Get_Employee_Contact_Record.MailingState})),       {!Get_Employ
     <screens>
         <name>screen07</name>
         <label>Travel Review</label>
-        <locationX>182</locationX>
-        <locationY>1358</locationY>
+        <locationX>654</locationX>
+        <locationY>1406</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -1275,6 +1311,7 @@ IF(NOT(ISBLANK({!Get_Employee_Contact_Record.MailingState})),       {!Get_Employ
                     <elementReference>PathIndicatorOptions</elementReference>
                 </value>
             </inputParameters>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
             <storeOutputAutomatically>true</storeOutputAutomatically>
         </fields>
@@ -1282,6 +1319,7 @@ IF(NOT(ISBLANK({!Get_Employee_Contact_Record.MailingState})),       {!Get_Employ
             <name>screen07ContinueTextHR</name>
             <extensionName>c:horizontalRuleFSC</extensionName>
             <fieldType>ComponentInstance</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
             <storeOutputAutomatically>true</storeOutputAutomatically>
         </fields>
@@ -1308,8 +1346,8 @@ IF(NOT(ISBLANK({!Get_Employee_Contact_Record.MailingState})),       {!Get_Employ
     <screens>
         <name>screen08_0</name>
         <label>Travel Request Complete</label>
-        <locationX>182</locationX>
-        <locationY>3350</locationY>
+        <locationX>654</locationX>
+        <locationY>3398</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -1334,6 +1372,7 @@ IF(NOT(ISBLANK({!Get_Employee_Contact_Record.MailingState})),       {!Get_Employ
                     <elementReference>PathIndicatorOptions</elementReference>
                 </value>
             </inputParameters>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
             <storeOutputAutomatically>true</storeOutputAutomatically>
         </fields>
@@ -1341,6 +1380,7 @@ IF(NOT(ISBLANK({!Get_Employee_Contact_Record.MailingState})),       {!Get_Employ
             <name>screen08ContinueTextHR_0</name>
             <extensionName>c:horizontalRuleFSC</extensionName>
             <fieldType>ComponentInstance</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
             <storeOutputAutomatically>true</storeOutputAutomatically>
         </fields>
@@ -1358,8 +1398,8 @@ IF(NOT(ISBLANK({!Get_Employee_Contact_Record.MailingState})),       {!Get_Employ
         <showHeader>false</showHeader>
     </screens>
     <start>
-        <locationX>56</locationX>
-        <locationY>0</locationY>
+        <locationX>528</locationX>
+        <locationY>48</locationY>
         <connector>
             <targetReference>Initialize_Variable_Settings</targetReference>
         </connector>
@@ -1414,12 +1454,27 @@ IF(NOT(ISBLANK({!Get_Employee_Contact_Record.MailingState})),       {!Get_Employ
         <objectType>TR_Itinerary_Point__c</objectType>
     </variables>
     <variables>
+        <name>CaseTravelRequestRecordTypeId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
         <description>These are the path indicator options that will be referenced on every screen.</description>
         <name>PathIndicatorOptions</name>
         <dataType>String</dataType>
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>RecordType</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>RecordType</objectType>
     </variables>
     <variables>
         <name>TeleworkAgreement</name>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Biweekly</fullName>
+        <default>false</default>
+        <label>Biweekly</label>
+    </customValue>
+    <customValue>
+        <fullName>Fee Basis</fullName>
+        <default>false</default>
+        <label>Fee Basis</label>
+    </customValue>
+    <customValue>
+        <fullName>Per Annum</fullName>
+        <default>false</default>
+        <label>Per Annum</label>
+    </customValue>
+    <customValue>
+        <fullName>Per Diem</fullName>
+        <default>false</default>
+        <label>Per Diem</label>
+    </customValue>
+    <customValue>
+        <fullName>Per Hour</fullName>
+        <default>false</default>
+        <label>Per Hour</label>
+    </customValue>
+    <customValue>
+        <fullName>Per Month</fullName>
+        <default>false</default>
+        <label>Per Month</label>
+    </customValue>
+    <customValue>
+        <fullName>Piece Work</fullName>
+        <default>false</default>
+        <label>Piece Work</label>
+    </customValue>
+    <customValue>
+        <fullName>Student Stipend</fullName>
+        <default>false</default>
+        <label>Student Stipend</label>
+    </customValue>
+    <customValue>
+        <fullName>School Year</fullName>
+        <default>false</default>
+        <label>School Year</label>
+    </customValue>
+    <customValue>
+        <fullName>Without Compensation</fullName>
+        <default>false</default>
+        <label>Without Compensation</label>
+    </customValue>
+    <masterLabel>Pay Basis</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

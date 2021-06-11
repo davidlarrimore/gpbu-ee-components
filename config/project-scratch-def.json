@@ -1,6 +1,7 @@
 {
   "orgName": "Employee Experience",
   "sourceOrg": "00Df400000226SXEAY",
+  "version": "previous",
   "features": ["Communities", "ServiceCloud"],
   "settings": {
       "communitiesSettings": {

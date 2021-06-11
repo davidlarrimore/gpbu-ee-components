@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Never Married</fullName>
+        <default>false</default>
+        <label>Never Married</label>
+    </customValue>
+    <customValue>
+        <fullName>Married</fullName>
+        <default>false</default>
+        <label>Married</label>
+    </customValue>
+    <customValue>
+        <fullName>Divorced</fullName>
+        <default>false</default>
+        <label>Divorced</label>
+    </customValue>
+    <customValue>
+        <fullName>Legally Separated</fullName>
+        <default>false</default>
+        <label>Legally Separated</label>
+    </customValue>
+    <customValue>
+        <fullName>Marriage Annulled</fullName>
+        <default>false</default>
+        <label>Marriage Annulled</label>
+    </customValue>
+    <customValue>
+        <fullName>Widowed</fullName>
+        <default>false</default>
+        <label>Widowed</label>
+    </customValue>
+    <masterLabel>Marital Status</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>GG</fullName>
+        <default>false</default>
+        <label>GG</label>
+    </customValue>
+    <customValue>
+        <fullName>GL</fullName>
+        <default>false</default>
+        <label>GL</label>
+    </customValue>
+    <customValue>
+        <fullName>GM</fullName>
+        <default>false</default>
+        <label>GM</label>
+    </customValue>
+    <customValue>
+        <fullName>GP</fullName>
+        <default>false</default>
+        <label>GP</label>
+    </customValue>
+    <customValue>
+        <fullName>GR</fullName>
+        <default>false</default>
+        <label>GR</label>
+    </customValue>
+    <customValue>
+        <fullName>GS</fullName>
+        <default>true</default>
+        <label>GS</label>
+    </customValue>
+    <masterLabel>Pay Plan</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>
