@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Supervisor__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>REQUIRED!!! Ensures that the Recruit (Lead), Applicant (Opportunity), and Employee (Contact), have a supervisor which is leveraged for many of the scenarios, especially Employee Services.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>REQUIRED!!! Ensures that the Recruit (Lead), Applicant (Opportunity), and Employee (Contact), have a supervisor which is leveraged for many of the scenarios, especially Employee Services.</inlineHelpText>
+    <label>Supervisor</label>
+    <referenceTo>Contact</referenceTo>
+    <relationshipLabel>Demo Setup (Supervisor)</relationshipLabel>
+    <relationshipName>Demo_Setup_Supervisor</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

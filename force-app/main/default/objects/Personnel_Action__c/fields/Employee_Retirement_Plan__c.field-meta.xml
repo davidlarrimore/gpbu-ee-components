@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Employee_Retirement_Plan__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>The civilian retirement system(s) to which deductions from an employee&apos;s pay are credited; https://dw.opm.gov/datastandards/dataStandard/1550?index=R</description>
+    <externalId>false</externalId>
+    <inlineHelpText>The civilian retirement system(s) to which deductions from an employee&apos;s pay are credited; https://dw.opm.gov/datastandards/dataStandard/1550?index=R</inlineHelpText>
+    <label>Employee Retirement Plan</label>
+    <referenceTo>Employee_Retirement_Plan__c</referenceTo>
+    <relationshipLabel>Personnel Actions</relationshipLabel>
+    <relationshipName>Personnel_Actions</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

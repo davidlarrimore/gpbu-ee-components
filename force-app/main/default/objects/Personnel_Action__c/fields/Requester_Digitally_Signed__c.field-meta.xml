@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Requester_Digitally_Signed__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Requester agreed to standard terms during submission and digitally signed the case at the time of submission</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Requester agreed to standard terms during submission and digitally signed the case at the time of submission</inlineHelpText>
+    <label>Requester Digitally Signed</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

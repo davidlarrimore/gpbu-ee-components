@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Veterans_Status__c</fullName>
+    <description>The indicator of whether an employee is a veteran as defined by 38 U.S.C. 101; https://dw.opm.gov/datastandards/dataStandard/1589?index=V</description>
+    <externalId>false</externalId>
+    <inlineHelpText>The indicator of whether an employee is a veteran as defined by 38 U.S.C. 101; https://dw.opm.gov/datastandards/dataStandard/1589?index=V</inlineHelpText>
+    <label>Veterans Status</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Veteran</fullName>
+                <default>false</default>
+                <label>Veteran</label>
+            </value>
+            <value>
+                <fullName>Not a Veteran</fullName>
+                <default>false</default>
+                <label>Not a Veteran</label>
+            </value>
+            <value>
+                <fullName>Exempt from Reporting</fullName>
+                <default>false</default>
+                <label>Exempt from Reporting</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

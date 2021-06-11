@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>LPA__c</fullName>
+    <externalId>false</externalId>
+    <label>Locality Pay Area (LPA)</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>AK - Alaska</fullName>
+                <default>false</default>
+                <label>AK - Alaska</label>
+            </value>
+            <value>
+                <fullName>AL - Albany-Schenectady, NY-MA</fullName>
+                <default>false</default>
+                <label>AL - Albany-Schenectady, NY-MA</label>
+            </value>
+            <value>
+                <fullName>AQ - ALBUQUERQUE-SANTA FE-LAS VEGAS, NM</fullName>
+                <default>false</default>
+                <label>AQ - ALBUQUERQUE-SANTA FE-LAS VEGAS, NM</label>
+            </value>
+            <value>
+                <fullName>AT - Atlanta--Athens-Clarke County--Sandy Springs, GA-AL</fullName>
+                <default>false</default>
+                <label>AT - Atlanta--Athens-Clarke County--Sandy Springs, GA-AL</label>
+            </value>
+            <value>
+                <fullName>AU - AUSTIN-ROUND ROCK, TX</fullName>
+                <default>false</default>
+                <label>AU - AUSTIN-ROUND ROCK, TX</label>
+            </value>
+            <value>
+                <fullName>BH - BIRMINGHAM-HOOVER-TALLADEGA, AL</fullName>
+                <default>false</default>
+                <label>BH - BIRMINGHAM-HOOVER-TALLADEGA, AL</label>
+            </value>
+            <value>
+                <fullName>BN - BURLINGTON-SOUTH BURLINGTON, VT</fullName>
+                <default>false</default>
+                <label>BN - BURLINGTON-SOUTH BURLINGTON, VT</label>
+            </value>
+            <value>
+                <fullName>BO - Boston-Worcester-Providence, MA-RI-NH-ME</fullName>
+                <default>false</default>
+                <label>BO - Boston-Worcester-Providence, MA-RI-NH-ME</label>
+            </value>
+            <value>
+                <fullName>BU - Buffalo-Cheektowaga, NY</fullName>
+                <default>false</default>
+                <label>BU - Buffalo-Cheektowaga, NY</label>
+            </value>
+            <value>
+                <fullName>CC - CORPUS CHRISTI-KINGSVILLE-ALICE, TX</fullName>
+                <default>false</default>
+                <label>CC - CORPUS CHRISTI-KINGSVILLE-ALICE, TX</label>
+            </value>
+            <value>
+                <fullName>CH - Chicago-Naperville, IL-IN-WI</fullName>
+                <default>false</default>
+                <label>CH - Chicago-Naperville, IL-IN-WI</label>
+            </value>
+            <value>
+                <fullName>CI - Cincinnati-Wilmington-Maysville, OH-KY-IN</fullName>
+                <default>false</default>
+                <label>CI - Cincinnati-Wilmington-Maysville, OH-KY-IN</label>
+            </value>
+            <value>
+                <fullName>CL - Cleveland-Akron-Canton, OH</fullName>
+                <default>false</default>
+                <label>CL - Cleveland-Akron-Canton, OH</label>
+            </value>
+            <value>
+                <fullName>CO - Columbus-Marion-Zanesville, OH</fullName>
+                <default>false</default>
+                <label>CO - Columbus-Marion-Zanesville, OH</label>
+            </value>
+            <value>
+                <fullName>CS - COLORADO SPRINGS, CO</fullName>
+                <default>false</default>
+                <label>CS - COLORADO SPRINGS, CO</label>
+            </value>
+            <value>
+                <fullName>CT - CHARLOTTE-CONCORD, NC-SC</fullName>
+                <default>false</default>
+                <label>CT - CHARLOTTE-CONCORD, NC-SC</label>
+            </value>
+            <value>
+                <fullName>DA - Dallas-Fort Worth, TX-OK</fullName>
+                <default>false</default>
+                <label>DA - Dallas-Fort Worth, TX-OK</label>
+            </value>
+            <value>
+                <fullName>DG - Dayton-Springfield-Sidney, OH</fullName>
+                <default>false</default>
+                <label>DG - Dayton-Springfield-Sidney, OH</label>
+            </value>
+            <value>
+                <fullName>DN - Denver-Aurora, CO</fullName>
+                <default>false</default>
+                <label>DN - Denver-Aurora, CO</label>
+            </value>
+            <value>
+                <fullName>DT - Detroit-Warren-Ann Arbor, MI</fullName>
+                <default>false</default>
+                <label>DT - Detroit-Warren-Ann Arbor, MI</label>
+            </value>
+            <value>
+                <fullName>DV - DAVENPORT-MOLINE, IA-IL</fullName>
+                <default>false</default>
+                <label>DV - DAVENPORT-MOLINE, IA-IL</label>
+            </value>
+            <value>
+                <fullName>HA - Hartford-West Hartford, CT-MA</fullName>
+                <default>false</default>
+                <label>HA - Hartford-West Hartford, CT-MA</label>
+            </value>
+            <value>
+                <fullName>HB - HARRISBURG-LEBANON, PA</fullName>
+                <default>false</default>
+                <label>HB - HARRISBURG-LEBANON, PA</label>
+            </value>
+            <value>
+                <fullName>HI - Hawaii</fullName>
+                <default>false</default>
+                <label>HI - Hawaii</label>
+            </value>
+            <value>
+                <fullName>HO - Houston-The Woodlands, TX</fullName>
+                <default>false</default>
+                <label>HO - Houston-The Woodlands, TX</label>
+            </value>
+            <value>
+                <fullName>HU - Huntsville-Decatur-Albertville, AL</fullName>
+                <default>false</default>
+                <label>HU - Huntsville-Decatur-Albertville, AL</label>
+            </value>
+            <value>
+                <fullName>IN - Indianapolis-Carmel-Muncie, IN</fullName>
+                <default>false</default>
+                <label>IN - Indianapolis-Carmel-Muncie, IN</label>
+            </value>
+            <value>
+                <fullName>KC - Kansas City-Overland Park-Kansas City, MO-KS</fullName>
+                <default>false</default>
+                <label>KC - Kansas City-Overland Park-Kansas City, MO-KS</label>
+            </value>
+            <value>
+                <fullName>LA - Los Angeles-Long Beach, CA</fullName>
+                <default>false</default>
+                <label>LA - Los Angeles-Long Beach, CA</label>
+            </value>
+            <value>
+                <fullName>LR - LAREDO, TX</fullName>
+                <default>false</default>
+                <label>LR - LAREDO, TX</label>
+            </value>
+            <value>
+                <fullName>LV - LAS VEGAS-HENDERSON, NV-AZ</fullName>
+                <default>false</default>
+                <label>LV - LAS VEGAS-HENDERSON, NV-AZ</label>
+            </value>
+            <value>
+                <fullName>MI - Miami-Fort Lauderdale-Port St. Lucie, FL</fullName>
+                <default>false</default>
+                <label>MI - Miami-Fort Lauderdale-Port St. Lucie, FL</label>
+            </value>
+            <value>
+                <fullName>ML - Milwaukee-Racine-Waukesha, WI</fullName>
+                <default>false</default>
+                <label>ML - Milwaukee-Racine-Waukesha, WI</label>
+            </value>
+            <value>
+                <fullName>MN - Minneapolis-St. Paul, MN-WI</fullName>
+                <default>false</default>
+                <label>MN - Minneapolis-St. Paul, MN-WI</label>
+            </value>
+            <value>
+                <fullName>NY - New York-Newark, NY-NJ-CT-PA</fullName>
+                <default>false</default>
+                <label>NY - New York-Newark, NY-NJ-CT-PA</label>
+            </value>
+            <value>
+                <fullName>OM - OMAHA-COUNCIL BLUFFS-FREMONT, NE-IA</fullName>
+                <default>false</default>
+                <label>OM - OMAHA-COUNCIL BLUFFS-FREMONT, NE-IA</label>
+            </value>
+            <value>
+                <fullName>PB - PALM BAY-MELBOURNE-TITUSVILLE, FL</fullName>
+                <default>false</default>
+                <label>PB - PALM BAY-MELBOURNE-TITUSVILLE, FL</label>
+            </value>
+            <value>
+                <fullName>PH - Philadelphia-Reading-Camden, PA-NJ-DE-MD</fullName>
+                <default>false</default>
+                <label>PH - Philadelphia-Reading-Camden, PA-NJ-DE-MD</label>
+            </value>
+            <value>
+                <fullName>PI - Pittsburgh-New Castle-Weirton, PA-OH-WV</fullName>
+                <default>false</default>
+                <label>PI - Pittsburgh-New Castle-Weirton, PA-OH-WV</label>
+            </value>
+            <value>
+                <fullName>PO - Portland-Vancouver-Salem, OR-WA</fullName>
+                <default>false</default>
+                <label>PO - Portland-Vancouver-Salem, OR-WA</label>
+            </value>
+            <value>
+                <fullName>PX - Phoenix-Mesa-Scottsdale, AZ</fullName>
+                <default>false</default>
+                <label>PX - Phoenix-Mesa-Scottsdale, AZ</label>
+            </value>
+            <value>
+                <fullName>RA - Raleigh-Durham-Chapel Hill, NC</fullName>
+                <default>false</default>
+                <label>RA - Raleigh-Durham-Chapel Hill, NC</label>
+            </value>
+            <value>
+                <fullName>RI - Richmond, VA</fullName>
+                <default>false</default>
+                <label>RI - Richmond, VA</label>
+            </value>
+            <value>
+                <fullName>SA - Sacramento-Roseville, CA-NV</fullName>
+                <default>false</default>
+                <label>SA - Sacramento-Roseville, CA-NV</label>
+            </value>
+            <value>
+                <fullName>SD - San Diego-Carlsbad, CA</fullName>
+                <default>false</default>
+                <label>SD - San Diego-Carlsbad, CA</label>
+            </value>
+            <value>
+                <fullName>SJ - San Jose-San Francisco-Oakland, CA</fullName>
+                <default>false</default>
+                <label>SJ - San Jose-San Francisco-Oakland, CA</label>
+            </value>
+            <value>
+                <fullName>SL - St. Louis-St. Charles-Farmington, MO-IL</fullName>
+                <default>false</default>
+                <label>SL - St. Louis-St. Charles-Farmington, MO-IL</label>
+            </value>
+            <value>
+                <fullName>SO - SAN ANTONIO-NEW BRAUNFELS-PEARSALL, TX</fullName>
+                <default>false</default>
+                <label>SO - SAN ANTONIO-NEW BRAUNFELS-PEARSALL, TX</label>
+            </value>
+            <value>
+                <fullName>ST - Seattle-Tacoma, WA</fullName>
+                <default>false</default>
+                <label>ST - Seattle-Tacoma, WA</label>
+            </value>
+            <value>
+                <fullName>TU - Tucson-Nogales, AZ</fullName>
+                <default>false</default>
+                <label>TU - Tucson-Nogales, AZ</label>
+            </value>
+            <value>
+                <fullName>VB - VIRGINIA BEACH-NORFOLK, VA-NC</fullName>
+                <default>false</default>
+                <label>VB - VIRGINIA BEACH-NORFOLK, VA-NC</label>
+            </value>
+            <value>
+                <fullName>WA - Washington-Baltimore-Arlington, DC-MD-VA-WV-PA</fullName>
+                <default>false</default>
+                <label>WA - Washington-Baltimore-Arlington, DC-MD-VA-WV-PA</label>
+            </value>
+            <value>
+                <fullName>ZX - REST OF THE UNITED STATES AND ITS TERRITORIES AND POSSESSIONS</fullName>
+                <default>false</default>
+                <label>ZX - REST OF THE UNITED STATES AND ITS TERRITORIES AND POSSESSIONS</label>
+            </value>
+            <value>
+                <fullName>ZZ - Not in a Locality Pay Area</fullName>
+                <default>false</default>
+                <label>ZZ - Not in a Locality Pay Area</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

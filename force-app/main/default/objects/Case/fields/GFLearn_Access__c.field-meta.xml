@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>GFLearn_Access__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Access to the Gov of the Future Learning system is required.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Check if access to the Gov of the Future Learning system is required.</inlineHelpText>
+    <label>GFLearn Access</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

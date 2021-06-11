@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Total_Annual_Used_Leave__c</fullName>
+    <externalId>false</externalId>
+    <label>Total Annual Leave Used</label>
+    <summarizedField>Earnings_and_Leave_Statements__c.Annual_Leave_Used__c</summarizedField>
+    <summaryForeignKey>Earnings_and_Leave_Statements__c.Employee__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <type>Summary</type>
+</CustomField>

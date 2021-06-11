@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Applicant_Score_Rating__c</fullName>
+    <externalId>false</externalId>
+    <formula>IMAGE(
+  IF(Applicant_Score__c &gt;=4, &quot;/img/samples/stars_500.gif&quot;,
+    IF(Applicant_Score__c &gt;=3, &quot;/img/samples/stars_400.gif&quot;,
+      IF(Applicant_Score__c &gt;=2, &quot;/img/samples/stars_300.gif&quot;,
+        IF(Applicant_Score__c &gt;=1, &quot;/img/samples/stars_200.gif&quot;,
+          IF(Applicant_Score__c &gt;=0, &quot;/img/samples/stars_100.gif&quot;,&quot;/img/samples/stars_000.gif&quot;)
+        )
+      )
+    )
+  ), &quot;Applicant Score&quot;
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Applicant Score Rating</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

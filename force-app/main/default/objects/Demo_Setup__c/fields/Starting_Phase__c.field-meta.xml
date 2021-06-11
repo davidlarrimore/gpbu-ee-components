@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Starting_Phase__c</fullName>
+    <description>This field controls what scenario (Hiring, Onboarding, etc..) this demo setup can reset too. It is designed to be a governor to prevent you from rewinding a demo so far back that you have to run through the whole demo to get it back to where you want it. If you need to go farther back, just use one of the other pre-configured demo setups.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>This field controls what scenario (Hiring, Onboarding, etc..) this demo setup can reset too. It is designed to be a governor to prevent you from rewinding a demo so far back that you have to run through the whole demo to get it back to where you want it. If you need to go farther back, just use one of the other pre-configured demo setups.</inlineHelpText>
+    <label>Starting Phase</label>
+    <required>true</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Recruiting</fullName>
+                <default>true</default>
+                <label>Recruiting</label>
+            </value>
+            <value>
+                <fullName>Hiring</fullName>
+                <default>false</default>
+                <label>Hiring</label>
+            </value>
+            <value>
+                <fullName>Suitability</fullName>
+                <default>false</default>
+                <label>Suitability</label>
+            </value>
+            <value>
+                <fullName>Onboarding</fullName>
+                <default>false</default>
+                <label>Onboarding</label>
+            </value>
+            <value>
+                <fullName>Employee Services</fullName>
+                <default>false</default>
+                <label>Employee Services</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

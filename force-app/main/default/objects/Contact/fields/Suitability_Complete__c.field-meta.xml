@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Suitability_Complete__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Has the Employee completed required suitability prior to Onboarding?</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Has the Employee completed required suitability prior to Onboarding?</inlineHelpText>
+    <label>Suitability Complete</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Checkbox</type>
+</CustomField>
