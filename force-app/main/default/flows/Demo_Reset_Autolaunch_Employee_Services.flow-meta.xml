@@ -306,39 +306,9 @@
         <locationX>182</locationX>
         <locationY>1334</locationY>
         <connector>
-            <targetReference>Update_User_Account</targetReference>
-        </connector>
-        <inputReference>varRecContact</inputReference>
-    </recordUpdates>
-    <recordUpdates>
-        <name>Update_User_Account</name>
-        <label>Update User Account</label>
-        <locationX>182</locationX>
-        <locationY>1454</locationY>
-        <connector>
             <targetReference>Run_Demo_Reset_Telework_Agreement</targetReference>
         </connector>
-        <filterLogic>and</filterLogic>
-        <filters>
-            <field>Id</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>varRecContact.User_Record__c</elementReference>
-            </value>
-        </filters>
-        <inputAssignments>
-            <field>FirstName</field>
-            <value>
-                <elementReference>Get_Demo_Setup.Recruit_First_Name__c</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>LastName</field>
-            <value>
-                <elementReference>Get_Demo_Setup.Recruit_Last_Name__c</elementReference>
-            </value>
-        </inputAssignments>
-        <object>User</object>
+        <inputReference>varRecContact</inputReference>
     </recordUpdates>
     <runInMode>SystemModeWithoutSharing</runInMode>
     <start>
@@ -353,7 +323,7 @@
         <name>Run_Contact_Autolaunch_Set_Employee_Photo</name>
         <label>Run Contact Autolaunch - Set Employee Photo</label>
         <locationX>182</locationX>
-        <locationY>1814</locationY>
+        <locationY>1694</locationY>
         <flowName>Contact_Autolaunch_Set_Employee_Photo</flowName>
         <inputAssignments>
             <name>recordId</name>
@@ -366,7 +336,7 @@
         <name>Run_Demo_Reset_Telework_Agreement</name>
         <label>Run Demo Reset - Telework Agreement</label>
         <locationX>182</locationX>
-        <locationY>1574</locationY>
+        <locationY>1454</locationY>
         <connector>
             <targetReference>Run_Demo_Reset_Workforce_Management</targetReference>
         </connector>
@@ -382,7 +352,7 @@
         <name>Run_Demo_Reset_Workforce_Management</name>
         <label>Run Demo Reset - Workforce Management</label>
         <locationX>182</locationX>
-        <locationY>1694</locationY>
+        <locationY>1574</locationY>
         <connector>
             <targetReference>Run_Contact_Autolaunch_Set_Employee_Photo</targetReference>
         </connector>
