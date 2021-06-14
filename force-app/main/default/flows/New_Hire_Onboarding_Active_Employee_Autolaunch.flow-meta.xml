@@ -4,7 +4,7 @@
         <name>Send_New_Hire_Welcome_Email</name>
         <label>Send New Hire Welcome Email</label>
         <locationX>182</locationX>
-        <locationY>1838</locationY>
+        <locationY>1958</locationY>
         <actionName>Contact.New_Hire_Welcome_Email</actionName>
         <actionType>emailAlert</actionType>
         <connector>
@@ -53,7 +53,7 @@
         <name>Found_Demo_Setup_Record</name>
         <label>Found Demo Setup Record?</label>
         <locationX>182</locationX>
-        <locationY>2078</locationY>
+        <locationY>2198</locationY>
         <defaultConnectorLabel>No</defaultConnectorLabel>
         <rules>
             <name>Found_Demo_Setup_Record_Yes</name>
@@ -116,7 +116,7 @@
         <name>Create_Task_FISSA</name>
         <label>Create Task - FISSA</label>
         <locationX>182</locationX>
-        <locationY>1358</locationY>
+        <locationY>1478</locationY>
         <connector>
             <targetReference>Run_Assign_Assets</targetReference>
         </connector>
@@ -163,6 +163,12 @@
             </value>
         </inputAssignments>
         <inputAssignments>
+            <field>RecordTypeId</field>
+            <value>
+                <elementReference>Get_Onboarding_Task_Record_Type.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
             <field>Subject</field>
             <value>
                 <stringValue>Complete Compliance Training</stringValue>
@@ -181,7 +187,7 @@
         <name>Create_Task_New_Hire_Orientation</name>
         <label>Create Task - New Hire Orientation</label>
         <locationX>182</locationX>
-        <locationY>998</locationY>
+        <locationY>1118</locationY>
         <connector>
             <targetReference>Create_Task_Performance_Plan</targetReference>
         </connector>
@@ -216,6 +222,12 @@
             </value>
         </inputAssignments>
         <inputAssignments>
+            <field>RecordTypeId</field>
+            <value>
+                <elementReference>Get_Onboarding_Task_Record_Type.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
             <field>Subject</field>
             <value>
                 <stringValue>New Hire Orientation</stringValue>
@@ -234,7 +246,7 @@
         <name>Create_Task_Performance_Plan</name>
         <label>Create Task - Performance Plan</label>
         <locationX>182</locationX>
-        <locationY>1118</locationY>
+        <locationY>1238</locationY>
         <connector>
             <targetReference>Create_Task_Upload_I_9</targetReference>
         </connector>
@@ -269,6 +281,12 @@
             </value>
         </inputAssignments>
         <inputAssignments>
+            <field>RecordTypeId</field>
+            <value>
+                <elementReference>Get_Onboarding_Task_Record_Type.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
             <field>Subject</field>
             <value>
                 <stringValue>Initial Performance Plan</stringValue>
@@ -287,7 +305,7 @@
         <name>Create_Task_Review_Security_Safety_Procedures</name>
         <label>Create Task - Review Security/Safety Procedures</label>
         <locationX>182</locationX>
-        <locationY>878</locationY>
+        <locationY>998</locationY>
         <connector>
             <targetReference>Create_Task_New_Hire_Orientation</targetReference>
         </connector>
@@ -322,6 +340,12 @@
             </value>
         </inputAssignments>
         <inputAssignments>
+            <field>RecordTypeId</field>
+            <value>
+                <elementReference>Get_Onboarding_Task_Record_Type.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
             <field>Subject</field>
             <value>
                 <stringValue>Review Security/Safety Procedures</stringValue>
@@ -340,7 +364,7 @@
         <name>Create_Task_Upload_I_9</name>
         <label>Create Task - Upload I-9</label>
         <locationX>182</locationX>
-        <locationY>1238</locationY>
+        <locationY>1358</locationY>
         <connector>
             <targetReference>Create_Task_FISSA</targetReference>
         </connector>
@@ -378,6 +402,12 @@
             <field>Priority</field>
             <value>
                 <stringValue>High</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>RecordTypeId</field>
+            <value>
+                <elementReference>Get_Onboarding_Task_Record_Type.Id</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -420,7 +450,7 @@
         <name>Get_Demo_Setup_Record</name>
         <label>Get Demo Setup Record</label>
         <locationX>182</locationX>
-        <locationY>1958</locationY>
+        <locationY>2078</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Found_Demo_Setup_Record</targetReference>
@@ -479,6 +509,27 @@
         <object>Employee_Retirement_Plan__c</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
+    <recordLookups>
+        <name>Get_Onboarding_Task_Record_Type</name>
+        <label>Get Onboarding Task Record Type</label>
+        <locationX>182</locationX>
+        <locationY>878</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Create_Task_Review_Security_Safety_Procedures</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>DeveloperName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Onboarding_Tasks</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>RecordType</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
     <recordUpdates>
         <name>Update_Contact</name>
         <label>Update Contact</label>
@@ -493,7 +544,7 @@
         <name>Update_User_Record</name>
         <label>Update User Record</label>
         <locationX>50</locationX>
-        <locationY>2198</locationY>
+        <locationY>2318</locationY>
         <connector>
             <targetReference>Run_Contact_Autolaunch_Set_Employee_Photo</targetReference>
         </connector>
@@ -526,7 +577,7 @@
         <name>Run_Assign_Assets</name>
         <label>Run Assign Assets</label>
         <locationX>182</locationX>
-        <locationY>1478</locationY>
+        <locationY>1598</locationY>
         <connector>
             <targetReference>Run_Create_Performance_Plan</targetReference>
         </connector>
@@ -545,7 +596,7 @@
         <locationX>182</locationX>
         <locationY>758</locationY>
         <connector>
-            <targetReference>Create_Task_Review_Security_Safety_Procedures</targetReference>
+            <targetReference>Get_Onboarding_Task_Record_Type</targetReference>
         </connector>
         <flowName>Demo_Reset_Autolaunch_Close_Cases</flowName>
         <inputAssignments>
@@ -559,7 +610,7 @@
         <name>Run_Contact_Autolaunch_Set_Employee_Photo</name>
         <label>Run Contact Autolaunch - Set Employee Photo</label>
         <locationX>50</locationX>
-        <locationY>2318</locationY>
+        <locationY>2438</locationY>
         <flowName>Contact_Autolaunch_Set_Employee_Photo</flowName>
         <inputAssignments>
             <name>recordId</name>
@@ -572,7 +623,7 @@
         <name>Run_Create_Performance_Plan</name>
         <label>Run Create Performance Plan</label>
         <locationX>182</locationX>
-        <locationY>1598</locationY>
+        <locationY>1718</locationY>
         <connector>
             <targetReference>Run_Enroll_in_Position_Courses</targetReference>
         </connector>
@@ -589,7 +640,7 @@
         <name>Run_Enroll_in_Position_Courses</name>
         <label>Run Enroll in Position Courses</label>
         <locationX>182</locationX>
-        <locationY>1718</locationY>
+        <locationY>1838</locationY>
         <connector>
             <targetReference>Send_New_Hire_Welcome_Email</targetReference>
         </connector>
