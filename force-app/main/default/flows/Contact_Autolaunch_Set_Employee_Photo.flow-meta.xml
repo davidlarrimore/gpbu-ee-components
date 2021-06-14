@@ -221,7 +221,7 @@
             <field>DeveloperName</field>
             <operator>EqualTo</operator>
             <value>
-                <stringValue>GenericContactProfileImage</stringValue>
+                <stringValue>generic_contact_profile_image</stringValue>
             </value>
         </filters>
         <object>ContentAsset</object>
