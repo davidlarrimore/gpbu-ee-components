@@ -14,7 +14,7 @@
         <inputParameters>
             <name>SObjectRowId</name>
             <value>
-                <elementReference>Get_Demo_Setup_Record.Supervisor__c</elementReference>
+                <elementReference>Get_Contact_Record.Id</elementReference>
             </value>
         </inputParameters>
     </actionCalls>

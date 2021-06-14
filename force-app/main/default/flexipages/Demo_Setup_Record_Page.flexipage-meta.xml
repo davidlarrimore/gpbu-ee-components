@@ -52,7 +52,7 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>richTextValue</name>
-                    <value>&lt;p&gt;In order to customize the Employee&apos;s Contact record image, simply update the &quot;Employee Photo Asset File Name&quot; field with an Image Asset File Title, or upload a new version to the existing Asset File.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;If you change the Employee Image, Please run a &quot;Employee Services&quot; scenario reset to have the contact record to test. &lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(255, 5, 5);&quot;&gt;Note: Please ensure that the contact is actually in the Employee Services scenario before running the reset.&lt;/span&gt;&lt;/p&gt;</value>
+                    <value>&lt;p&gt;In order to customize the Employee&apos;s Contact record image, simply update the &quot;Employee Photo Asset Developer Name&quot; field with an Image Asset File Developer Name, or upload a new version to the existing Asset File.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;If you change the Employee Image, Please run a &quot;Employee Services&quot; scenario reset to have the contact record to test. &lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(255, 5, 5);&quot;&gt;Note: Please ensure that the contact is actually in the Employee Services scenario before running the reset.&lt;/span&gt;&lt;/p&gt;</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:richText</componentName>
             </componentInstance>

@@ -4,7 +4,7 @@
         <name>Send_New_Hire_Onboarding_Wizard_Email</name>
         <label>Send New Hire Onboarding Wizard Email</label>
         <locationX>3702</locationX>
-        <locationY>1487</locationY>
+        <locationY>1607</locationY>
         <actionName>Contact.New_Hire_Onboarding_Wizard</actionName>
         <actionType>emailAlert</actionType>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
@@ -224,7 +224,7 @@
         <name>Task_Records_Found_New_Employee_Stage</name>
         <label>Task Records Found</label>
         <locationX>3702</locationX>
-        <locationY>1151</locationY>
+        <locationY>1271</locationY>
         <defaultConnector>
             <targetReference>Send_New_Hire_Onboarding_Wizard_Email</targetReference>
         </defaultConnector>
@@ -1271,7 +1271,7 @@
         <locationX>3702</locationX>
         <locationY>1031</locationY>
         <connector>
-            <targetReference>Task_Records_Found_New_Employee_Stage</targetReference>
+            <targetReference>Update_User_Record</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -1485,7 +1485,7 @@
         <name>Update_Tasks</name>
         <label>Update Tasks</label>
         <locationX>3570</locationX>
-        <locationY>1271</locationY>
+        <locationY>1391</locationY>
         <connector>
             <targetReference>Send_New_Hire_Onboarding_Wizard_Email</targetReference>
         </connector>
@@ -1504,6 +1504,30 @@
             </value>
         </inputAssignments>
         <object>Task</object>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_User_Record</name>
+        <label>Update User Record</label>
+        <locationX>3702</locationX>
+        <locationY>1151</locationY>
+        <connector>
+            <targetReference>Task_Records_Found_New_Employee_Stage</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Applicant__r.User_Record__c</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Employment_Status__c</field>
+            <value>
+                <stringValue>New-Hire</stringValue>
+            </value>
+        </inputAssignments>
+        <object>User</object>
     </recordUpdates>
     <start>
         <locationX>3059</locationX>

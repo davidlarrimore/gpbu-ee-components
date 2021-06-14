@@ -3,7 +3,7 @@ import { LightningElement, api, wire, track } from 'lwc';
 import { getRecord, getFieldValue, getRecordNotifyChange } from 'lightning/uiRecordApi';
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 
-import getContentAssetFromDocument from '@salesforce/apex/eeLWCHelper.getContentAssetFromDocument';
+import getContentAssetfromDeveloperName from '@salesforce/apex/eeLWCHelper.getContentAssetfromDeveloperName';
 
 import EMPLOYEE_PHOTO_ASSET_FILE_NAME_FIELD from '@salesforce/schema/Demo_Setup__c.Employee_Photo_Asset_File_Name__c';
 
@@ -40,15 +40,15 @@ export default class EeDemoComponentContactImageCard extends LightningElement {
         }
     }
 
-    getContentDocumentMethod(docTitle){
+    getContentDocumentMethod(docDeveloperName){
         this.apiCallCompletedFlag = false; 
-        getContentAssetFromDocument({ title: docTitle })
+        getContentAssetfromDeveloperName({ developerName: docDeveloperName })
         .then((data) => {
             this.apiCallCompletedFlag = true;
 
             if (data && data !== null && data !== undefined) {
                 console.log(
-                    `getContentDocumentMethod.getContentAssetFromDocument Completed Successfully: ${JSON.stringify(data)}`
+                    `getContentDocumentMethod.getContentAssetfromDeveloperName Completed Successfully: ${JSON.stringify(data)}`
                 );
                 this.apiResultsFlag = true;
                 this.contentDocument = data;
@@ -59,7 +59,7 @@ export default class EeDemoComponentContactImageCard extends LightningElement {
                 this.error = undefined;
             }else{
                 console.log(
-                    `getContentDocumentMethod.getContentAssetFromDocument Completed Successfully, but had no data`
+                    `getContentDocumentMethod.getContentAssetfromDeveloperName Completed Successfully, but had no data`
                 );                
             }
         })

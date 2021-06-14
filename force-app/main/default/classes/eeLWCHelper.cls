@@ -27,6 +27,19 @@ public with sharing class eeLWCHelper {
       }
  
       @AuraEnabled
+      public static ContentAsset getContentAssetfromDeveloperName(String developerName) {
+          System.debug('Running eeLWCHelper getContentAssetfromDeveloperName');
+          System.debug('developerName = "' + developerName + '"');   
+  
+          List<ContentAsset> contentAssets = [SELECT Id, DeveloperName FROM ContentAsset WHERE DeveloperName = :developerName];
+          if(contentAssets.size() > 0){
+              return contentAssets[0];
+          }
+  
+          return null;
+       }
+
+      @AuraEnabled
       public static ContentAsset getContentAssetFromDocument(String title) {
           System.debug('Running eeLWCHelper getContentAssetFromDocument');
           System.debug('title = "' + title + '"');   

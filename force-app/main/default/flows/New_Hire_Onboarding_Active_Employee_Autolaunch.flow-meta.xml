@@ -66,7 +66,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Run_Contact_Autolaunch_Set_Employee_Photo</targetReference>
+                <targetReference>Update_User_Record</targetReference>
             </connector>
             <label>Yes</label>
         </rules>
@@ -489,6 +489,30 @@
         </connector>
         <inputReference>Get_Contact</inputReference>
     </recordUpdates>
+    <recordUpdates>
+        <name>Update_User_Record</name>
+        <label>Update User Record</label>
+        <locationX>50</locationX>
+        <locationY>2198</locationY>
+        <connector>
+            <targetReference>Run_Contact_Autolaunch_Set_Employee_Photo</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Get_Contact.User_Record__c</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Employment_Status__c</field>
+            <value>
+                <stringValue>Active</stringValue>
+            </value>
+        </inputAssignments>
+        <object>User</object>
+    </recordUpdates>
     <runInMode>SystemModeWithoutSharing</runInMode>
     <start>
         <locationX>56</locationX>
@@ -535,7 +559,7 @@
         <name>Run_Contact_Autolaunch_Set_Employee_Photo</name>
         <label>Run Contact Autolaunch - Set Employee Photo</label>
         <locationX>50</locationX>
-        <locationY>2198</locationY>
+        <locationY>2318</locationY>
         <flowName>Contact_Autolaunch_Set_Employee_Photo</flowName>
         <inputAssignments>
             <name>recordId</name>

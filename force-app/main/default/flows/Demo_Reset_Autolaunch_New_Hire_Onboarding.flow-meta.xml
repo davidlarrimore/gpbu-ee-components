@@ -296,7 +296,7 @@
             <targetReference>Update_Course_Session</targetReference>
         </nextValueConnector>
         <noMoreValuesConnector>
-            <targetReference>Run_Contact_Autolaunch_Set_Employee_Photo</targetReference>
+            <targetReference>Update_User_Record</targetReference>
         </noMoreValuesConnector>
     </loops>
     <processMetadataValues>
@@ -784,6 +784,30 @@
         </inputAssignments>
         <object>Course_Session__c</object>
     </recordUpdates>
+    <recordUpdates>
+        <name>Update_User_Record</name>
+        <label>Update User Record</label>
+        <locationX>182</locationX>
+        <locationY>4886</locationY>
+        <connector>
+            <targetReference>Run_Contact_Autolaunch_Set_Employee_Photo</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Get_Contact.User_Record__c</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Employment_Status__c</field>
+            <value>
+                <stringValue>New-Hire</stringValue>
+            </value>
+        </inputAssignments>
+        <object>User</object>
+    </recordUpdates>
     <runInMode>SystemModeWithoutSharing</runInMode>
     <start>
         <locationX>655</locationX>
@@ -797,7 +821,7 @@
         <name>Run_Contact_Autolaunch_Set_Employee_Photo</name>
         <label>Run Contact Autolaunch - Set Employee Photo</label>
         <locationX>182</locationX>
-        <locationY>4886</locationY>
+        <locationY>5006</locationY>
         <flowName>Contact_Autolaunch_Set_Employee_Photo</flowName>
         <inputAssignments>
             <name>recordId</name>
