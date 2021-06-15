@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Not Qualified</fullName>
+        <default>false</default>
+        <label>Not Qualified</label>
+    </customValue>
+    <customValue>
+        <fullName>Partially Qualified</fullName>
+        <default>false</default>
+        <label>Partially Qualified</label>
+    </customValue>
+    <customValue>
+        <fullName>Qualified</fullName>
+        <default>false</default>
+        <label>Qualified</label>
+    </customValue>
+    <customValue>
+        <fullName>Well Qualified</fullName>
+        <default>false</default>
+        <label>Well Qualified</label>
+    </customValue>
+    <customValue>
+        <fullName>Highly Qualified</fullName>
+        <default>false</default>
+        <label>Highly Qualified</label>
+    </customValue>
+    <masterLabel>Scoring</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

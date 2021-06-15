@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>0 - Regular Rate</fullName>
+        <default>false</default>
+        <label>0 - Regular Rate</label>
+    </customValue>
+    <customValue>
+        <fullName>2 - Saved Rate - Indefinite</fullName>
+        <default>false</default>
+        <label>2 - Saved Rate - Indefinite</label>
+    </customValue>
+    <customValue>
+        <fullName>3 - Retained Pay - Special Rate Adjustment</fullName>
+        <default>false</default>
+        <label>3 - Retained Pay - Special Rate Adjustment</label>
+    </customValue>
+    <customValue>
+        <fullName>4 - Saved Rate - Other</fullName>
+        <default>false</default>
+        <label>4 - Saved Rate - Other</label>
+    </customValue>
+    <customValue>
+        <fullName>5 - Special and Superior Qualifications Rates</fullName>
+        <default>false</default>
+        <label>5 - Special and Superior Qualifications Rates</label>
+    </customValue>
+    <customValue>
+        <fullName>6 - Special Rate</fullName>
+        <default>false</default>
+        <label>6 - Special Rate</label>
+    </customValue>
+    <customValue>
+        <fullName>7 - Superior Qualifications Rate</fullName>
+        <default>false</default>
+        <label>7 - Superior Qualifications Rate</label>
+    </customValue>
+    <customValue>
+        <fullName>A - Retained Grade - Different Position</fullName>
+        <default>false</default>
+        <label>A - Retained Grade - Different Position</label>
+    </customValue>
+    <customValue>
+        <fullName>B - Retained Grade - Same Position</fullName>
+        <default>false</default>
+        <label>B - Retained Grade - Same Position</label>
+    </customValue>
+    <customValue>
+        <fullName>C - Critical Position Pay</fullName>
+        <default>false</default>
+        <label>C - Critical Position Pay</label>
+    </customValue>
+    <customValue>
+        <fullName>D - Inspector General in a designated Federal entity</fullName>
+        <default>false</default>
+        <label>D - Inspector General in a designated Federal entity</label>
+    </customValue>
+    <customValue>
+        <fullName>E - Retained Grade and Special Rate - Different Position</fullName>
+        <default>false</default>
+        <label>E - Retained Grade and Special Rate - Different Position</label>
+    </customValue>
+    <customValue>
+        <fullName>F - Retained Grade and Special Rate - Same Position</fullName>
+        <default>false</default>
+        <label>F - Retained Grade and Special Rate - Same Position</label>
+    </customValue>
+    <customValue>
+        <fullName>J - Retained Pay - Same Position</fullName>
+        <default>false</default>
+        <label>J - Retained Pay - Same Position</label>
+    </customValue>
+    <customValue>
+        <fullName>K - Retained Pay - Different Position</fullName>
+        <default>false</default>
+        <label>K - Retained Pay - Different Position</label>
+    </customValue>
+    <customValue>
+        <fullName>P - Preserved IGA Pay</fullName>
+        <default>false</default>
+        <label>P - Preserved IGA Pay</label>
+    </customValue>
+    <customValue>
+        <fullName>R - Retained Pay - SES Removal</fullName>
+        <default>false</default>
+        <label>R - Retained Pay - SES Removal</label>
+    </customValue>
+    <customValue>
+        <fullName>S - Continued SES Basic Pay</fullName>
+        <default>false</default>
+        <label>S - Continued SES Basic Pay</label>
+    </customValue>
+    <customValue>
+        <fullName>T - Below the Minimum Rate</fullName>
+        <default>false</default>
+        <label>T - Below the Minimum Rate</label>
+    </customValue>
+    <customValue>
+        <fullName>U - Retained Grade and Pay - Same Position</fullName>
+        <default>false</default>
+        <label>U - Retained Grade and Pay - Same Position</label>
+    </customValue>
+    <customValue>
+        <fullName>V - Retained Grade and Pay - Different Position</fullName>
+        <default>false</default>
+        <label>V - Retained Grade and Pay - Different Position</label>
+    </customValue>
+    <customValue>
+        <fullName>Y - NSPS Retained Pay</fullName>
+        <default>false</default>
+        <label>Y - NSPS Retained Pay</label>
+    </customValue>
+    <customValue>
+        <fullName>Z - Border Equalization Allowance</fullName>
+        <default>false</default>
+        <label>Z - Border Equalization Allowance</label>
+    </customValue>
+    <masterLabel>Pay Rate Determinant</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>1 - Competitive Service</fullName>
+        <default>false</default>
+        <label>1 - Competitive Service</label>
+    </customValue>
+    <customValue>
+        <fullName>2 - Excepted Service</fullName>
+        <default>false</default>
+        <label>2 - Excepted Service</label>
+    </customValue>
+    <customValue>
+        <fullName>3 - SES General</fullName>
+        <default>false</default>
+        <label>3 - SES General</label>
+    </customValue>
+    <customValue>
+        <fullName>4 - SES Career</fullName>
+        <default>false</default>
+        <label>4 - SES Career</label>
+    </customValue>
+    <masterLabel>Position Occupied</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>
