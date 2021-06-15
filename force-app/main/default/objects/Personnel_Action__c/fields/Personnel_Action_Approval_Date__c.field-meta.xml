@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Personnel_Action_Approval_Date__c</fullName>
+    <description>Date/time of final approval</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Date/time of final approval</inlineHelpText>
+    <label>Personnel Action Approval Date</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>DateTime</type>
+</CustomField>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Location__c</fullName>
+    <externalId>false</externalId>
+    <formula>HYPERLINK(&quot;http://maps.google.com/maps?q=&quot;&amp;Street&amp;&quot;,&quot;&amp;City&amp;&quot;%20&quot;&amp;State&amp;&quot;%20&quot;&amp;PostalCode&amp;&quot;&amp;t=m&amp;z=13&quot;, 
+
+
+IMAGE( 
+
+&quot;http://maps.google.com/maps/api/staticmap?center=&quot; + Street + &quot;,&quot; + City + &quot;,&quot; + State + &quot; &quot; + PostalCode +&quot;&amp;zoom=13&amp;size=650x250&amp;markers=color:blue|&quot; + Street + &quot;,&quot; + City + &quot;,&quot; + State + &quot; &quot; + PostalCode + &quot;&amp;sensor=false&amp;format=png32&quot; , &quot;no map available&quot;, 250, 650))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Location</label>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

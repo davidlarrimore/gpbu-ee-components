@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Multiple</fullName>
+        <default>false</default>
+        <label>Multiple</label>
+    </customValue>
+    <customValue>
+        <fullName>Permanent</fullName>
+        <default>false</default>
+        <label>Permanent</label>
+    </customValue>
+    <customValue>
+        <fullName>Telework</fullName>
+        <default>false</default>
+        <label>Telework</label>
+    </customValue>
+    <customValue>
+        <fullName>Internships</fullName>
+        <default>false</default>
+        <label>Internships</label>
+    </customValue>
+    <customValue>
+        <fullName>Recent Graduates</fullName>
+        <default>false</default>
+        <label>Recent Graduates</label>
+    </customValue>
+    <customValue>
+        <fullName>Presidential Management Fellows (PMFs)</fullName>
+        <default>false</default>
+        <label>Presidential Management Fellows (PMFs)</label>
+    </customValue>
+    <customValue>
+        <fullName>Temporary</fullName>
+        <default>false</default>
+        <label>Temporary</label>
+    </customValue>
+    <customValue>
+        <fullName>Term</fullName>
+        <default>false</default>
+        <label>Term</label>
+    </customValue>
+    <customValue>
+        <fullName>Detail</fullName>
+        <default>false</default>
+        <label>Detail</label>
+    </customValue>
+    <customValue>
+        <fullName>Temporary Promotion</fullName>
+        <default>false</default>
+        <label>Temporary Promotion</label>
+    </customValue>
+    <customValue>
+        <fullName>Intermittent</fullName>
+        <default>false</default>
+        <label>Intermittent</label>
+    </customValue>
+    <customValue>
+        <fullName>Seasonal</fullName>
+        <default>false</default>
+        <label>Seasonal</label>
+    </customValue>
+    <customValue>
+        <fullName>Summer</fullName>
+        <default>false</default>
+        <label>Summer</label>
+    </customValue>
+    <masterLabel>Work Type</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

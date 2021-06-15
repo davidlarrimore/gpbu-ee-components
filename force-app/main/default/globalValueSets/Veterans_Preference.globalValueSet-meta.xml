@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>1 - None</fullName>
+        <default>true</default>
+        <label>1 - None</label>
+    </customValue>
+    <customValue>
+        <fullName>2 - 5-Point</fullName>
+        <default>false</default>
+        <label>2 - 5-Point</label>
+    </customValue>
+    <customValue>
+        <fullName>3 - 10-Point/Disability</fullName>
+        <default>false</default>
+        <label>3 - 10-Point/Disability</label>
+    </customValue>
+    <customValue>
+        <fullName>4 - 10-PointCompensable</fullName>
+        <default>false</default>
+        <label>4 - 10-PointCompensable</label>
+    </customValue>
+    <customValue>
+        <fullName>5 - 10-Point/Other</fullName>
+        <default>false</default>
+        <label>5 - 10-Point/Other</label>
+    </customValue>
+    <customValue>
+        <fullName>6 - 10-Point/Compensable/30%</fullName>
+        <default>false</default>
+        <label>6 - 10-Point/Compensable/30%</label>
+    </customValue>
+    <masterLabel>Veterans Preference</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

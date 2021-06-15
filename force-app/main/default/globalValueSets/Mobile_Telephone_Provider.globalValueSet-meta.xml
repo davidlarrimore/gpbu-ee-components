@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>AT&amp;T</fullName>
+        <default>false</default>
+        <label>AT&amp;T</label>
+    </customValue>
+    <customValue>
+        <fullName>T-Mobile</fullName>
+        <default>false</default>
+        <label>T-Mobile</label>
+    </customValue>
+    <customValue>
+        <fullName>Verizon</fullName>
+        <default>false</default>
+        <label>Verizon</label>
+    </customValue>
+    <customValue>
+        <fullName>Sprint</fullName>
+        <default>false</default>
+        <label>Sprint</label>
+    </customValue>
+    <customValue>
+        <fullName>Xfinity Mobile</fullName>
+        <default>false</default>
+        <label>Xfinity Mobile</label>
+    </customValue>
+    <customValue>
+        <fullName>Virgin Mobile</fullName>
+        <default>false</default>
+        <label>Virgin Mobile</label>
+    </customValue>
+    <customValue>
+        <fullName>Tracfone</fullName>
+        <default>false</default>
+        <label>Tracfone</label>
+    </customValue>
+    <customValue>
+        <fullName>Simple Mobile</fullName>
+        <default>false</default>
+        <label>Simple Mobile</label>
+    </customValue>
+    <customValue>
+        <fullName>Mint Mobile</fullName>
+        <default>false</default>
+        <label>Mint Mobile</label>
+    </customValue>
+    <customValue>
+        <fullName>Red Pocket</fullName>
+        <default>false</default>
+        <label>Red Pocket</label>
+    </customValue>
+    <customValue>
+        <fullName>Metro PCS</fullName>
+        <default>false</default>
+        <label>Metro PCS</label>
+    </customValue>
+    <customValue>
+        <fullName>Boost Mobile</fullName>
+        <default>false</default>
+        <label>Boost Mobile</label>
+    </customValue>
+    <customValue>
+        <fullName>Cricket</fullName>
+        <default>false</default>
+        <label>Cricket</label>
+    </customValue>
+    <customValue>
+        <fullName>Republic Wireless</fullName>
+        <default>false</default>
+        <label>Republic Wireless</label>
+    </customValue>
+    <customValue>
+        <fullName>Google Fi</fullName>
+        <default>false</default>
+        <label>Google Fi</label>
+    </customValue>
+    <customValue>
+        <fullName>U.S. Cellular</fullName>
+        <default>false</default>
+        <label>U.S. Cellular</label>
+    </customValue>
+    <customValue>
+        <fullName>Ting</fullName>
+        <default>false</default>
+        <label>Ting</label>
+    </customValue>
+    <customValue>
+        <fullName>Consumer Cellular</fullName>
+        <default>false</default>
+        <label>Consumer Cellular</label>
+    </customValue>
+    <customValue>
+        <fullName>C-Spire</fullName>
+        <default>false</default>
+        <label>C-Spire</label>
+    </customValue>
+    <customValue>
+        <fullName>Page Plus</fullName>
+        <default>false</default>
+        <label>Page Plus</label>
+    </customValue>
+    <description>U.S. mobile telephone providers. Used by the DemoCommunitySMSVerification Apex class to send an SMS message to the demo persona.</description>
+    <masterLabel>Mobile Telephone Provider</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

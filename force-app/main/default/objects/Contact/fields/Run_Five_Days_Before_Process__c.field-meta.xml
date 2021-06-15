@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Run_Five_Days_Before_Process__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Part of the Employee Onboarding Demo Scenario. Signifies that the Pre-Onboarding automation has been run and that the Activate Employee automation can be enabled.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Part of the Employee Onboarding Demo Scenario. Signifies that the Pre-Onboarding automation has been run and that the Activate Employee automation can be enabled.</inlineHelpText>
+    <label>Run 5 Days Before Process</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Checkbox</type>
+</CustomField>

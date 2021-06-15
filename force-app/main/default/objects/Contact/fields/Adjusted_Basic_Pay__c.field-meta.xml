@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Adjusted_Basic_Pay__c</fullName>
+    <description>The sum of an employee&apos;s rate of basic pay and any basic pay supplement (standard OR special). A basic pay supplement is defined as a regular, fixed supplemental payment (paid in conjunction with base pay) for nonovertime hours of work that is creditable as basic pay for retirement purposes; https://dw.opm.gov/datastandards/dataStandard/1387?index=A</description>
+    <externalId>false</externalId>
+    <formula>Basic_Pay__c + Locality_Adjustment__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>https://dw.opm.gov/datastandards/dataStandard/1387?index=A</inlineHelpText>
+    <label>Adjusted Basic Pay</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <type>Currency</type>
+</CustomField>

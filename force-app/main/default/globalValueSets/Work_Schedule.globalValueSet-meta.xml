@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>B - Baylor Plan</fullName>
+        <default>false</default>
+        <label>B - Baylor Plan</label>
+    </customValue>
+    <customValue>
+        <fullName>F - Full-Time</fullName>
+        <default>true</default>
+        <label>F - Full-Time</label>
+    </customValue>
+    <customValue>
+        <fullName>G - Full-Time Seasonal</fullName>
+        <default>false</default>
+        <label>G - Full-Time Seasonal</label>
+    </customValue>
+    <customValue>
+        <fullName>I - Intermittent</fullName>
+        <default>false</default>
+        <label>I - Intermittent</label>
+    </customValue>
+    <customValue>
+        <fullName>J - Intermittent Seasonal</fullName>
+        <default>false</default>
+        <label>J - Intermittent Seasonal</label>
+    </customValue>
+    <customValue>
+        <fullName>P - Part-Time</fullName>
+        <default>false</default>
+        <label>P - Part-Time</label>
+    </customValue>
+    <customValue>
+        <fullName>Q - Part-Time Seasonal</fullName>
+        <default>false</default>
+        <label>Q - Part-Time Seasonal</label>
+    </customValue>
+    <customValue>
+        <fullName>R - Phased Employment/Phased Retirement</fullName>
+        <default>false</default>
+        <label>R - Phased Employment/Phased Retirement</label>
+    </customValue>
+    <customValue>
+        <fullName>S - Part-Time Job Sharer</fullName>
+        <default>false</default>
+        <label>S - Part-Time Job Sharer</label>
+    </customValue>
+    <customValue>
+        <fullName>T - Part-Time Seasonal Job Sharer</fullName>
+        <default>false</default>
+        <label>T - Part-Time Seasonal Job Sharer</label>
+    </customValue>
+    <customValue>
+        <fullName>Shift work</fullName>
+        <default>false</default>
+        <label>Shift work</label>
+    </customValue>
+    <customValue>
+        <fullName>Multiple</fullName>
+        <default>false</default>
+        <label>Multiple</label>
+    </customValue>
+    <masterLabel>Work Schedule</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

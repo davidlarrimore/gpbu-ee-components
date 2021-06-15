@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Not Applicable</fullName>
+        <default>false</default>
+        <label>Not Applicable</label>
+    </customValue>
+    <customValue>
+        <fullName>Research</fullName>
+        <default>false</default>
+        <label>Research</label>
+    </customValue>
+    <customValue>
+        <fullName>Research Contract and Grant Administration</fullName>
+        <default>false</default>
+        <label>Research Contract and Grant Administration</label>
+    </customValue>
+    <customValue>
+        <fullName>Development</fullName>
+        <default>false</default>
+        <label>Development</label>
+    </customValue>
+    <customValue>
+        <fullName>Test and Evaluation</fullName>
+        <default>false</default>
+        <label>Test and Evaluation</label>
+    </customValue>
+    <customValue>
+        <fullName>Design</fullName>
+        <default>false</default>
+        <label>Design</label>
+    </customValue>
+    <customValue>
+        <fullName>Construction</fullName>
+        <default>false</default>
+        <label>Construction</label>
+    </customValue>
+    <customValue>
+        <fullName>Production</fullName>
+        <default>false</default>
+        <label>Production</label>
+    </customValue>
+    <customValue>
+        <fullName>Installation, Operations, and Maintenance</fullName>
+        <default>false</default>
+        <label>Installation, Operations, and Maintenance</label>
+    </customValue>
+    <customValue>
+        <fullName>Data Collection, Processing, and Analysis</fullName>
+        <default>false</default>
+        <label>Data Collection, Processing, and Analysis</label>
+    </customValue>
+    <customValue>
+        <fullName>Scientific and Technical Information</fullName>
+        <default>false</default>
+        <label>Scientific and Technical Information</label>
+    </customValue>
+    <customValue>
+        <fullName>Standards and Specifications</fullName>
+        <default>false</default>
+        <label>Standards and Specifications</label>
+    </customValue>
+    <customValue>
+        <fullName>Regulatory Enforcement and Licensing</fullName>
+        <default>false</default>
+        <label>Regulatory Enforcement and Licensing</label>
+    </customValue>
+    <customValue>
+        <fullName>Natural Resource Operations</fullName>
+        <default>false</default>
+        <label>Natural Resource Operations</label>
+    </customValue>
+    <customValue>
+        <fullName>Clinical Practice, Counseling, and Ancillary Medical Services</fullName>
+        <default>false</default>
+        <label>Clinical Practice, Counseling, and Ancillary Medical Services</label>
+    </customValue>
+    <customValue>
+        <fullName>Planning</fullName>
+        <default>false</default>
+        <label>Planning</label>
+    </customValue>
+    <customValue>
+        <fullName>Management</fullName>
+        <default>false</default>
+        <label>Management</label>
+    </customValue>
+    <customValue>
+        <fullName>Teaching and Training</fullName>
+        <default>false</default>
+        <label>Teaching and Training</label>
+    </customValue>
+    <customValue>
+        <fullName>Technical Assistance and Consulting</fullName>
+        <default>false</default>
+        <label>Technical Assistance and Consulting</label>
+    </customValue>
+    <customValue>
+        <fullName>Other</fullName>
+        <default>false</default>
+        <label>Other</label>
+    </customValue>
+    <masterLabel>Functional Classification</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

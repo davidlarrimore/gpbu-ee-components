@@ -5,7 +5,7 @@
     <description>&quot;Title&quot; Of the Asset File to be used at the Employee Photo.</description>
     <externalId>false</externalId>
     <inlineHelpText>&quot;Title&quot; Of the Asset File to be used at the Employee Photo.</inlineHelpText>
-    <label>Employee Photo Asset File Name</label>
+    <label>Employee Photo Asset Developer Name</label>
     <length>255</length>
     <required>false</required>
     <trackHistory>false</trackHistory>

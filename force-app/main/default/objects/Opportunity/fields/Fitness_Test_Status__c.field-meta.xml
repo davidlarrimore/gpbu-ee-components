@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Fitness_Test_Status__c</fullName>
+    <externalId>false</externalId>
+    <formula>IMAGE( 
+  CASE( TEXT( Fitness_Test__c ), 
+    &quot;Pass&quot;, &quot;/img/samples/flag_green.gif&quot;,
+    &quot;Fail&quot;, &quot;/img/samples/flag_red.gif&quot;, 
+    &quot;/s.gif&quot;), 
+&quot;Check Flag&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Fitness Test Status</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -3,8 +3,8 @@
     <actionCalls>
         <name>Send_Could_not_Find_Asset_Email</name>
         <label>Send Could not Find Asset Email</label>
-        <locationX>358</locationX>
-        <locationY>1430</locationY>
+        <locationX>314</locationX>
+        <locationY>974</locationY>
         <actionName>emailSimple</actionName>
         <actionType>emailSimple</actionType>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
@@ -31,8 +31,8 @@
     <assignments>
         <name>Set_Contact_Record_Photo</name>
         <label>Set Contact Record Photo</label>
-        <locationX>94</locationX>
-        <locationY>1430</locationY>
+        <locationX>50</locationX>
+        <locationY>974</locationY>
         <assignmentItems>
             <assignToReference>Get_Contact_Record.Photo__c</assignToReference>
             <operator>Assign</operator>
@@ -47,10 +47,10 @@
     <decisions>
         <name>Employee_Status_Decision</name>
         <label>Employee Status Decision</label>
-        <locationX>226</locationX>
+        <locationX>182</locationX>
         <locationY>518</locationY>
         <defaultConnector>
-            <targetReference>Get_Generic_Content_Document_Record</targetReference>
+            <targetReference>Get_Generic_Content_Asset</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Not Active</defaultConnectorLabel>
         <rules>
@@ -64,7 +64,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Get_Demo_Setup_Content_Document_Record</targetReference>
+                <targetReference>Get_Content_Asset_0</targetReference>
             </connector>
             <label>Active</label>
         </rules>
@@ -72,8 +72,8 @@
     <decisions>
         <name>Found_Content_Asset</name>
         <label>Found Content Asset?</label>
-        <locationX>226</locationX>
-        <locationY>1310</locationY>
+        <locationX>182</locationX>
+        <locationY>854</locationY>
         <defaultConnector>
             <targetReference>Send_Could_not_Find_Asset_Email</targetReference>
         </defaultConnector>
@@ -97,7 +97,7 @@
     <decisions>
         <name>Found_Demo_Setup_Record</name>
         <label>Found Demo Setup Record?</label>
-        <locationX>446</locationX>
+        <locationX>380</locationX>
         <locationY>278</locationY>
         <defaultConnectorLabel>No</defaultConnectorLabel>
         <rules>
@@ -112,31 +112,6 @@
             </conditions>
             <connector>
                 <targetReference>Get_Contact_Record</targetReference>
-            </connector>
-            <label>Yes</label>
-        </rules>
-    </decisions>
-    <decisions>
-        <name>Found_Document</name>
-        <label>Found Document?</label>
-        <locationX>50</locationX>
-        <locationY>758</locationY>
-        <defaultConnector>
-            <targetReference>Get_Generic_Content_Document_Record_0</targetReference>
-        </defaultConnector>
-        <defaultConnectorLabel>No</defaultConnectorLabel>
-        <rules>
-            <name>Found_Document_Yes</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>varRecContentDocument</leftValueReference>
-                <operator>IsNull</operator>
-                <rightValue>
-                    <booleanValue>false</booleanValue>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>Get_Content_Asset</targetReference>
             </connector>
             <label>Yes</label>
         </rules>
@@ -171,7 +146,7 @@
     <recordLookups>
         <name>Get_Contact_Record</name>
         <label>Get Contact Record</label>
-        <locationX>226</locationX>
+        <locationX>182</locationX>
         <locationY>398</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -190,20 +165,20 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
-        <name>Get_Content_Asset</name>
+        <name>Get_Content_Asset_0</name>
         <label>Get Content Asset</label>
-        <locationX>226</locationX>
-        <locationY>1190</locationY>
+        <locationX>50</locationX>
+        <locationY>638</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Found_Content_Asset</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
-            <field>ContentDocumentId</field>
+            <field>DeveloperName</field>
             <operator>EqualTo</operator>
             <value>
-                <elementReference>varRecContentDocument.Id</elementReference>
+                <elementReference>Get_Demo_Setup_Record.Employee_Photo_Asset_File_Name__c</elementReference>
             </value>
         </filters>
         <object>ContentAsset</object>
@@ -212,32 +187,9 @@
         <queriedFields>DeveloperName</queriedFields>
     </recordLookups>
     <recordLookups>
-        <name>Get_Demo_Setup_Content_Document_Record</name>
-        <label>Get Demo Setup Content Document Record</label>
-        <locationX>50</locationX>
-        <locationY>638</locationY>
-        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
-        <connector>
-            <targetReference>Found_Document</targetReference>
-        </connector>
-        <filterLogic>and</filterLogic>
-        <filters>
-            <field>Title</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>Get_Demo_Setup_Record.Employee_Photo_Asset_File_Name__c</elementReference>
-            </value>
-        </filters>
-        <object>ContentDocument</object>
-        <outputReference>varRecContentDocument</outputReference>
-        <queriedFields>Id</queriedFields>
-        <queriedFields>Title</queriedFields>
-        <queriedFields>LatestPublishedVersionId</queriedFields>
-    </recordLookups>
-    <recordLookups>
         <name>Get_Demo_Setup_Record</name>
         <label>Get Demo Setup Record</label>
-        <locationX>446</locationX>
+        <locationX>380</locationX>
         <locationY>158</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -256,61 +208,37 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
-        <name>Get_Generic_Content_Document_Record</name>
-        <label>Get Generic Content Document Record</label>
-        <locationX>402</locationX>
+        <name>Get_Generic_Content_Asset</name>
+        <label>Get Generic Content Asset</label>
+        <locationX>314</locationX>
         <locationY>638</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Get_Content_Asset</targetReference>
+            <targetReference>Found_Content_Asset</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
-            <field>Title</field>
+            <field>DeveloperName</field>
             <operator>EqualTo</operator>
             <value>
-                <stringValue>Generic Contact Profile Image</stringValue>
+                <stringValue>generic_contact_profile_image</stringValue>
             </value>
         </filters>
-        <object>ContentDocument</object>
-        <outputReference>varRecContentDocument</outputReference>
+        <object>ContentAsset</object>
+        <outputReference>varRecContentAsset</outputReference>
         <queriedFields>Id</queriedFields>
-        <queriedFields>Title</queriedFields>
-        <queriedFields>LatestPublishedVersionId</queriedFields>
-    </recordLookups>
-    <recordLookups>
-        <name>Get_Generic_Content_Document_Record_0</name>
-        <label>Get Generic Content Document Record</label>
-        <locationX>138</locationX>
-        <locationY>878</locationY>
-        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
-        <connector>
-            <targetReference>Get_Content_Asset</targetReference>
-        </connector>
-        <filterLogic>and</filterLogic>
-        <filters>
-            <field>Title</field>
-            <operator>EqualTo</operator>
-            <value>
-                <stringValue>Generic Contact Profile Image</stringValue>
-            </value>
-        </filters>
-        <object>ContentDocument</object>
-        <outputReference>varRecContentDocument</outputReference>
-        <queriedFields>Id</queriedFields>
-        <queriedFields>Title</queriedFields>
-        <queriedFields>LatestPublishedVersionId</queriedFields>
+        <queriedFields>DeveloperName</queriedFields>
     </recordLookups>
     <recordUpdates>
         <name>Update_Contact_Record</name>
         <label>Update Contact Record</label>
-        <locationX>94</locationX>
-        <locationY>1550</locationY>
+        <locationX>50</locationX>
+        <locationY>1094</locationY>
         <inputReference>Get_Contact_Record</inputReference>
     </recordUpdates>
     <runInMode>SystemModeWithoutSharing</runInMode>
     <start>
-        <locationX>320</locationX>
+        <locationX>254</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>Get_Demo_Setup_Record</targetReference>

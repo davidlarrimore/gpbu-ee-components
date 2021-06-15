@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Year_Degree_or_Certificate_Attained__c</fullName>
+    <description>The calendar year during which the employee received the degree or certificate shown for EDUCATION LEVEL; https://dw.opm.gov/datastandards/dataStandard/1593?index=Y</description>
+    <externalId>false</externalId>
+    <inlineHelpText>The calendar year during which the employee received the degree or certificate shown for EDUCATION LEVEL; https://dw.opm.gov/datastandards/dataStandard/1593?index=Y</inlineHelpText>
+    <label>Year Degree or Certificate Attained</label>
+    <length>4</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

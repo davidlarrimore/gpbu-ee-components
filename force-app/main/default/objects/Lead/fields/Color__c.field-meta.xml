@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Color__c</fullName>
+    <externalId>false</externalId>
+    <formula>if(Color_Code_New__c = &quot;Blue&quot;,IMAGE(&quot;/resource/RecruitColorCode01Blue&quot;, &quot;Blue&quot;, 35, 35),
+if(Color_Code_New__c = &quot;Green&quot;,IMAGE(&quot;/resource/RecruitColorCode02Green&quot;, &quot;Green&quot;, 35, 35),
+if(Color_Code_New__c = &quot;Yellow&quot;,IMAGE(&quot;/resource/RecruitColorCode03Yellow&quot;, &quot;Yellow&quot;, 35, 35),IMAGE(&quot;/resource/RecruitColorCode04Red&quot;, &quot;Red&quot;, 35, 35)
+)))</formula>
+    <label>Question Score Color</label>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

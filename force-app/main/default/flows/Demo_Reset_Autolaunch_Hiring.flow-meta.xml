@@ -349,7 +349,7 @@
         <locationX>182</locationX>
         <locationY>2510</locationY>
         <connector>
-            <targetReference>Run_Demo_Reset_Autolaunch_Reset_Hiring_Shared_Calendar</targetReference>
+            <targetReference>Update_User_Record</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -425,6 +425,30 @@
         </inputAssignments>
         <object>Recruit_Question__c</object>
     </recordUpdates>
+    <recordUpdates>
+        <name>Update_User_Record</name>
+        <label>Update User Record</label>
+        <locationX>182</locationX>
+        <locationY>2630</locationY>
+        <connector>
+            <targetReference>Run_Demo_Reset_Autolaunch_Reset_Hiring_Shared_Calendar</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Get_Demo_Setup.Contact__r.User_Record__c</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Employment_Status__c</field>
+            <value>
+                <stringValue>Inactive</stringValue>
+            </value>
+        </inputAssignments>
+        <object>User</object>
+    </recordUpdates>
     <runInMode>SystemModeWithoutSharing</runInMode>
     <start>
         <locationX>419</locationX>
@@ -462,7 +486,7 @@
         <name>Run_Demo_Reset_Autolaunch_Reset_Hiring_Shared_Calendar</name>
         <label>Run Demo Reset Autolaunch - Reset Hiring Shared Calendar</label>
         <locationX>182</locationX>
-        <locationY>2630</locationY>
+        <locationY>2750</locationY>
         <flowName>Demo_Reset_Autolaunch_Reset_Hiring_Shared_Calendar</flowName>
     </subflows>
     <variables>

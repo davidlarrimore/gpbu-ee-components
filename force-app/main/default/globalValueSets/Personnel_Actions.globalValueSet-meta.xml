@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>None</fullName>
+        <default>false</default>
+        <label>None</label>
+    </customValue>
+    <customValue>
+        <fullName>Action Held in Abeyance - less than 6 months</fullName>
+        <default>false</default>
+        <label>Action Held in Abeyance - less than 6 months</label>
+    </customValue>
+    <customValue>
+        <fullName>Action Held in Abeyance - 6 months or more</fullName>
+        <default>false</default>
+        <label>Action Held in Abeyance - 6 months or more</label>
+    </customValue>
+    <customValue>
+        <fullName>Admin Leave - less than 10 days</fullName>
+        <default>false</default>
+        <label>Admin Leave - less than 10 days</label>
+    </customValue>
+    <customValue>
+        <fullName>Admin Leave - 10 days or more</fullName>
+        <default>false</default>
+        <label>Admin Leave - 10 days or more</label>
+    </customValue>
+    <customValue>
+        <fullName>Leave Restriction</fullName>
+        <default>false</default>
+        <label>Leave Restriction</label>
+    </customValue>
+    <customValue>
+        <fullName>Letter of Reprimand</fullName>
+        <default>false</default>
+        <label>Letter of Reprimand</label>
+    </customValue>
+    <customValue>
+        <fullName>Involuntary Separation</fullName>
+        <default>false</default>
+        <label>Involuntary Separation</label>
+    </customValue>
+    <customValue>
+        <fullName>Demotion</fullName>
+        <default>false</default>
+        <label>Demotion</label>
+    </customValue>
+    <customValue>
+        <fullName>Other</fullName>
+        <default>false</default>
+        <label>Other</label>
+    </customValue>
+    <masterLabel>Personnel Actions</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

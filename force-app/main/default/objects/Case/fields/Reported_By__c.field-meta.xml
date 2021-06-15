@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reported_By__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Who Reported this Incident</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Who Reported this Incident</inlineHelpText>
+    <label>Reported By</label>
+    <referenceTo>Contact</referenceTo>
+    <relationshipLabel>Cases (Reported By)</relationshipLabel>
+    <relationshipName>Reported_Incidents</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

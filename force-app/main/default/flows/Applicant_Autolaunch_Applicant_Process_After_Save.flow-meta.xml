@@ -4,7 +4,7 @@
         <name>Send_New_Hire_Onboarding_Wizard_Email</name>
         <label>Send New Hire Onboarding Wizard Email</label>
         <locationX>3702</locationX>
-        <locationY>1487</locationY>
+        <locationY>1607</locationY>
         <actionName>Contact.New_Hire_Onboarding_Wizard</actionName>
         <actionType>emailAlert</actionType>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
@@ -46,6 +46,31 @@
         </rules>
     </decisions>
     <decisions>
+        <name>Found_Interviews</name>
+        <label>Found Interviews?</label>
+        <locationX>974</locationX>
+        <locationY>1247</locationY>
+        <defaultConnector>
+            <targetReference>Create_Generic_Interview</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>Found_Interviews_Yes</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Interviews</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Interviews</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>Found_Open_Interview_Processes</name>
         <label>Found Open Interview Processes?</label>
         <locationX>1062</locationX>
@@ -71,37 +96,12 @@
         </rules>
     </decisions>
     <decisions>
-        <name>Found_Open_Interviews</name>
-        <label>Found Open Interviews</label>
-        <locationX>974</locationX>
-        <locationY>1247</locationY>
-        <defaultConnector>
-            <targetReference>Create_Generic_Interview</targetReference>
-        </defaultConnector>
-        <defaultConnectorLabel>No</defaultConnectorLabel>
-        <rules>
-            <name>Found_Open_Interviews_Yes</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>Get_Open_Interviews</leftValueReference>
-                <operator>IsNull</operator>
-                <rightValue>
-                    <booleanValue>false</booleanValue>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>Update_Interviews</targetReference>
-            </connector>
-            <label>Yes</label>
-        </rules>
-    </decisions>
-    <decisions>
         <name>Task_Records_Found_Background_Stage</name>
         <label>Task Records Found</label>
         <locationX>974</locationX>
         <locationY>791</locationY>
         <defaultConnector>
-            <targetReference>Get_Open_Interviews</targetReference>
+            <targetReference>Get_Interviews</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>No</defaultConnectorLabel>
         <rules>
@@ -224,7 +224,7 @@
         <name>Task_Records_Found_New_Employee_Stage</name>
         <label>Task Records Found</label>
         <locationX>3702</locationX>
-        <locationY>1151</locationY>
+        <locationY>1271</locationY>
         <defaultConnector>
             <targetReference>Send_New_Hire_Onboarding_Wizard_Email</targetReference>
         </defaultConnector>
@@ -502,7 +502,7 @@
         <label>Interview Process Loop</label>
         <locationX>842</locationX>
         <locationY>1487</locationY>
-        <collectionReference>Get_Open_Interviews</collectionReference>
+        <collectionReference>Get_Interviews</collectionReference>
         <iterationOrder>Asc</iterationOrder>
         <nextValueConnector>
             <targetReference>Get_Interview_Questions</targetReference>
@@ -1028,13 +1028,13 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
-        <name>Get_Open_Interviews</name>
-        <label>Get Open Interviews</label>
+        <name>Get_Interviews</name>
+        <label>Get Interviews</label>
         <locationX>974</locationX>
         <locationY>1127</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Found_Open_Interviews</targetReference>
+            <targetReference>Found_Interviews</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -1042,13 +1042,6 @@
             <operator>EqualTo</operator>
             <value>
                 <elementReference>Get_Demo_Setup_Record.Applicant__c</elementReference>
-            </value>
-        </filters>
-        <filters>
-            <field>Status_Check__c</field>
-            <operator>NotEqualTo</operator>
-            <value>
-                <stringValue>Completed</stringValue>
             </value>
         </filters>
         <getFirstRecordOnly>false</getFirstRecordOnly>
@@ -1110,7 +1103,7 @@
         <locationX>842</locationX>
         <locationY>911</locationY>
         <connector>
-            <targetReference>Get_Open_Interviews</targetReference>
+            <targetReference>Get_Interviews</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -1278,7 +1271,7 @@
         <locationX>3702</locationX>
         <locationY>1031</locationY>
         <connector>
-            <targetReference>Task_Records_Found_New_Employee_Stage</targetReference>
+            <targetReference>Update_User_Record</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -1492,7 +1485,7 @@
         <name>Update_Tasks</name>
         <label>Update Tasks</label>
         <locationX>3570</locationX>
-        <locationY>1271</locationY>
+        <locationY>1391</locationY>
         <connector>
             <targetReference>Send_New_Hire_Onboarding_Wizard_Email</targetReference>
         </connector>
@@ -1511,6 +1504,30 @@
             </value>
         </inputAssignments>
         <object>Task</object>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_User_Record</name>
+        <label>Update User Record</label>
+        <locationX>3702</locationX>
+        <locationY>1151</locationY>
+        <connector>
+            <targetReference>Task_Records_Found_New_Employee_Stage</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Applicant__r.User_Record__c</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Employment_Status__c</field>
+            <value>
+                <stringValue>New-Hire</stringValue>
+            </value>
+        </inputAssignments>
+        <object>User</object>
     </recordUpdates>
     <start>
         <locationX>3059</locationX>

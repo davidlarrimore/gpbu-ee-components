@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Not required</fullName>
+        <default>false</default>
+        <label>Not required</label>
+    </customValue>
+    <customValue>
+        <fullName>Occasional travel</fullName>
+        <default>false</default>
+        <label>Occasional travel</label>
+    </customValue>
+    <customValue>
+        <fullName>25% or less</fullName>
+        <default>false</default>
+        <label>25% or less</label>
+    </customValue>
+    <customValue>
+        <fullName>50% or less</fullName>
+        <default>false</default>
+        <label>50% or less</label>
+    </customValue>
+    <customValue>
+        <fullName>75% or less</fullName>
+        <default>false</default>
+        <label>75% or less</label>
+    </customValue>
+    <customValue>
+        <fullName>76% or greater</fullName>
+        <default>false</default>
+        <label>76% or greater</label>
+    </customValue>
+    <masterLabel>Travel Requirements</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

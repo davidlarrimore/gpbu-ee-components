@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Achieved Excellence</fullName>
+        <default>false</default>
+        <label>Achieved Excellence</label>
+    </customValue>
+    <customValue>
+        <fullName>Exceed Expectations</fullName>
+        <default>false</default>
+        <label>Exceed Expectations</label>
+    </customValue>
+    <customValue>
+        <fullName>Achieved Expectations</fullName>
+        <default>false</default>
+        <label>Achieved Expectations</label>
+    </customValue>
+    <customValue>
+        <fullName>Satisfactory</fullName>
+        <default>false</default>
+        <label>Satisfactory</label>
+    </customValue>
+    <customValue>
+        <fullName>Unacceptable</fullName>
+        <default>false</default>
+        <label>Unacceptable</label>
+    </customValue>
+    <masterLabel>Performance Rating</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

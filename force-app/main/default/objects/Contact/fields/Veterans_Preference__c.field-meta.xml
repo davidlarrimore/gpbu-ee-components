@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Veterans_Preference__c</fullName>
+    <description>An employee&apos;s category of entitlement to preference at time of appointment in the Federal service based on active military service that terminated honorably; https://dw.opm.gov/datastandards/referenceData/1587/current?index=V</description>
+    <externalId>false</externalId>
+    <inlineHelpText>An employee&apos;s category of entitlement to preference at time of appointment in the Federal service based on active military service that terminated honorably; https://dw.opm.gov/datastandards/referenceData/1587/current?index=V</inlineHelpText>
+    <label>Veterans Preference</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetName>Veterans_Preference</valueSetName>
+    </valueSet>
+</CustomField>

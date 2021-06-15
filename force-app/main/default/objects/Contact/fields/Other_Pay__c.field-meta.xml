@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Other_Pay__c</fullName>
+    <description>This is the amount of any administratively uncontrollable overtime (AUO) pay, availability pay, RETENTION ALLOWANCE, or SUPERVISORY DIFFERENTIAL that may be paid after applying all appropriate pay caps; https://dw.opm.gov/datastandards/dataStandard/1494?index=O</description>
+    <externalId>false</externalId>
+    <inlineHelpText>https://dw.opm.gov/datastandards/dataStandard/1494?index=O</inlineHelpText>
+    <label>Other Pay</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Currency</type>
+</CustomField>

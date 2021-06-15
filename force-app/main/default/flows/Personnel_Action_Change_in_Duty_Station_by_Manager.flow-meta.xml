@@ -3,7 +3,7 @@
     <actionCalls>
         <name>Redirect_to_the_Case_Record_Page</name>
         <label>Redirect to the Case Record Page</label>
-        <locationX>1949</locationX>
+        <locationX>2122</locationX>
         <locationY>846</locationY>
         <actionName>c:NavigateToRecord</actionName>
         <actionType>component</actionType>
@@ -26,7 +26,7 @@
         <description>Initiate Approval Process for the Personnel Action record created.</description>
         <name>Submit_for_Approval</name>
         <label>Submit for Approval</label>
-        <locationX>1589</locationX>
+        <locationX>1762</locationX>
         <locationY>237</locationY>
         <actionName>submit</actionName>
         <actionType>submit</actionType>
@@ -55,7 +55,7 @@
         <inputParameters>
             <name>submitterId</name>
             <value>
-                <elementReference>Get_Logged_In_User_Contact_Record.User_Record__c</elementReference>
+                <elementReference>Get_Logged_In_User_Record.Id</elementReference>
             </value>
         </inputParameters>
         <storeOutputAutomatically>true</storeOutputAutomatically>
@@ -64,7 +64,7 @@
     <assignments>
         <name>assignHROnlyApprovalProcess</name>
         <label>Assign HR Only Approval Process</label>
-        <locationX>1427</locationX>
+        <locationX>1600</locationX>
         <locationY>341</locationY>
         <assignmentItems>
             <assignToReference>ApprovalProcessAPIName</assignToReference>
@@ -80,8 +80,8 @@
     <assignments>
         <name>assignManagerHRApprovalProcess</name>
         <label>Assign Manager &amp; HR Approval Process</label>
-        <locationX>1434</locationX>
-        <locationY>134</locationY>
+        <locationX>1621</locationX>
+        <locationY>121</locationY>
         <assignmentItems>
             <assignToReference>ApprovalProcessAPIName</assignToReference>
             <operator>Assign</operator>
@@ -97,8 +97,8 @@
         <description>In this assignment, set NatureOfAction, PathIndicatorOptions, and other variables to the values you want to use in this personnel action flow.</description>
         <name>assignSetVariablesHere</name>
         <label>Set Variables Here</label>
-        <locationX>469</locationX>
-        <locationY>234</locationY>
+        <locationX>231</locationX>
+        <locationY>99</locationY>
         <assignmentItems>
             <assignToReference>NatureOfAction</assignToReference>
             <operator>Assign</operator>
@@ -134,7 +134,7 @@
     <assignments>
         <name>Set_Employee_Contact_Record_Id_Supervisor</name>
         <label>Set Employee Contact Record Id (Supervisor)</label>
-        <locationX>641</locationX>
+        <locationX>814</locationX>
         <locationY>1381</locationY>
         <assignmentItems>
             <assignToReference>varTextEmployeeContactRecordId</assignToReference>
@@ -150,8 +150,8 @@
     <assignments>
         <name>Set_Employee_Contact_Record_Id_WFM</name>
         <label>Set Employee Contact Record Id (WFM)</label>
-        <locationX>508</locationX>
-        <locationY>1248</locationY>
+        <locationX>604</locationX>
+        <locationY>1216</locationY>
         <assignmentItems>
             <assignToReference>varTextEmployeeContactRecordId</assignToReference>
             <operator>Assign</operator>
@@ -206,7 +206,7 @@
     <decisions>
         <name>decisionDidRequesterAgree</name>
         <label>Did Requester Agree?</label>
-        <locationX>1251</locationX>
+        <locationX>1424</locationX>
         <locationY>673</locationY>
         <defaultConnector>
             <targetReference>screen04</targetReference>
@@ -231,7 +231,7 @@
     <decisions>
         <name>decisionDocumentationRequired</name>
         <label>Is Documentation Required?</label>
-        <locationX>1029</locationX>
+        <locationX>1202</locationX>
         <locationY>88</locationY>
         <defaultConnector>
             <targetReference>screen04</targetReference>
@@ -257,8 +257,8 @@
         <description>Pick which approval process to use based on selection on the related Nature of Action record.</description>
         <name>decUseWhichApprovalProcess</name>
         <label>Use Which Approval Process?</label>
-        <locationX>1251</locationX>
-        <locationY>236</locationY>
+        <locationX>1409</locationX>
+        <locationY>219</locationY>
         <defaultConnector>
             <targetReference>assignManagerHRApprovalProcess</targetReference>
         </defaultConnector>
@@ -295,10 +295,35 @@
         </rules>
     </decisions>
     <decisions>
+        <name>Does_Logged_In_User_Have_a_Contact_Record</name>
+        <label>Does Logged In User Have a Contact Record?</label>
+        <locationX>435</locationX>
+        <locationY>255</locationY>
+        <defaultConnector>
+            <targetReference>Run_Contact_Autolaunch_Create_New_Contact</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>Does_Logged_In_User_Have_a_Contact_Record_Yes</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>varRecLoggedInUserContactRecord</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>getSF52CaseRecordTypeId</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>Employee_Type_Decision</name>
         <label>Employee Type Decision</label>
-        <locationX>50</locationX>
-        <locationY>1210</locationY>
+        <locationX>140</locationX>
+        <locationY>1058</locationY>
         <defaultConnector>
             <targetReference>screen02_B</targetReference>
         </defaultConnector>
@@ -307,7 +332,7 @@
             <name>Workforce_Manager</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>Get_Logged_In_User_Contact_Record.Workforce_Manager_Flag__c</leftValueReference>
+                <leftValueReference>varRecLoggedInUserContactRecord.Workforce_Manager_Flag__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <booleanValue>true</booleanValue>
@@ -322,8 +347,8 @@
     <decisions>
         <name>On_Employee_Contact_Record_Decision</name>
         <label>On Employee Contact Record Decision</label>
-        <locationX>244</locationX>
-        <locationY>945</locationY>
+        <locationX>356</locationX>
+        <locationY>784</locationY>
         <defaultConnector>
             <targetReference>Employee_Type_Decision</targetReference>
         </defaultConnector>
@@ -374,7 +399,7 @@
             <field>ReportsToId</field>
             <operator>EqualTo</operator>
             <value>
-                <elementReference>Get_Logged_In_User_Contact_Record.Id</elementReference>
+                <elementReference>varRecLoggedInUserContactRecord.Id</elementReference>
             </value>
         </filters>
         <object>Contact</object>
@@ -427,8 +452,8 @@
     <recordCreates>
         <name>createCase</name>
         <label>Create Case</label>
-        <locationX>812</locationX>
-        <locationY>518</locationY>
+        <locationX>987</locationX>
+        <locationY>527</locationY>
         <connector>
             <targetReference>getNewCase</targetReference>
         </connector>
@@ -492,7 +517,7 @@
     <recordCreates>
         <name>createPAChangeContactDutyLocation</name>
         <label>Create PA Change (Contact Duty Location)</label>
-        <locationX>1777</locationX>
+        <locationX>1950</locationX>
         <locationY>237</locationY>
         <connector>
             <targetReference>createPAChangeContactDutyStation_0</targetReference>
@@ -539,8 +564,8 @@
     <recordCreates>
         <name>createPAChangeContactDutyStation_0</name>
         <label>Create PA Change (Contact Duty Station)</label>
-        <locationX>1783</locationX>
-        <locationY>379</locationY>
+        <locationX>1978</locationX>
+        <locationY>492</locationY>
         <connector>
             <targetReference>screen99</targetReference>
         </connector>
@@ -586,7 +611,7 @@
     <recordCreates>
         <name>createPersonnelAction</name>
         <label>Create Personnel Action</label>
-        <locationX>813</locationX>
+        <locationX>986</locationX>
         <locationY>230</locationY>
         <connector>
             <targetReference>getNewPersonnelAction</targetReference>
@@ -594,13 +619,13 @@
         <inputAssignments>
             <field>Approval01_Manager__c</field>
             <value>
-                <elementReference>Get_Supervisor_Contact_Record.Id</elementReference>
+                <elementReference>Get_Supervisor_User_Record.Id</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
             <field>Approval02_HR__c</field>
             <value>
-                <elementReference>Get_Logged_In_User_Contact_Record.Account.OwnerId</elementReference>
+                <elementReference>Get_Demo_Setup_Record.Recruiter_Owner_User__c</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -667,13 +692,34 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordCreates>
     <recordLookups>
-        <name>Get_Employee_Contact</name>
-        <label>Get Employee Contact</label>
-        <locationX>742</locationX>
-        <locationY>1135</locationY>
+        <name>Get_Demo_Setup_Record</name>
+        <label>Get Demo Setup Record</label>
+        <locationX>880</locationX>
+        <locationY>1076</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>screen02</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Contact__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Get_Employee_Contact.Id</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Demo_Setup__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Employee_Contact</name>
+        <label>Get Employee Contact</label>
+        <locationX>761</locationX>
+        <locationY>998</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_Demo_Setup_Record</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -690,11 +736,11 @@
     <recordLookups>
         <name>Get_Logged_In_User_Contact_Record</name>
         <label>Get Logged In User Contact Record</label>
-        <locationX>630</locationX>
-        <locationY>376</locationY>
-        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <locationX>50</locationX>
+        <locationY>521</locationY>
+        <assignNullValuesIfNoRecordsFound>true</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>getSF52CaseRecordTypeId</targetReference>
+            <targetReference>Does_Logged_In_User_Have_a_Contact_Record</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -704,15 +750,19 @@
                 <elementReference>UserId</elementReference>
             </value>
         </filters>
-        <getFirstRecordOnly>true</getFirstRecordOnly>
         <object>Contact</object>
-        <storeOutputAutomatically>true</storeOutputAutomatically>
+        <outputReference>varRecLoggedInUserContactRecord</outputReference>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>FirstName</queriedFields>
+        <queriedFields>LastName</queriedFields>
+        <queriedFields>Email</queriedFields>
+        <queriedFields>Workforce_Manager_Flag__c</queriedFields>
     </recordLookups>
     <recordLookups>
         <name>Get_Logged_In_User_Record</name>
         <label>Get Logged In User Record</label>
-        <locationX>646</locationX>
-        <locationY>229</locationY>
+        <locationX>54</locationX>
+        <locationY>321</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Get_Logged_In_User_Contact_Record</targetReference>
@@ -732,8 +782,8 @@
     <recordLookups>
         <name>Get_Supervisor_Contact_Record</name>
         <label>Get Supervisor Contact Record</label>
-        <locationX>817</locationX>
-        <locationY>927</locationY>
+        <locationX>1132</locationX>
+        <locationY>1023</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Get_Supervisor_User_Record</targetReference>
@@ -753,8 +803,8 @@
     <recordLookups>
         <name>Get_Supervisor_User_Record</name>
         <label>Get Supervisor User Record</label>
-        <locationX>814</locationX>
-        <locationY>816</locationY>
+        <locationX>984</locationX>
+        <locationY>865</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>getPARQueue</targetReference>
@@ -774,8 +824,8 @@
     <recordLookups>
         <name>getNatureOfAction</name>
         <label>Get Nature of Action for Name Change</label>
-        <locationX>629</locationX>
-        <locationY>672</locationY>
+        <locationX>786</locationX>
+        <locationY>536</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>screen01</targetReference>
@@ -795,7 +845,7 @@
     <recordLookups>
         <name>getNewCase</name>
         <label>Get New Case</label>
-        <locationX>812</locationX>
+        <locationX>985</locationX>
         <locationY>376</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -816,8 +866,8 @@
     <recordLookups>
         <name>getNewPersonnelAction</name>
         <label>Get New Personnel Action</label>
-        <locationX>813</locationX>
-        <locationY>86</locationY>
+        <locationX>987</locationX>
+        <locationY>87</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>decisionDocumentationRequired</targetReference>
@@ -838,7 +888,7 @@
         <description>Get the Id for the HR Queue to assign the created case</description>
         <name>getPARQueue</name>
         <label>Get PAR Queue</label>
-        <locationX>812</locationX>
+        <locationX>985</locationX>
         <locationY>677</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -866,8 +916,8 @@
     <recordLookups>
         <name>getSF52CaseRecordTypeId</name>
         <label>Get SF-52 Case Record Type Id</label>
-        <locationX>629</locationX>
-        <locationY>524</locationY>
+        <locationX>784</locationX>
+        <locationY>308</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>getNatureOfAction</targetReference>
@@ -895,7 +945,7 @@
         <description>Update the personnel action request with the requester&apos;s digital signature</description>
         <name>updateSignPersonnelAction</name>
         <label>Sign Personnel Action Request</label>
-        <locationX>1259</locationX>
+        <locationX>1432</locationX>
         <locationY>517</locationY>
         <connector>
             <targetReference>decUseWhichApprovalProcess</targetReference>
@@ -928,11 +978,12 @@
         </inputAssignments>
         <object>Personnel_Action__c</object>
     </recordUpdates>
+    <runInMode>SystemModeWithoutSharing</runInMode>
     <screens>
         <name>Employee_Select_Screen_WFM</name>
         <label>Employee Select Screen (WFM)</label>
-        <locationX>321</locationX>
-        <locationY>1199</locationY>
+        <locationX>412</locationX>
+        <locationY>1145</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -1019,8 +1070,8 @@
         <description>Screen that will show the &quot;Before You Begin&quot; content from the selected Nature of Action record.</description>
         <name>screen01</name>
         <label>Before You Begin</label>
-        <locationX>582</locationX>
-        <locationY>825</locationY>
+        <locationX>788</locationX>
+        <locationY>773</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
@@ -1068,8 +1119,8 @@
     <screens>
         <name>screen02</name>
         <label>Enter Information</label>
-        <locationX>877</locationX>
-        <locationY>1125</locationY>
+        <locationX>1144</locationX>
+        <locationY>1250</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
@@ -1150,7 +1201,7 @@
     <screens>
         <name>screen02_B</name>
         <label>Employee Select Screen (Supervisor)</label>
-        <locationX>195</locationX>
+        <locationX>368</locationX>
         <locationY>1444</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
@@ -1207,7 +1258,7 @@
     <screens>
         <name>screen03</name>
         <label>Upload Documentation</label>
-        <locationX>971</locationX>
+        <locationX>1144</locationX>
         <locationY>843</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
@@ -1306,7 +1357,7 @@
     <screens>
         <name>screen04</name>
         <label>Sign</label>
-        <locationX>1117</locationX>
+        <locationX>1290</locationX>
         <locationY>843</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
@@ -1372,7 +1423,7 @@
     <screens>
         <name>screen99</name>
         <label>Confirmation Page</label>
-        <locationX>1777</locationX>
+        <locationX>1950</locationX>
         <locationY>846</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
@@ -1419,13 +1470,33 @@
         <showHeader>false</showHeader>
     </screens>
     <start>
-        <locationX>343</locationX>
+        <locationX>516</locationX>
         <locationY>76</locationY>
         <connector>
             <targetReference>assignSetVariablesHere</targetReference>
         </connector>
     </start>
     <status>Active</status>
+    <subflows>
+        <name>Run_Contact_Autolaunch_Create_New_Contact</name>
+        <label>Run Contact Autolaunch - Create New Contact</label>
+        <locationX>566</locationX>
+        <locationY>495</locationY>
+        <connector>
+            <targetReference>getSF52CaseRecordTypeId</targetReference>
+        </connector>
+        <flowName>Contact_Autolaunch_Create_New_Contact</flowName>
+        <inputAssignments>
+            <name>recordId</name>
+            <value>
+                <elementReference>Get_Logged_In_User_Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <outputAssignments>
+            <assignToReference>varRecLoggedInUserContactRecord</assignToReference>
+            <name>newContactRecord</name>
+        </outputAssignments>
+    </subflows>
     <variables>
         <description>API Name for the approval process to initiate for the personnel action</description>
         <name>ApprovalProcessAPIName</name>
@@ -1484,6 +1555,14 @@
         <isCollection>true</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>varRecLoggedInUserContactRecord</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Contact</objectType>
     </variables>
     <variables>
         <name>varTextEmployeeContactRecordId</name>

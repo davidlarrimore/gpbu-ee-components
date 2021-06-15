@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Supporting_Documentation_Type__c</fullName>
+    <description>When supporting documentation is required, this field controls what kind of documentation is asked for</description>
+    <externalId>false</externalId>
+    <inlineHelpText>When supporting documentation is required, this field controls what kind of documentation is asked for</inlineHelpText>
+    <label>Supporting Documentation Type</label>
+    <length>255</length>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

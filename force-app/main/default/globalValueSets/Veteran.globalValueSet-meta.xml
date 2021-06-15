@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>No Preference Claimed</fullName>
+        <default>false</default>
+        <label>No Preference Claimed</label>
+    </customValue>
+    <customValue>
+        <fullName>Sole Survivorship Preference Claimed</fullName>
+        <default>false</default>
+        <label>Sole Survivorship Preference Claimed</label>
+    </customValue>
+    <customValue>
+        <fullName>5 Points Preference Claimed</fullName>
+        <default>false</default>
+        <label>5 Points Preference Claimed</label>
+    </customValue>
+    <customValue>
+        <fullName>10 Points Preference Claimed (award of a Purple Heart or noncompensable service-connected disability of less than 10%)</fullName>
+        <default>false</default>
+        <label>10 Points Preference Claimed (award of a Purple Heart or noncompensable service-connected disability of less than 10%)</label>
+    </customValue>
+    <customValue>
+        <fullName>10 Points Compensable Disability Preference Claimed (disability rating of at least 10% and less than 30%)</fullName>
+        <default>false</default>
+        <label>10 Points Compensable Disability Preference Claimed (disability rating of at least 10% and less than 30%)</label>
+    </customValue>
+    <customValue>
+        <fullName>10 Points Other (wife, widow, husband, widower, parent preference claimed)</fullName>
+        <default>false</default>
+        <label>10 Points Other (wife, widow, husband, widower, parent preference claimed)</label>
+    </customValue>
+    <customValue>
+        <fullName>10 Points Compensable Disability Preference Claimed (disability rating of 30% or more)</fullName>
+        <default>false</default>
+        <label>10 Points Compensable Disability Preference Claimed (disability rating of 30% or more)</label>
+    </customValue>
+    <masterLabel>Veteran</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

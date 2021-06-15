@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Type_of_Telework__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Core: Regular Telework, at least 1 day a week
+Situational: Occasional, 1 time on an irregular basis</inlineHelpText>
+    <label>Type of Telework Requested</label>
+    <required>false</required>
+    <trackFeedHistory>true</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Core Telework</fullName>
+                <default>false</default>
+                <label>Core Telework</label>
+            </value>
+            <value>
+                <fullName>Situational</fullName>
+                <default>false</default>
+                <label>Situational</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

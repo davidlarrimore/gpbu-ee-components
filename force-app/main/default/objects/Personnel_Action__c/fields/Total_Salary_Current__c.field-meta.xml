@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Total_Salary_Current__c</fullName>
+    <description>Sum of all fixed pay amounts paid on a regular and recurring basis (i.e., each pay period). This includes adjusted basic pay and any fixed-amount allowances and differentials that are paid on a regular and recurring basis (e.g., post differentials and cost-of-living allowances).Not limited to retirement-creditable basic pay; https://dw.opm.gov/datastandards/dataStandard/1584?index=T</description>
+    <externalId>false</externalId>
+    <formula>Adjusted_Basic_Pay_Current__c + Other_Pay_Current__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>https://dw.opm.gov/datastandards/dataStandard/1584?index=T</inlineHelpText>
+    <label>Total Salary (Current)</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

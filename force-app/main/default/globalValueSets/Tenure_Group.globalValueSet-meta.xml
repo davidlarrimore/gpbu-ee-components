@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>0 - None</fullName>
+        <default>false</default>
+        <label>0 - None</label>
+    </customValue>
+    <customValue>
+        <fullName>1 - Permanent</fullName>
+        <default>true</default>
+        <label>1 - Permanent</label>
+    </customValue>
+    <customValue>
+        <fullName>2 - Conditional</fullName>
+        <default>false</default>
+        <label>2 - Conditional</label>
+    </customValue>
+    <customValue>
+        <fullName>3 - Indefinite</fullName>
+        <default>false</default>
+        <label>3 - Indefinite</label>
+    </customValue>
+    <masterLabel>Tenure</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

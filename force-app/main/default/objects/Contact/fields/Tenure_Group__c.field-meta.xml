@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Tenure_Group__c</fullName>
+    <description>For purposes of reduction in force, the retention group in which an employee is placed based on the employee&apos;s type of appointment; https://dw.opm.gov/datastandards/referenceData/1579/current?index=T</description>
+    <externalId>false</externalId>
+    <inlineHelpText>For purposes of reduction in force, the retention group in which an employee is placed based on the employee&apos;s type of appointment; https://dw.opm.gov/datastandards/referenceData/1579/current?index=T</inlineHelpText>
+    <label>Tenure Group</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetName>Tenure_Group</valueSetName>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Pay_Plan_Current__c</fullName>
+    <description>A particular table or array of pay rates prescribed by law or other authoritative source that establishes the basic pay rates for certain employees; https://www.opm.gov/policy-data-oversight/pay-leave/pay-administration/fact-sheets/pay-plans/</description>
+    <externalId>false</externalId>
+    <inlineHelpText>A particular table or array of pay rates prescribed by law or other authoritative source that establishes the basic pay rates for certain employees; https://www.opm.gov/policy-data-oversight/pay-leave/pay-administration/fact-sheets/pay-plans/</inlineHelpText>
+    <label>Pay Plan (Current)</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetName>Pay_Plan</valueSetName>
+    </valueSet>
+</CustomField>

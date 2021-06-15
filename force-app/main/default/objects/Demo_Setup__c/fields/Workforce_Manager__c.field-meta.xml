@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Workforce_Manager__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Predominantly leveraged for the Employee Services and Labor Relations Scenarios. Ensures that the Employee (Contact) is assigned to the correct Workforce Liaison.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Predominantly leveraged for the Employee Services and Labor Relations Scenarios. Ensures that the Employee (Contact) is assigned to the correct Workforce Liaison.</inlineHelpText>
+    <label>Workforce Liaison</label>
+    <referenceTo>Contact</referenceTo>
+    <relationshipLabel>Demo Setup</relationshipLabel>
+    <relationshipName>Demo_Setup_WFM</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

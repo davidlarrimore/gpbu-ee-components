@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>My_Employee_Flag__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( ReportsTo.User_Record__r.Id = $User.Id  , true, false)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>My Employee Flag</label>
+    <type>Checkbox</type>
+</CustomField>

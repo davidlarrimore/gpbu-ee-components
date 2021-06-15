@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Step_or_Rate__c</fullName>
+    <description>An indicator of a specific salary within a grade, level, class, rate, or pay band.  Each grade has 10 step rates (steps 1-10) that are each worth approximately 3 percent of the employee’s salary; https://dw.opm.gov/datastandards/dataStandard/1576?index=S</description>
+    <externalId>false</externalId>
+    <inlineHelpText>An indicator of a specific salary within a grade, level, class, rate, or pay band.  Each grade has 10 step rates (steps 1-10) that are each worth approximately 3 percent of the employee’s salary; https://dw.opm.gov/datastandards/dataStandard/1576?index=S</inlineHelpText>
+    <label>Step or Rate</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetName>Step_or_Rate</valueSetName>
+    </valueSet>
+</CustomField>

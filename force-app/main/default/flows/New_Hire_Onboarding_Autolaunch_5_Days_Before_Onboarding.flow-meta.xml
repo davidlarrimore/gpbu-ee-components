@@ -3,12 +3,12 @@
     <actionCalls>
         <name>Chatter_Post</name>
         <label>Chatter Post</label>
-        <locationX>176</locationX>
-        <locationY>1310</locationY>
+        <locationX>138</locationX>
+        <locationY>1430</locationY>
         <actionName>chatterPost</actionName>
         <actionType>chatterPost</actionType>
         <connector>
-            <targetReference>Create_Task_Update_Contact_Info</targetReference>
+            <targetReference>Get_Onboarding_Task_Record_Type</targetReference>
         </connector>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
         <inputParameters>
@@ -28,8 +28,8 @@
     <actionCalls>
         <name>Send_GFLEarn_Notification</name>
         <label>Send GFLEarn Notification</label>
-        <locationX>176</locationX>
-        <locationY>1190</locationY>
+        <locationX>138</locationX>
+        <locationY>1310</locationY>
         <actionName>Contact.Manager_5_days_till_GFLearn_notification</actionName>
         <actionType>emailAlert</actionType>
         <connector>
@@ -46,8 +46,8 @@
     <actionCalls>
         <name>Send_New_Hire_Welcome_Email</name>
         <label>Send New Hire Welcome Email</label>
-        <locationX>176</locationX>
-        <locationY>1070</locationY>
+        <locationX>138</locationX>
+        <locationY>1190</locationY>
         <actionName>Contact.New_Hire_Welcome_Email</actionName>
         <actionType>emailAlert</actionType>
         <connector>
@@ -65,8 +65,8 @@
     <assignments>
         <name>Close_Case_Assignment</name>
         <label>Close Case Assignment</label>
-        <locationX>176</locationX>
-        <locationY>638</locationY>
+        <locationX>138</locationX>
+        <locationY>758</locationY>
         <assignmentItems>
             <assignToReference>Loop_through_cases.Status</assignToReference>
             <operator>Assign</operator>
@@ -81,8 +81,8 @@
     <assignments>
         <name>Update_Contact_Assignment</name>
         <label>Update Contact Assignment</label>
-        <locationX>176</locationX>
-        <locationY>1790</locationY>
+        <locationX>138</locationX>
+        <locationY>2030</locationY>
         <assignmentItems>
             <assignToReference>Get_Contact_Record.Run_Five_Days_Before_Process__c</assignToReference>
             <operator>Assign</operator>
@@ -95,10 +95,32 @@
         </connector>
     </assignments>
     <decisions>
+        <name>Found_Contact_Record</name>
+        <label>Found Contact Record?</label>
+        <locationX>270</locationX>
+        <locationY>278</locationY>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>Found_Contact_Record_Yes</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Contact_Record</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Cases</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>If_Cases_Found</name>
         <label>If Cases Found</label>
-        <locationX>176</locationX>
-        <locationY>398</locationY>
+        <locationX>138</locationX>
+        <locationY>518</locationY>
         <defaultConnector>
             <targetReference>Send_New_Hire_Welcome_Email</targetReference>
         </defaultConnector>
@@ -140,8 +162,8 @@
     <loops>
         <name>Loop_through_cases</name>
         <label>Loop through cases</label>
-        <locationX>88</locationX>
-        <locationY>518</locationY>
+        <locationX>50</locationX>
+        <locationY>638</locationY>
         <collectionReference>varCases</collectionReference>
         <iterationOrder>Asc</iterationOrder>
         <nextValueConnector>
@@ -173,8 +195,8 @@
     <recordCreates>
         <name>Create_GFLearn_Case</name>
         <label>Create GFLearn Case</label>
-        <locationX>176</locationX>
-        <locationY>1670</locationY>
+        <locationX>138</locationX>
+        <locationY>1910</locationY>
         <connector>
             <targetReference>Update_Contact_Assignment</targetReference>
         </connector>
@@ -244,8 +266,8 @@
     <recordCreates>
         <name>Create_Task_Beneficiary_Form</name>
         <label>Create Task - Beneficiary Form</label>
-        <locationX>176</locationX>
-        <locationY>1550</locationY>
+        <locationX>138</locationX>
+        <locationY>1790</locationY>
         <connector>
             <targetReference>Create_GFLearn_Case</targetReference>
         </connector>
@@ -280,9 +302,21 @@
             </value>
         </inputAssignments>
         <inputAssignments>
+            <field>OwnerId</field>
+            <value>
+                <elementReference>Get_Contact_Record.User_Record__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
             <field>Priority</field>
             <value>
                 <stringValue>Normal</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>RecordTypeId</field>
+            <value>
+                <elementReference>Get_Onboarding_Task_Record_Type.Id</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -303,8 +337,8 @@
     <recordCreates>
         <name>Create_Task_Update_Contact_Info</name>
         <label>Create Task - Update Contact Info</label>
-        <locationX>176</locationX>
-        <locationY>1430</locationY>
+        <locationX>138</locationX>
+        <locationY>1670</locationY>
         <connector>
             <targetReference>Create_Task_Beneficiary_Form</targetReference>
         </connector>
@@ -333,9 +367,21 @@
             </value>
         </inputAssignments>
         <inputAssignments>
+            <field>OwnerId</field>
+            <value>
+                <elementReference>Get_Contact_Record.User_Record__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
             <field>Priority</field>
             <value>
                 <stringValue>Normal</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>RecordTypeId</field>
+            <value>
+                <elementReference>Get_Onboarding_Task_Record_Type.Id</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -356,8 +402,8 @@
     <recordLookups>
         <name>Get_Cases</name>
         <label>Get Cases</label>
-        <locationX>176</locationX>
-        <locationY>278</locationY>
+        <locationX>138</locationX>
+        <locationY>398</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>If_Cases_Found</targetReference>
@@ -378,11 +424,11 @@
     <recordLookups>
         <name>Get_Contact_Record</name>
         <label>Get Contact Record</label>
-        <locationX>176</locationX>
+        <locationX>270</locationX>
         <locationY>158</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Get_Cases</targetReference>
+            <targetReference>Found_Contact_Record</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -396,11 +442,32 @@
         <object>Contact</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
+    <recordLookups>
+        <name>Get_Onboarding_Task_Record_Type</name>
+        <label>Get Onboarding Task Record Type</label>
+        <locationX>138</locationX>
+        <locationY>1550</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Create_Task_Update_Contact_Info</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>DeveloperName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Onboarding_Tasks</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>RecordType</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
     <recordUpdates>
         <name>Update_Case</name>
         <label>Update Case</label>
-        <locationX>176</locationX>
-        <locationY>758</locationY>
+        <locationX>138</locationX>
+        <locationY>878</locationY>
         <connector>
             <targetReference>Loop_through_cases</targetReference>
         </connector>
@@ -409,12 +476,13 @@
     <recordUpdates>
         <name>Update_Contact</name>
         <label>Update Contact</label>
-        <locationX>176</locationX>
-        <locationY>1910</locationY>
+        <locationX>138</locationX>
+        <locationY>2150</locationY>
         <inputReference>Get_Contact_Record</inputReference>
     </recordUpdates>
+    <runInMode>SystemModeWithoutSharing</runInMode>
     <start>
-        <locationX>50</locationX>
+        <locationX>144</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>Get_Contact_Record</targetReference>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Born</fullName>
+        <default>false</default>
+        <label>Born</label>
+    </customValue>
+    <customValue>
+        <fullName>Naturalized</fullName>
+        <default>false</default>
+        <label>Naturalized</label>
+    </customValue>
+    <customValue>
+        <fullName>No</fullName>
+        <default>false</default>
+        <label>No</label>
+    </customValue>
+    <masterLabel>US Citizen</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

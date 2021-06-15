@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Personnel_Action_Compact_Layout</fullName>
+    <fields>Name</fields>
+    <fields>Nature_of_Action__c</fields>
+    <fields>SF52_Case__c</fields>
+    <fields>Employee__c</fields>
+    <fields>Status__c</fields>
+    <label>Personnel Action Compact Layout</label>
+</CompactLayout>

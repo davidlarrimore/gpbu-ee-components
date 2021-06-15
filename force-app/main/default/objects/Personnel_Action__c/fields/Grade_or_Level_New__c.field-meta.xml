@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Grade_or_Level_New__c</fullName>
+    <description>An indicator of hierarchical relationships among positions covered by the same pay plan or system. The numerical designation, GS−1 through GS−15, which identifies the range of difficulty and responsibility, and level of qualification requirements of positions included in the General Schedule; https://dw.opm.gov/datastandards/dataStandard/1463?index=G</description>
+    <externalId>false</externalId>
+    <inlineHelpText>https://dw.opm.gov/datastandards/dataStandard/1463?index=G</inlineHelpText>
+    <label>Grade or Level (New)</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetName>Grade_or_Level</valueSetName>
+    </valueSet>
+</CustomField>
