@@ -8,7 +8,7 @@
         <actionName>chatterPost</actionName>
         <actionType>chatterPost</actionType>
         <connector>
-            <targetReference>Get_Onboarding_Task_Record_Type</targetReference>
+            <targetReference>Create_GFLearn_Case</targetReference>
         </connector>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
         <inputParameters>
@@ -82,7 +82,7 @@
         <name>Update_Contact_Assignment</name>
         <label>Update Contact Assignment</label>
         <locationX>138</locationX>
-        <locationY>2030</locationY>
+        <locationY>1670</locationY>
         <assignmentItems>
             <assignToReference>Get_Contact_Record.Run_Five_Days_Before_Process__c</assignToReference>
             <operator>Assign</operator>
@@ -196,7 +196,7 @@
         <name>Create_GFLearn_Case</name>
         <label>Create GFLearn Case</label>
         <locationX>138</locationX>
-        <locationY>1910</locationY>
+        <locationY>1550</locationY>
         <connector>
             <targetReference>Update_Contact_Assignment</targetReference>
         </connector>
@@ -263,142 +263,6 @@
         <object>Case</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordCreates>
-    <recordCreates>
-        <name>Create_Task_Beneficiary_Form</name>
-        <label>Create Task - Beneficiary Form</label>
-        <locationX>138</locationX>
-        <locationY>1790</locationY>
-        <connector>
-            <targetReference>Create_GFLearn_Case</targetReference>
-        </connector>
-        <inputAssignments>
-            <field>ActivityDate</field>
-            <value>
-                <elementReference>varFormulaDateTomorrow</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Description</field>
-            <value>
-                <stringValue>Please complete and submit your beneficiary form.</stringValue>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Onboarding_Link_Label__c</field>
-            <value>
-                <stringValue>Go to USAStaffing</stringValue>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Onboarding_Link_URL__c</field>
-            <value>
-                <stringValue>https://onboard.usastaffing.gov/Account/Login</stringValue>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Onboarding_Task_Type__c</field>
-            <value>
-                <stringValue>Link</stringValue>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>OwnerId</field>
-            <value>
-                <elementReference>Get_Contact_Record.User_Record__c</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Priority</field>
-            <value>
-                <stringValue>Normal</stringValue>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>RecordTypeId</field>
-            <value>
-                <elementReference>Get_Onboarding_Task_Record_Type.Id</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Subject</field>
-            <value>
-                <stringValue>Complete Your Beneficiary Form</stringValue>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>WhoId</field>
-            <value>
-                <elementReference>recordId</elementReference>
-            </value>
-        </inputAssignments>
-        <object>Task</object>
-        <storeOutputAutomatically>true</storeOutputAutomatically>
-    </recordCreates>
-    <recordCreates>
-        <name>Create_Task_Update_Contact_Info</name>
-        <label>Create Task - Update Contact Info</label>
-        <locationX>138</locationX>
-        <locationY>1670</locationY>
-        <connector>
-            <targetReference>Create_Task_Beneficiary_Form</targetReference>
-        </connector>
-        <inputAssignments>
-            <field>ActivityDate</field>
-            <value>
-                <elementReference>varFormulaThreeDaysFromNow</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Description</field>
-            <value>
-                <stringValue>Please review your contact details and make sure we have your most current info.</stringValue>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Onboarding_Flow_Name__c</field>
-            <value>
-                <stringValue>New_Hire_Task_Update_Contact_Information</stringValue>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Onboarding_Task_Type__c</field>
-            <value>
-                <stringValue>Flow</stringValue>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>OwnerId</field>
-            <value>
-                <elementReference>Get_Contact_Record.User_Record__c</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Priority</field>
-            <value>
-                <stringValue>Normal</stringValue>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>RecordTypeId</field>
-            <value>
-                <elementReference>Get_Onboarding_Task_Record_Type.Id</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Subject</field>
-            <value>
-                <stringValue>Update Your Contact Information</stringValue>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>WhoId</field>
-            <value>
-                <elementReference>recordId</elementReference>
-            </value>
-        </inputAssignments>
-        <object>Task</object>
-        <storeOutputAutomatically>true</storeOutputAutomatically>
-    </recordCreates>
     <recordLookups>
         <name>Get_Cases</name>
         <label>Get Cases</label>
@@ -442,27 +306,6 @@
         <object>Contact</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
-    <recordLookups>
-        <name>Get_Onboarding_Task_Record_Type</name>
-        <label>Get Onboarding Task Record Type</label>
-        <locationX>138</locationX>
-        <locationY>1550</locationY>
-        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
-        <connector>
-            <targetReference>Create_Task_Update_Contact_Info</targetReference>
-        </connector>
-        <filterLogic>and</filterLogic>
-        <filters>
-            <field>DeveloperName</field>
-            <operator>EqualTo</operator>
-            <value>
-                <stringValue>Onboarding_Tasks</stringValue>
-            </value>
-        </filters>
-        <getFirstRecordOnly>true</getFirstRecordOnly>
-        <object>RecordType</object>
-        <storeOutputAutomatically>true</storeOutputAutomatically>
-    </recordLookups>
     <recordUpdates>
         <name>Update_Case</name>
         <label>Update Case</label>
@@ -477,7 +320,7 @@
         <name>Update_Contact</name>
         <label>Update Contact</label>
         <locationX>138</locationX>
-        <locationY>2150</locationY>
+        <locationY>1790</locationY>
         <inputReference>Get_Contact_Record</inputReference>
     </recordUpdates>
     <runInMode>SystemModeWithoutSharing</runInMode>

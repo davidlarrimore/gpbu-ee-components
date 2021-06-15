@@ -1624,7 +1624,7 @@ Allows a hiring manager to setup their new hire as an employee - updating their 
         <locationX>5086</locationX>
         <locationY>1971</locationY>
         <connector>
-            <targetReference>screen08</targetReference>
+            <targetReference>Run_New_Hire_Onboarding_Autolaunch_Employee_Pre_Onboarding_Tasks</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -2314,8 +2314,8 @@ Allows a hiring manager to setup their new hire as an employee - updating their 
     <screens>
         <name>screen08</name>
         <label>Confirmation</label>
-        <locationX>5228</locationX>
-        <locationY>1971</locationY>
+        <locationX>5491</locationX>
+        <locationY>1916</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -2399,6 +2399,22 @@ Allows a hiring manager to setup their new hire as an employee - updating their 
             </value>
         </inputAssignments>
         <storeOutputAutomatically>true</storeOutputAutomatically>
+    </subflows>
+    <subflows>
+        <name>Run_New_Hire_Onboarding_Autolaunch_Employee_Pre_Onboarding_Tasks</name>
+        <label>Run New Hire Onboarding Autolaunch - Employee Pre-Onboarding Tasks</label>
+        <locationX>5269</locationX>
+        <locationY>1931</locationY>
+        <connector>
+            <targetReference>screen08</targetReference>
+        </connector>
+        <flowName>New_Hire_Onboarding_Autolaunch_Employee_Pre_Onboarding_Tasks</flowName>
+        <inputAssignments>
+            <name>recordId</name>
+            <value>
+                <elementReference>getContactRecord.Id</elementReference>
+            </value>
+        </inputAssignments>
     </subflows>
     <variables>
         <description>Case record for access profile id</description>
