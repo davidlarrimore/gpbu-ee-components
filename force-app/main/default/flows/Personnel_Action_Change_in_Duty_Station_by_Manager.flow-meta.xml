@@ -713,24 +713,6 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
-        <name>Get_Demo_Setup_Record_0</name>
-        <label>Get Demo Setup Record</label>
-        <locationX>955</locationX>
-        <locationY>1151</locationY>
-        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
-        <filterLogic>and</filterLogic>
-        <filters>
-            <field>Contact__c</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>Get_Employee_Contact.Id</elementReference>
-            </value>
-        </filters>
-        <getFirstRecordOnly>true</getFirstRecordOnly>
-        <object>Demo_Setup__c</object>
-        <storeOutputAutomatically>true</storeOutputAutomatically>
-    </recordLookups>
-    <recordLookups>
         <name>Get_Employee_Contact</name>
         <label>Get Employee Contact</label>
         <locationX>761</locationX>
@@ -885,7 +867,7 @@
         <name>getNewPersonnelAction</name>
         <label>Get New Personnel Action</label>
         <locationX>987</locationX>
-        <locationY>86</locationY>
+        <locationY>87</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>decisionDocumentationRequired</targetReference>
