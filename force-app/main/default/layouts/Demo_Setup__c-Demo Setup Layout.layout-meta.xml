@@ -42,7 +42,7 @@
         <customLabel>true</customLabel>
         <detailHeading>true</detailHeading>
         <editHeading>true</editHeading>
-        <label>Recruit Lead Default Values</label>
+        <label>Basic Information Default Values</label>
         <layoutColumns>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -101,7 +101,7 @@
         <customLabel>true</customLabel>
         <detailHeading>true</detailHeading>
         <editHeading>true</editHeading>
-        <label>Recruit Lead Address Default Values</label>
+        <label>Address Default Values</label>
         <layoutColumns>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -314,10 +314,6 @@
                 <behavior>Edit</behavior>
                 <field>Recruit_Lead_Heading_2__c</field>
             </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Current_Demo_Config__c</field>
-            </layoutItems>
         </layoutColumns>
         <style>TwoColumnsLeftToRight</style>
     </layoutSections>
@@ -381,9 +377,24 @@
             <posY>0</posY>
         </summaryLayoutItems>
         <summaryLayoutItems>
-            <field>Account__c</field>
+            <field>Contact__c</field>
             <posX>0</posX>
             <posY>1</posY>
+        </summaryLayoutItems>
+        <summaryLayoutItems>
+            <field>Starting_Phase__c</field>
+            <posX>1</posX>
+            <posY>0</posY>
+        </summaryLayoutItems>
+        <summaryLayoutItems>
+            <field>Applicant__c</field>
+            <posX>1</posX>
+            <posY>1</posY>
+        </summaryLayoutItems>
+        <summaryLayoutItems>
+            <field>Recruit__c</field>
+            <posX>2</posX>
+            <posY>0</posY>
         </summaryLayoutItems>
         <summaryLayoutStyle>Default</summaryLayoutStyle>
     </summaryLayout>
