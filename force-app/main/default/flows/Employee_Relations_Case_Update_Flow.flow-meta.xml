@@ -2,8 +2,8 @@
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>51.0</apiVersion>
     <decisions>
-        <name>Is_ER_Case_Decision</name>
-        <label>Is ER Case Decision</label>
+        <name>Is_ER_Case_Under_Review_Decision</name>
+        <label>Is ER Case Under Review Decision</label>
         <locationX>380</locationX>
         <locationY>311</locationY>
         <defaultConnectorLabel>Not an ER Case</defaultConnectorLabel>
@@ -54,7 +54,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Create_EEO_Task</targetReference>
+                <targetReference>Get_Task_Record_Type</targetReference>
             </connector>
             <label>No Tasks Exist</label>
         </rules>
@@ -94,7 +94,7 @@
         <name>Create_Bargaining_Unit_Review_Task</name>
         <label>Create Bargaining Unit Review Task</label>
         <locationX>50</locationX>
-        <locationY>1271</locationY>
+        <locationY>1391</locationY>
         <inputAssignments>
             <field>ActivityDate</field>
             <value>
@@ -111,6 +111,12 @@
             <field>Priority</field>
             <value>
                 <stringValue>Normal</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>RecordTypeId</field>
+            <value>
+                <elementReference>Get_Task_Record_Type.Id</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -144,7 +150,7 @@
         <name>Create_Chief_Council_Task</name>
         <label>Create Chief Council Task</label>
         <locationX>50</locationX>
-        <locationY>911</locationY>
+        <locationY>1031</locationY>
         <connector>
             <targetReference>Create_Senior_Leader_Task</targetReference>
         </connector>
@@ -164,6 +170,12 @@
             <field>Priority</field>
             <value>
                 <stringValue>Normal</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>RecordTypeId</field>
+            <value>
+                <elementReference>Get_Task_Record_Type.Id</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -197,7 +209,7 @@
         <name>Create_EEO_Task</name>
         <label>Create EEO Task</label>
         <locationX>50</locationX>
-        <locationY>671</locationY>
+        <locationY>791</locationY>
         <connector>
             <targetReference>Create_Supervisor_Task</targetReference>
         </connector>
@@ -217,6 +229,12 @@
             <field>Priority</field>
             <value>
                 <stringValue>Normal</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>RecordTypeId</field>
+            <value>
+                <elementReference>Get_Task_Record_Type.Id</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -250,7 +268,7 @@
         <name>Create_Reasonable_Accommodations_Task</name>
         <label>Create Reasonable Accommodations Task</label>
         <locationX>50</locationX>
-        <locationY>1151</locationY>
+        <locationY>1271</locationY>
         <connector>
             <targetReference>Create_Bargaining_Unit_Review_Task</targetReference>
         </connector>
@@ -270,6 +288,12 @@
             <field>Priority</field>
             <value>
                 <stringValue>Normal</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>RecordTypeId</field>
+            <value>
+                <elementReference>Get_Task_Record_Type.Id</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -303,7 +327,7 @@
         <name>Create_Senior_Leader_Task</name>
         <label>Create Senior Leader Task</label>
         <locationX>50</locationX>
-        <locationY>1031</locationY>
+        <locationY>1151</locationY>
         <connector>
             <targetReference>Create_Reasonable_Accommodations_Task</targetReference>
         </connector>
@@ -323,6 +347,12 @@
             <field>Priority</field>
             <value>
                 <stringValue>Normal</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>RecordTypeId</field>
+            <value>
+                <elementReference>Get_Task_Record_Type.Id</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -356,7 +386,7 @@
         <name>Create_Supervisor_Task</name>
         <label>Create Supervisor Task</label>
         <locationX>50</locationX>
-        <locationY>791</locationY>
+        <locationY>911</locationY>
         <connector>
             <targetReference>Create_Chief_Council_Task</targetReference>
         </connector>
@@ -376,6 +406,12 @@
             <field>Priority</field>
             <value>
                 <stringValue>Normal</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>RecordTypeId</field>
+            <value>
+                <elementReference>Get_Task_Record_Type.Id</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -433,11 +469,32 @@
         <outputReference>Tasks</outputReference>
         <queriedFields>Id</queriedFields>
     </recordLookups>
+    <recordLookups>
+        <name>Get_Task_Record_Type</name>
+        <label>Get Task Record Type</label>
+        <locationX>50</locationX>
+        <locationY>671</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Create_EEO_Task</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>DeveloperName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Standard_Tasks</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>RecordType</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
     <start>
         <locationX>254</locationX>
         <locationY>0</locationY>
         <connector>
-            <targetReference>Is_ER_Case_Decision</targetReference>
+            <targetReference>Is_ER_Case_Under_Review_Decision</targetReference>
         </connector>
         <object>Case</object>
         <recordTriggerType>CreateAndUpdate</recordTriggerType>

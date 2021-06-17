@@ -45,6 +45,13 @@
                 <elementReference>Get_Employee_Life_Insurance.Id</elementReference>
             </value>
         </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Get_Contact.Employee_ID__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Demo_Setup_Record.Employee_ID__c</elementReference>
+            </value>
+        </assignmentItems>
         <connector>
             <targetReference>Update_Contact</targetReference>
         </connector>

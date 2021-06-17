@@ -18,7 +18,7 @@
         <description>ContactId is CreatedById</description>
         <name>assignContact</name>
         <label>Assign Contact</label>
-        <locationX>666</locationX>
+        <locationX>798</locationX>
         <locationY>431</locationY>
         <assignmentItems>
             <assignToReference>$Record.ContactId</assignToReference>
@@ -47,7 +47,7 @@
     <assignments>
         <name>assignQueueHR</name>
         <label>Assign to HR Queue</label>
-        <locationX>798</locationX>
+        <locationX>930</locationX>
         <locationY>1343</locationY>
         <assignmentItems>
             <assignToReference>$Record.OwnerId</assignToReference>
@@ -100,7 +100,7 @@
         <description>Is the ContactId field blank?</description>
         <name>decContactBlank</name>
         <label>Contact Blank?</label>
-        <locationX>798</locationX>
+        <locationX>930</locationX>
         <locationY>311</locationY>
         <defaultConnector>
             <targetReference>decType</targetReference>
@@ -132,7 +132,7 @@
     <decisions>
         <name>decType</name>
         <label>What is Type?</label>
-        <locationX>798</locationX>
+        <locationX>930</locationX>
         <locationY>647</locationY>
         <defaultConnector>
             <targetReference>getQueueHR</targetReference>
@@ -228,6 +228,18 @@
             </connector>
             <label>PAR Queue</label>
         </rules>
+        <rules>
+            <name>Employee_Misconduct</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Employee Misconduct</stringValue>
+                </rightValue>
+            </conditions>
+            <label>Employee Misconduct</label>
+        </rules>
     </decisions>
     <description>This flow assigns cases to certain queues as they are created.  This replaces the Case Creation Settings process.</description>
     <interviewLabel>Case - Creation Settings {!$Flow.CurrentDateTime}</interviewLabel>
@@ -310,7 +322,7 @@
     <recordLookups>
         <name>getQueueHR</name>
         <label>Get HR Queue</label>
-        <locationX>798</locationX>
+        <locationX>930</locationX>
         <locationY>1223</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -420,7 +432,7 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <start>
-        <locationX>672</locationX>
+        <locationX>804</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>decContactBlank</targetReference>

@@ -120,6 +120,13 @@
                 <elementReference>Get_Demo_Setup.Racial_Category__c</elementReference>
             </value>
         </assignmentItems>
+        <assignmentItems>
+            <assignToReference>varRecContact.Duty_Location__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Demo_Setup.Duty_Location__c</elementReference>
+            </value>
+        </assignmentItems>
         <connector>
             <targetReference>Update_Contact</targetReference>
         </connector>
