@@ -22,6 +22,9 @@
         <label>Do Recruit Questions Exist?</label>
         <locationX>182</locationX>
         <locationY>1334</locationY>
+        <defaultConnector>
+            <targetReference>Get_Tasks</targetReference>
+        </defaultConnector>
         <defaultConnectorLabel>No</defaultConnectorLabel>
         <rules>
             <name>Do_Recruit_Questions_Exist_Yes</name>
@@ -35,6 +38,53 @@
             </conditions>
             <connector>
                 <targetReference>Delete_Recruit_Questiosn</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Do_Tasks_Exist</name>
+        <label>Do Tasks Exist?</label>
+        <locationX>182</locationX>
+        <locationY>1790</locationY>
+        <defaultConnector>
+            <targetReference>Get_Content_Document_Links</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>Do_Tasks_Exist_Yes</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Tasks</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Delete_Tasks</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Found_Content_Document_Links</name>
+        <label>Found Content Document Links?</label>
+        <locationX>182</locationX>
+        <locationY>2246</locationY>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>Found_Content_Document_Links_Yes</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Content_Document_Links</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Delete_Content_Document_Links</targetReference>
             </connector>
             <label>Yes</label>
         </rules>
@@ -130,10 +180,20 @@
     </processMetadataValues>
     <processType>AutoLaunchedFlow</processType>
     <recordDeletes>
+        <name>Delete_Content_Document_Links</name>
+        <label>Delete Content Document Links</label>
+        <locationX>50</locationX>
+        <locationY>2366</locationY>
+        <inputReference>Get_Content_Document_Links</inputReference>
+    </recordDeletes>
+    <recordDeletes>
         <name>Delete_Recruit_Questiosn</name>
         <label>Delete Recruit Questiosn</label>
         <locationX>50</locationX>
         <locationY>1454</locationY>
+        <connector>
+            <targetReference>Get_Tasks</targetReference>
+        </connector>
         <inputReference>Get_Recruit_Questions</inputReference>
     </recordDeletes>
     <recordDeletes>
@@ -146,6 +206,37 @@
         </connector>
         <inputReference>Get_Recruits</inputReference>
     </recordDeletes>
+    <recordDeletes>
+        <name>Delete_Tasks</name>
+        <label>Delete Tasks</label>
+        <locationX>50</locationX>
+        <locationY>1910</locationY>
+        <connector>
+            <targetReference>Get_Content_Document_Links</targetReference>
+        </connector>
+        <inputReference>Get_Tasks</inputReference>
+    </recordDeletes>
+    <recordLookups>
+        <name>Get_Content_Document_Links</name>
+        <label>Get Content Document Links</label>
+        <locationX>182</locationX>
+        <locationY>2126</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Found_Content_Document_Links</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>LinkedEntityId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Get_Demo_Setup.Applicant__c</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>ContentDocumentLink</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
     <recordLookups>
         <name>Get_Demo_Setup</name>
         <label>Get Demo Setup</label>
@@ -207,6 +298,55 @@
         </filters>
         <getFirstRecordOnly>false</getFirstRecordOnly>
         <object>Lead</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Tasks</name>
+        <label>Get Tasks</label>
+        <locationX>182</locationX>
+        <locationY>1670</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Do_Tasks_Exist</targetReference>
+        </connector>
+        <filterLogic>or</filterLogic>
+        <filters>
+            <field>WhoId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Get_Demo_Setup.Contact__c</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>OwnerId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Get_Demo_Setup.Contact__r.User_Record__c</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>WhatId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Get_Demo_Setup.Contact__c</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>WhoId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Get_Demo_Setup.Recruit__c</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>WhatId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Get_Demo_Setup.Applicant__c</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>Task</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordUpdates>

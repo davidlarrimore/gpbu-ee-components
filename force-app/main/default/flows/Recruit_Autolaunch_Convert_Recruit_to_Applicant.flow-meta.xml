@@ -4,7 +4,7 @@
     <assignments>
         <name>Assignment_Update_Applicant</name>
         <label>Assignment Update Applicant</label>
-        <locationX>50</locationX>
+        <locationX>380</locationX>
         <locationY>638</locationY>
         <assignmentItems>
             <assignToReference>Get_Applicant.CloseDate</assignToReference>
@@ -160,7 +160,7 @@
     <assignments>
         <name>Assignment_Update_Recruit</name>
         <label>Assignment Update Recruit</label>
-        <locationX>50</locationX>
+        <locationX>380</locationX>
         <locationY>758</locationY>
         <assignmentItems>
             <assignToReference>Get_Recruit.Status</assignToReference>
@@ -173,10 +173,190 @@
             <targetReference>Update_Recruit</targetReference>
         </connector>
     </assignments>
+    <assignments>
+        <name>Set_Email_Message_Record</name>
+        <label>Set Email Message Record</label>
+        <locationX>380</locationX>
+        <locationY>2510</locationY>
+        <assignmentItems>
+            <assignToReference>Email_Message_Loop</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>varRecEmailMessage</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Email_Message</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Update_Email_Message</name>
+        <label>Update Email Message</label>
+        <locationX>380</locationX>
+        <locationY>2630</locationY>
+        <assignmentItems>
+            <assignToReference>varRecEmailMessage.RelatedToId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Applicant.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>varRecEmailMessage.Id</assignToReference>
+            <operator>Assign</operator>
+        </assignmentItems>
+        <connector>
+            <targetReference>Create_Email_Message</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>Content_Link_Already_Exists</name>
+        <label>Content Link Already Exists?</label>
+        <locationX>468</locationX>
+        <locationY>3542</locationY>
+        <defaultConnector>
+            <targetReference>Create_Content_Document_Link</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>Content_Link_Already_Exists_Yes</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Document_Link_Lookup</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Content_Document_Link_Loop</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Found_Content_Document_Links</name>
+        <label>Found Content Document Links?</label>
+        <locationX>380</locationX>
+        <locationY>3182</locationY>
+        <defaultConnector>
+            <targetReference>Get_Generic_Resume_Content_Asset</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>Found_Content_Document_Links_Yes</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Content_Document_Link_Records</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Content_Document_Link_Loop</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Found_Email_Messages</name>
+        <label>Found Email Messages?</label>
+        <locationX>380</locationX>
+        <locationY>2270</locationY>
+        <defaultConnector>
+            <targetReference>Get_Content_Document_Link_Records</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>Found_Email_Messages_Yes</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Email_Messages</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Email_Message_Loop</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Found_Generic_Resume_Content_Asset</name>
+        <label>Found Generic Resume Content Asset?</label>
+        <locationX>380</locationX>
+        <locationY>4190</locationY>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>Found_Generic_Resume_Content_Asset_Yes</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Generic_Resume_Content_Asset</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Generic_Resume_Content_Document</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Found_Generic_Resume_Content_Document</name>
+        <label>Found Generic Resume Content Document</label>
+        <locationX>182</locationX>
+        <locationY>4430</locationY>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>Found_Generic_Resume_Content_Document_Yes</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Generic_Resume_Content_Document</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Create_Generic_Resume_Content_Document_Link</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Found_Recruit_Tasks</name>
+        <label>Found Recruit Tasks?</label>
+        <locationX>380</locationX>
+        <locationY>1598</locationY>
+        <defaultConnector>
+            <targetReference>Get_Email_Messages</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>Found_Recruit_Tasks_Yes</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Recruit_Task_Records</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Recruit_Tasks_Loop</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
     <decisions>
         <name>Was_Record_Id_Provided</name>
         <label>Was Record Id Provided?</label>
-        <locationX>182</locationX>
+        <locationX>611</locationX>
         <locationY>158</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
@@ -212,6 +392,48 @@
     </formulas>
     <interviewLabel>Recruit Autolaunch - Convert Recruit {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Recruit Autolaunch - Convert Recruit to Applicant</label>
+    <loops>
+        <name>Content_Document_Link_Loop</name>
+        <label>Content Document Link Loop</label>
+        <locationX>292</locationX>
+        <locationY>3302</locationY>
+        <collectionReference>Get_Content_Document_Link_Records</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Document_Link_Lookup</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Get_Generic_Resume_Content_Asset</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <loops>
+        <name>Email_Message_Loop</name>
+        <label>Email Message Loop</label>
+        <locationX>292</locationX>
+        <locationY>2390</locationY>
+        <collectionReference>Get_Email_Messages</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Set_Email_Message_Record</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Get_Content_Document_Link_Records</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <loops>
+        <name>Recruit_Tasks_Loop</name>
+        <label>Recruit Tasks Loop</label>
+        <locationX>292</locationX>
+        <locationY>1718</locationY>
+        <collectionReference>Get_Recruit_Task_Records</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Create_Applicant_Task</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Get_Email_Messages</targetReference>
+        </noMoreValuesConnector>
+    </loops>
     <processMetadataValues>
         <name>BuilderType</name>
         <value>
@@ -231,10 +453,222 @@
         </value>
     </processMetadataValues>
     <processType>AutoLaunchedFlow</processType>
+    <recordCreates>
+        <name>Create_Applicant_Task</name>
+        <label>Create Applicant Task</label>
+        <locationX>380</locationX>
+        <locationY>1838</locationY>
+        <connector>
+            <targetReference>Recruit_Tasks_Loop</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>ActivityDate</field>
+            <value>
+                <elementReference>Recruit_Tasks_Loop.ActivityDate</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>CallDisposition</field>
+            <value>
+                <elementReference>Recruit_Tasks_Loop.CallDisposition</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>CallDurationInSeconds</field>
+            <value>
+                <elementReference>Recruit_Tasks_Loop.CallDurationInSeconds</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>CallObject</field>
+            <value>
+                <elementReference>Recruit_Tasks_Loop.CallObject</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>CallType</field>
+            <value>
+                <elementReference>Recruit_Tasks_Loop.CallType</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Description</field>
+            <value>
+                <elementReference>Recruit_Tasks_Loop.Description</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>IsRecurrence</field>
+            <value>
+                <elementReference>Recruit_Tasks_Loop.IsRecurrence</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>IsReminderSet</field>
+            <value>
+                <elementReference>Recruit_Tasks_Loop.IsReminderSet</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>OwnerId</field>
+            <value>
+                <elementReference>Recruit_Tasks_Loop.OwnerId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Priority</field>
+            <value>
+                <elementReference>Recruit_Tasks_Loop.Priority</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>RecordTypeId</field>
+            <value>
+                <elementReference>Recruit_Tasks_Loop.RecordTypeId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Recruiting_Task__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status</field>
+            <value>
+                <stringValue>Completed</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Subject</field>
+            <value>
+                <elementReference>Recruit_Tasks_Loop.Subject</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>TaskSubtype</field>
+            <value>
+                <elementReference>Recruit_Tasks_Loop.TaskSubtype</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>WhatId</field>
+            <value>
+                <elementReference>Get_Applicant.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>WhoId</field>
+            <value>
+                <elementReference>Get_Demo_Setup.Contact__c</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Task</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordCreates>
+        <name>Create_Content_Document_Link</name>
+        <label>Create Content Document Link</label>
+        <locationX>556</locationX>
+        <locationY>3662</locationY>
+        <connector>
+            <targetReference>Content_Document_Link_Loop</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>ContentDocumentId</field>
+            <value>
+                <elementReference>Content_Document_Link_Loop.ContentDocumentId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>LinkedEntityId</field>
+            <value>
+                <elementReference>Get_Applicant.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>ShareType</field>
+            <value>
+                <elementReference>Content_Document_Link_Loop.ShareType</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Visibility</field>
+            <value>
+                <elementReference>Content_Document_Link_Loop.Visibility</elementReference>
+            </value>
+        </inputAssignments>
+        <object>ContentDocumentLink</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordCreates>
+        <name>Create_Email_Message</name>
+        <label>Create Email Message</label>
+        <locationX>380</locationX>
+        <locationY>2750</locationY>
+        <connector>
+            <targetReference>Email_Message_Loop</targetReference>
+        </connector>
+        <inputReference>varRecEmailMessage</inputReference>
+    </recordCreates>
+    <recordCreates>
+        <name>Create_Generic_Resume_Content_Document_Link</name>
+        <label>Create Generic Resume Content Document Link</label>
+        <locationX>50</locationX>
+        <locationY>4550</locationY>
+        <inputAssignments>
+            <field>ContentDocumentId</field>
+            <value>
+                <elementReference>Get_Generic_Resume_Content_Document.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>LinkedEntityId</field>
+            <value>
+                <elementReference>Get_Applicant.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Visibility</field>
+            <value>
+                <stringValue>AllUsers</stringValue>
+            </value>
+        </inputAssignments>
+        <object>ContentDocumentLink</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordLookups>
+        <name>Document_Link_Lookup</name>
+        <label>Document Link Lookup</label>
+        <locationX>468</locationX>
+        <locationY>3422</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Content_Link_Already_Exists</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>ContentDocumentId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Content_Document_Link_Loop.ContentDocumentId</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>LinkedEntityId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Get_Applicant.Id</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>ContentDocumentLink</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
     <recordLookups>
         <name>Get_Applicant</name>
         <label>Get Applicant</label>
-        <locationX>50</locationX>
+        <locationX>380</locationX>
         <locationY>518</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -253,9 +687,30 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
+        <name>Get_Content_Document_Link_Records</name>
+        <label>Get Content Document Link Records</label>
+        <locationX>380</locationX>
+        <locationY>3062</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Found_Content_Document_Links</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>LinkedEntityId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Get_Recruit.Id</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>ContentDocumentLink</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
         <name>Get_Demo_Setup</name>
         <label>Get Demo Setup</label>
-        <locationX>50</locationX>
+        <locationX>380</locationX>
         <locationY>398</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -274,9 +729,72 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
+        <name>Get_Email_Messages</name>
+        <label>Get Email Messages</label>
+        <locationX>380</locationX>
+        <locationY>2150</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Found_Email_Messages</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>RelatedToId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Get_Recruit.Id</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>EmailMessage</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Generic_Resume_Content_Asset</name>
+        <label>Get Generic Resume Content Asset</label>
+        <locationX>380</locationX>
+        <locationY>4070</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Found_Generic_Resume_Content_Asset</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>DeveloperName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Resume</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>ContentAsset</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Generic_Resume_Content_Document</name>
+        <label>Get Generic Resume Content Document</label>
+        <locationX>182</locationX>
+        <locationY>4310</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Found_Generic_Resume_Content_Document</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>ContentAssetId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Get_Generic_Resume_Content_Asset.Id</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>ContentDocument</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
         <name>Get_Recruit</name>
         <label>Get Recruit</label>
-        <locationX>50</locationX>
+        <locationX>380</locationX>
         <locationY>278</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -294,10 +812,31 @@
         <object>Lead</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
+    <recordLookups>
+        <name>Get_Recruit_Task_Records</name>
+        <label>Get Recruit Task Records</label>
+        <locationX>380</locationX>
+        <locationY>1478</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Found_Recruit_Tasks</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>WhoId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Get_Recruit.Id</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>Task</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
     <recordUpdates>
         <name>Update_Applicant</name>
         <label>Update Applicant</label>
-        <locationX>50</locationX>
+        <locationX>380</locationX>
         <locationY>998</locationY>
         <connector>
             <targetReference>Update_Job_Opening</targetReference>
@@ -307,8 +846,11 @@
     <recordUpdates>
         <name>Update_Contact</name>
         <label>Update Contact</label>
-        <locationX>50</locationX>
+        <locationX>380</locationX>
         <locationY>1358</locationY>
+        <connector>
+            <targetReference>Get_Recruit_Task_Records</targetReference>
+        </connector>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -358,7 +900,7 @@
     <recordUpdates>
         <name>Update_Job_Opening</name>
         <label>Update Job Opening</label>
-        <locationX>50</locationX>
+        <locationX>380</locationX>
         <locationY>1118</locationY>
         <connector>
             <targetReference>Update_Recruit_Questions</targetReference>
@@ -382,7 +924,7 @@
     <recordUpdates>
         <name>Update_Recruit</name>
         <label>Update Recruit</label>
-        <locationX>50</locationX>
+        <locationX>380</locationX>
         <locationY>878</locationY>
         <connector>
             <targetReference>Update_Applicant</targetReference>
@@ -392,7 +934,7 @@
     <recordUpdates>
         <name>Update_Recruit_Questions</name>
         <label>Update Recruit Questions</label>
-        <locationX>50</locationX>
+        <locationX>380</locationX>
         <locationY>1238</locationY>
         <connector>
             <targetReference>Update_Contact</targetReference>
@@ -415,7 +957,7 @@
     </recordUpdates>
     <runInMode>SystemModeWithoutSharing</runInMode>
     <start>
-        <locationX>56</locationX>
+        <locationX>485</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>Was_Record_Id_Provided</targetReference>
@@ -428,5 +970,21 @@
         <isCollection>false</isCollection>
         <isInput>true</isInput>
         <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>varRecEmailMessage</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>EmailMessage</objectType>
+    </variables>
+    <variables>
+        <name>varRecTask</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Task</objectType>
     </variables>
 </Flow>

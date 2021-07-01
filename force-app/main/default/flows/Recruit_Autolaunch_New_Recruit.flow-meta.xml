@@ -4,7 +4,7 @@
         <name>Send_Recruit_Registration_Response_Email</name>
         <label>Send Recruit Registration Response Email</label>
         <locationX>176</locationX>
-        <locationY>551</locationY>
+        <locationY>575</locationY>
         <actionName>Lead.Recruit_Registration_Response</actionName>
         <actionType>emailAlert</actionType>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
@@ -52,7 +52,7 @@
         <name>Create_Task_Follow_Up_Call</name>
         <label>Create Task: Follow-Up Call</label>
         <locationX>176</locationX>
-        <locationY>311</locationY>
+        <locationY>335</locationY>
         <connector>
             <targetReference>Create_Task_Send_Application_Readiness_Email</targetReference>
         </connector>
@@ -72,6 +72,12 @@
             <field>Priority</field>
             <value>
                 <stringValue>Normal</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Recruiting_Task__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -99,7 +105,7 @@
         <name>Create_Task_Send_Application_Readiness_Email</name>
         <label>Create Task: Send Application Readiness Email</label>
         <locationX>176</locationX>
-        <locationY>431</locationY>
+        <locationY>455</locationY>
         <connector>
             <targetReference>Send_Recruit_Registration_Response_Email</targetReference>
         </connector>
@@ -119,6 +125,12 @@
             <field>Priority</field>
             <value>
                 <stringValue>Normal</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Recruiting_Task__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
             </value>
         </inputAssignments>
         <inputAssignments>

@@ -1396,13 +1396,13 @@
             <inputParameters>
                 <name>heading</name>
                 <value>
-                    <stringValue>Demo Reset Utility</stringValue>
+                    <elementReference>varScreenHeading</elementReference>
                 </value>
             </inputParameters>
             <inputParameters>
                 <name>subHeading</name>
                 <value>
-                    <stringValue>Use this Flow to quickly reset your Demos</stringValue>
+                    <elementReference>varScreenSubheading</elementReference>
                 </value>
             </inputParameters>
             <inputParameters>
@@ -1447,16 +1447,8 @@
             <isRequired>true</isRequired>
         </fields>
         <fields>
-            <name>Completion_Screen_HR</name>
-            <extensionName>c:horizontalRuleFSC</extensionName>
-            <fieldType>ComponentInstance</fieldType>
-            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-            <isRequired>true</isRequired>
-            <storeOutputAutomatically>true</storeOutputAutomatically>
-        </fields>
-        <fields>
             <name>Completion_Screen_NextDT</name>
-            <fieldText>&lt;p&gt;&lt;b style=&quot;color: rgb(62, 62, 60); background-color: rgb(255, 255, 255);&quot;&gt;Demo Reset has completed, click &quot;Finish&quot;.&lt;/b&gt;&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;b style=&quot;font-size: 14px; color: rgb(0, 147, 0); background-color: rgb(255, 255, 255);&quot;&gt;Demo Reset has completed, click &quot;Finish&quot;.&lt;/b&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <showFooter>true</showFooter>
@@ -1486,7 +1478,7 @@
             <inputParameters>
                 <name>subHeading</name>
                 <value>
-                    <stringValue>Use this Flow to quickly reset Demo Scenarios</stringValue>
+                    <stringValue>You are resetting the selected record to the Employee Services phase</stringValue>
                 </value>
             </inputParameters>
             <inputParameters>
@@ -1531,27 +1523,62 @@
             <isRequired>true</isRequired>
         </fields>
         <fields>
-            <name>Employee_Services_Reset_HR</name>
-            <extensionName>c:horizontalRuleFSC</extensionName>
-            <fieldType>ComponentInstance</fieldType>
-            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-            <isRequired>true</isRequired>
-            <storeOutputAutomatically>true</storeOutputAutomatically>
-        </fields>
-        <fields>
             <name>Employee_Services_Reset_BDT</name>
-            <fieldText>&lt;p&gt;&lt;b&gt;This flow will perform the following:&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Reset Profile Image.&lt;/li&gt;&lt;li&gt;Reset Employee Information to match Demo Setup.&lt;/li&gt;&lt;li&gt;Delete Existing Telework Agreements.&lt;/li&gt;&lt;li&gt;Reset Any Potential PAR Name Changes.&lt;/li&gt;&lt;li&gt;Reset Any Potential PAR Duty Location Changes.&lt;/li&gt;&lt;li&gt;Delete any Employee Relation Cases.&lt;/li&gt;&lt;/ul&gt;</fieldText>
+            <fieldText>&lt;p&gt;&lt;b&gt;This flow will perform the following:&lt;/b&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Resets profile image&lt;/li&gt;&lt;li&gt;Reset employee information to match Demo Setup&lt;/li&gt;&lt;li&gt;Delete existing telework agreements&lt;/li&gt;&lt;li&gt;Reset any PAR name changes&lt;/li&gt;&lt;li&gt;Reset any PAR duty location changes&lt;/li&gt;&lt;li&gt;Delete any employee relations cases&lt;/li&gt;&lt;/ul&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <fields>
-            <name>Employee_Services_Reset_BDTU</name>
-            <fieldText>&lt;p&gt;&lt;b style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;Affected Contact: &lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;﻿&lt;/b&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;{!Get_Contact_Record.Name}/ {!Get_Contact_Record.Id}&lt;/span&gt;&lt;/p&gt;</fieldText>
-            <fieldType>DisplayText</fieldType>
-        </fields>
-        <fields>
-            <name>Employee_Services_Reset_NextDT</name>
-            <fieldText>&lt;p&gt;&lt;b style=&quot;background-color: rgb(255, 255, 255); color: rgb(62, 62, 60);&quot;&gt;To proceed, click &quot;Next&quot;.&lt;/b&gt;&lt;/p&gt;</fieldText>
-            <fieldType>DisplayText</fieldType>
+            <name>Employee_Services_Reset_Section1</name>
+            <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>Employee_Services_Reset_Section1_Column1</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>text06a</name>
+                    <fieldText>&lt;p&gt;&lt;b style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;Affected Recruit&lt;/b&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;:&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;ql-indent-1&quot;&gt;N/A&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>4</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Employee_Services_Reset_Section1_Column2</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>text06b</name>
+                    <fieldText>&lt;p&gt;&lt;b style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;Affected Applicant&lt;/b&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;:&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;ql-indent-1&quot;&gt;N/A&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>4</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Employee_Services_Reset_Section1_Column3</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>text06c</name>
+                    <fieldText>&lt;p&gt;&lt;b style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;Affected Contact&lt;/b&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;:&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;ql-indent-1&quot;&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;{!Get_Contact_Record.Name}&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;ql-indent-1&quot;&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;recordId:  {!Get_Contact_Record.Id}&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>4</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <isRequired>false</isRequired>
         </fields>
         <showFooter>true</showFooter>
         <showHeader>false</showHeader>
@@ -1571,13 +1598,13 @@
             <inputParameters>
                 <name>heading</name>
                 <value>
-                    <stringValue>Demo Reset Utility</stringValue>
+                    <stringValue>Issue</stringValue>
                 </value>
             </inputParameters>
             <inputParameters>
                 <name>subHeading</name>
                 <value>
-                    <stringValue>Use this Flow to quickly reset your Demos</stringValue>
+                    <stringValue>Issue with the selected Demo Setup record</stringValue>
                 </value>
             </inputParameters>
             <inputParameters>
@@ -1622,16 +1649,8 @@
             <isRequired>true</isRequired>
         </fields>
         <fields>
-            <name>Error_Screen_HR</name>
-            <extensionName>c:horizontalRuleFSC</extensionName>
-            <fieldType>ComponentInstance</fieldType>
-            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-            <isRequired>true</isRequired>
-            <storeOutputAutomatically>true</storeOutputAutomatically>
-        </fields>
-        <fields>
             <name>Error_Screen_DT</name>
-            <fieldText>&lt;p&gt;&lt;b style=&quot;background-color: rgb(255, 255, 255); color: rgb(255, 31, 31);&quot;&gt;There is an issue with the Demo Setup Record. Please make sure that the record has at least an associated Applicant and Contact Record.&lt;/b&gt;&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;b style=&quot;color: rgb(255, 31, 31); background-color: rgb(255, 255, 255); font-size: 14px;&quot;&gt;There is an issue with the selected Demo Setup record.  Please make sure that the record has, at a minimum, an associated Applicant record and Contact record.&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <showFooter>true</showFooter>
@@ -1661,7 +1680,7 @@
             <inputParameters>
                 <name>subHeading</name>
                 <value>
-                    <stringValue>Use this Flow to quickly reset Demo Scenarios</stringValue>
+                    <stringValue>You are resetting the selected record to the Hiring phase</stringValue>
                 </value>
             </inputParameters>
             <inputParameters>
@@ -1706,27 +1725,62 @@
             <isRequired>true</isRequired>
         </fields>
         <fields>
-            <name>Hiring_Reset_HR</name>
-            <extensionName>c:horizontalRuleFSC</extensionName>
-            <fieldType>ComponentInstance</fieldType>
-            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-            <isRequired>true</isRequired>
-            <storeOutputAutomatically>true</storeOutputAutomatically>
-        </fields>
-        <fields>
             <name>Hiring_Reset_BDT</name>
-            <fieldText>&lt;p&gt;&lt;b&gt;This flow will perform the following changes:&lt;/b&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;b&gt;Runs Employee Services Reset&lt;/b&gt;&lt;/li&gt;&lt;li&gt;&lt;b&gt;Runs Onboarding Reset&lt;/b&gt;&lt;/li&gt;&lt;li&gt;&lt;b&gt;Runs Suitability Reset&lt;/b&gt;&lt;/li&gt;&lt;li&gt;Makes sure a Recruit Exists (If not, creates a new one from Demo Setup)&lt;/li&gt;&lt;li&gt;Updates Applicant Data from the Recruit.&lt;/li&gt;&lt;li&gt;Deletes any Interviews.&lt;/li&gt;&lt;li&gt;Resets Recruit Questions.&lt;/li&gt;&lt;li&gt;Resets any Medical, Fitness, Background, Polygraph status for the Applicant.&lt;/li&gt;&lt;li&gt;Ensure Correct Job Opening is referenced in Applicant Record.&lt;/li&gt;&lt;li&gt;Deletes any Applicant Tasks.&lt;/li&gt;&lt;/ul&gt;</fieldText>
+            <fieldText>&lt;p&gt;&lt;b&gt;This flow will perform the following changes:&lt;/b&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Runs Employee Services reset&lt;/li&gt;&lt;li&gt;Runs Onboarding reset&lt;/li&gt;&lt;li&gt;Runs Suitability reset&lt;/li&gt;&lt;li&gt;Makes sure a recruit exists (if not, creates a new one from Demo Setup)&lt;/li&gt;&lt;li&gt;Updates applicant data from the recruit record&lt;/li&gt;&lt;li&gt;Deletes any interviews&lt;/li&gt;&lt;li&gt;Resets recruit questions&lt;/li&gt;&lt;li&gt;Resets any medical, fitness, background, polygraph status for the applicant&lt;/li&gt;&lt;li&gt;Ensure correct job opening is referenced in the applicant record&lt;/li&gt;&lt;li&gt;Deletes any applicant tasks&lt;/li&gt;&lt;/ul&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <fields>
-            <name>Hiring_Reset_BDTU</name>
-            <fieldText>&lt;p&gt;&lt;b style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;Affected Applicant: &lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;{!Get_Applicant_Record.Name}/ {!Get_Applicant_Record.Id}&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;Affected Contact: &lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;{!Get_Contact_Record.Name}/ {!Get_Contact_Record.Id}&lt;/span&gt;&lt;/p&gt;</fieldText>
-            <fieldType>DisplayText</fieldType>
-        </fields>
-        <fields>
-            <name>Hiring_Reset_NextDT</name>
-            <fieldText>&lt;p&gt;&lt;b style=&quot;background-color: rgb(255, 255, 255); color: rgb(62, 62, 60);&quot;&gt;To proceed, click &quot;Next&quot;.&lt;/b&gt;&lt;/p&gt;</fieldText>
-            <fieldType>DisplayText</fieldType>
+            <name>Hiring_Reset_Section1</name>
+            <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>Hiring_Reset_Section1_Column1</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>text03a</name>
+                    <fieldText>&lt;p&gt;&lt;b style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;Affected Recruit&lt;/b&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;:&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;ql-indent-1&quot;&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;N/A&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>4</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Hiring_Reset_Section1_Column2</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>text03b</name>
+                    <fieldText>&lt;p&gt;&lt;b style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;Affected Applicant&lt;/b&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;:&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;ql-indent-1&quot;&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;{!Get_Applicant_Record.Name}&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;ql-indent-1&quot;&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;recordId:  {!Get_Applicant_Record.Id}&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>4</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Hiring_Reset_Section1_Column3</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>text03c</name>
+                    <fieldText>&lt;p&gt;&lt;b style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;Affected Contact&lt;/b&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;:&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;ql-indent-1&quot;&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;{!Get_Contact_Record.Name}&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;ql-indent-1&quot;&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;recordId:  {!Get_Contact_Record.Id}&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>4</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <isRequired>false</isRequired>
         </fields>
         <showFooter>true</showFooter>
         <showHeader>false</showHeader>
@@ -1755,7 +1809,7 @@
             <inputParameters>
                 <name>subHeading</name>
                 <value>
-                    <stringValue>Use this Flow to quickly reset Demo Scenarios</stringValue>
+                    <stringValue>You are resetting the selected record to the Onboarding phase</stringValue>
                 </value>
             </inputParameters>
             <inputParameters>
@@ -1800,27 +1854,62 @@
             <isRequired>true</isRequired>
         </fields>
         <fields>
-            <name>Onboarding_Reset_HR</name>
-            <extensionName>c:horizontalRuleFSC</extensionName>
-            <fieldType>ComponentInstance</fieldType>
-            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-            <isRequired>true</isRequired>
-            <storeOutputAutomatically>true</storeOutputAutomatically>
-        </fields>
-        <fields>
             <name>Onboarding_Reset_BDT</name>
-            <fieldText>&lt;p&gt;&lt;b&gt;This flow will perform the following changes:&lt;/b&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;b&gt;Runs Employee Services Reset&lt;/b&gt;&lt;/li&gt;&lt;li&gt;Marks Applicant record as &quot;Closed - Offer Accepted&quot;&lt;/li&gt;&lt;li&gt;Delete any cases, performance plans, tasks, events, assets, course enrollments, Earnings and Leave Statements. This includes anything that may be in the &quot;Employee Services&quot; Demo Scenario.&lt;/li&gt;&lt;li&gt;Resets Contact Info to New-Hire Info.&lt;/li&gt;&lt;/ul&gt;</fieldText>
+            <fieldText>&lt;p&gt;&lt;b&gt;This flow will perform the following changes:&lt;/b&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Runs Employee Services reset&lt;/li&gt;&lt;li&gt;Updates applicant record to &quot;Closed - Offer Accepted&quot;&lt;/li&gt;&lt;li&gt;Delete any cases, performance plans, tasks, events, assets, course enrollments, earnings and leave statements. This includes anything that may be in the &quot;Employee Services&quot; demo scenario&lt;/li&gt;&lt;li&gt;Resets contact info to new hire&apos;s info&lt;/li&gt;&lt;/ul&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <fields>
-            <name>Onboarding_Reset_BDTU</name>
-            <fieldText>&lt;p&gt;&lt;b style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;Affected Applicant: &lt;/b&gt;&lt;/p&gt;&lt;p&gt;{!Get_Applicant_Record.Name}/ {!Get_Applicant_Record.Id}&lt;/p&gt;&lt;p&gt;&lt;b style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;Affected Contact: &lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;{!Get_Contact_Record.Name}/ {!Get_Contact_Record.Id}&lt;/span&gt;&lt;/p&gt;</fieldText>
-            <fieldType>DisplayText</fieldType>
-        </fields>
-        <fields>
-            <name>Onboarding_Reset_NextDT</name>
-            <fieldText>&lt;p&gt;&lt;b style=&quot;background-color: rgb(255, 255, 255); color: rgb(62, 62, 60);&quot;&gt;To proceed, click &quot;Next&quot;.&lt;/b&gt;&lt;/p&gt;</fieldText>
-            <fieldType>DisplayText</fieldType>
+            <name>Onboarding_Reset_Section1</name>
+            <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>Onboarding_Reset_Section1_Column1</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>text05a</name>
+                    <fieldText>&lt;p&gt;&lt;b style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;Affected Recruit&lt;/b&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;:&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;ql-indent-1&quot;&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;N/A&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>4</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Onboarding_Reset_Section1_Column2</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>text05b</name>
+                    <fieldText>&lt;p&gt;&lt;b style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;Affected Applicant&lt;/b&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;:&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;ql-indent-1&quot;&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;{!Get_Applicant_Record.Name}&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;ql-indent-1&quot;&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;recordId:  {!Get_Applicant_Record.Id}&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>4</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Onboarding_Reset_Section1_Column3</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>text05c</name>
+                    <fieldText>&lt;p&gt;&lt;b style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;Affected Contact&lt;/b&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;:&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;ql-indent-1&quot;&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;{!Get_Contact_Record.Name}&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;ql-indent-1&quot;&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;recordId:  {!Get_Contact_Record.Id}&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>4</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <isRequired>false</isRequired>
         </fields>
         <showFooter>true</showFooter>
         <showHeader>false</showHeader>
@@ -1849,7 +1938,7 @@
             <inputParameters>
                 <name>subHeading</name>
                 <value>
-                    <stringValue>Please go back</stringValue>
+                    <stringValue>Please return to the previous screen</stringValue>
                 </value>
             </inputParameters>
             <inputParameters>
@@ -1894,16 +1983,8 @@
             <isRequired>true</isRequired>
         </fields>
         <fields>
-            <name>Phase_Not_Select_Screen_HR</name>
-            <extensionName>c:horizontalRuleFSC</extensionName>
-            <fieldType>ComponentInstance</fieldType>
-            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-            <isRequired>true</isRequired>
-            <storeOutputAutomatically>true</storeOutputAutomatically>
-        </fields>
-        <fields>
             <name>Phase_Not_Select_Screen_BDT</name>
-            <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;b style=&quot;font-size: 14px; color: rgb(255, 0, 0);&quot;&gt;Hey! We noticed you did not select a Phase, please go back and try again...&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;&lt;span class=&quot;ql-cursor&quot;&gt;﻿&lt;/span&gt;&lt;/b&gt;&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;b style=&quot;color: rgb(255, 0, 0); font-size: 14px;&quot;&gt;Hey! We noticed you did not select a Phase, please go back and try again...&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;﻿&lt;/b&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <showFooter>true</showFooter>
@@ -1933,7 +2014,7 @@
             <inputParameters>
                 <name>subHeading</name>
                 <value>
-                    <stringValue>Use this Flow to quickly reset Demo Scenarios</stringValue>
+                    <stringValue>You are resetting the selected record to the Recruiting phase</stringValue>
                 </value>
             </inputParameters>
             <inputParameters>
@@ -1978,27 +2059,62 @@
             <isRequired>true</isRequired>
         </fields>
         <fields>
-            <name>Recruiting_Reset_HR</name>
-            <extensionName>c:horizontalRuleFSC</extensionName>
-            <fieldType>ComponentInstance</fieldType>
-            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-            <isRequired>true</isRequired>
-            <storeOutputAutomatically>true</storeOutputAutomatically>
-        </fields>
-        <fields>
             <name>Recruiting_Reset_BDT</name>
-            <fieldText>&lt;p&gt;&lt;b&gt;This flow will perform the following changes:&lt;/b&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;b&gt;Runs Employee Services Reset&lt;/b&gt;&lt;/li&gt;&lt;li&gt;&lt;b&gt;Runs Onboarding Reset&lt;/b&gt;&lt;/li&gt;&lt;li&gt;&lt;b&gt;Runs Suitability Reset&lt;/b&gt;&lt;/li&gt;&lt;li&gt;&lt;b&gt;Runs Hiring Reset&lt;/b&gt;&lt;/li&gt;&lt;li&gt;Deletes any Recruits matching the Demo Setup Record Recruit Email Address.&lt;/li&gt;&lt;li&gt;Deletes Recruit Questions.&lt;/li&gt;&lt;li&gt;Resets any Medical, Fitness, Background, Polygraph status for the Applicant.&lt;/li&gt;&lt;/ul&gt;</fieldText>
+            <fieldText>&lt;p&gt;&lt;b&gt;This flow will perform the following changes:&lt;/b&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Runs Employee Services reset&lt;/li&gt;&lt;li&gt;Runs Onboarding reset&lt;/li&gt;&lt;li&gt;Runs Suitability reset&lt;/li&gt;&lt;li&gt;Runs Hiring reset&lt;/li&gt;&lt;li&gt;Deletes any recruits matching the Demo Setup record&apos;s Recruit Email Address field.&lt;/li&gt;&lt;li&gt;Deletes recruit questions&lt;/li&gt;&lt;li&gt;Resets any medical, fitness, background, polygraph status for the applicant&lt;/li&gt;&lt;/ul&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <fields>
-            <name>Recruiting_Reset_BDTU</name>
-            <fieldText>&lt;p&gt;&lt;b&gt;Affected Recruit:&lt;/b&gt;&lt;/p&gt;&lt;p&gt;{!Get_Recruit_Record.Name} / {!Get_Recruit_Record.Id}&lt;/p&gt;&lt;p&gt;&lt;b style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;Affected Applicant: &lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;{!Get_Applicant_Record.Name}/ {!Get_Applicant_Record.Id}&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;Affected Contact: &lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;{!Get_Contact_Record.Name}/ {!Get_Contact_Record.Id}&lt;/span&gt;&lt;/p&gt;</fieldText>
-            <fieldType>DisplayText</fieldType>
-        </fields>
-        <fields>
-            <name>Recruiting_Reset_NextDT</name>
-            <fieldText>&lt;p&gt;&lt;b style=&quot;background-color: rgb(255, 255, 255); color: rgb(62, 62, 60);&quot;&gt;To proceed, click &quot;Next&quot;.&lt;/b&gt;&lt;/p&gt;</fieldText>
-            <fieldType>DisplayText</fieldType>
+            <name>Recruiting_Reset_Section1</name>
+            <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>Recruiting_Reset_Section1_Column1</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>text02a</name>
+                    <fieldText>&lt;p&gt;&lt;b&gt;Affected Recruit&lt;/b&gt;:&lt;/p&gt;&lt;p class=&quot;ql-indent-1&quot;&gt;{!Get_Recruit_Record.Name}&lt;/p&gt;&lt;p class=&quot;ql-indent-1&quot;&gt;recordId:  {!Get_Recruit_Record.Id}&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>4</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Recruiting_Reset_Section1_Column2</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>text02b</name>
+                    <fieldText>&lt;p&gt;&lt;b style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;Affected Applicant&lt;/b&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;:&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;ql-indent-1&quot;&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;{!Get_Applicant_Record.Name}&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;ql-indent-1&quot;&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;recordId:  {!Get_Applicant_Record.Id}&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>4</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Recruiting_Reset_Section1_Column3</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>text02c</name>
+                    <fieldText>&lt;p&gt;&lt;b style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;Affected Contact&lt;/b&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;:&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;ql-indent-1&quot;&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;{!Get_Contact_Record.Name}&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;ql-indent-1&quot;&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;recordId:  {!Get_Contact_Record.Id}&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>4</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <isRequired>false</isRequired>
         </fields>
         <showFooter>true</showFooter>
         <showHeader>false</showHeader>
@@ -2021,13 +2137,13 @@
             <inputParameters>
                 <name>heading</name>
                 <value>
-                    <stringValue>Demo Reset Utility</stringValue>
+                    <elementReference>varScreenHeading</elementReference>
                 </value>
             </inputParameters>
             <inputParameters>
                 <name>subHeading</name>
                 <value>
-                    <stringValue>Use this Flow to quickly reset Demo Scenarios</stringValue>
+                    <elementReference>varScreenSubheading</elementReference>
                 </value>
             </inputParameters>
             <inputParameters>
@@ -2072,16 +2188,45 @@
             <isRequired>true</isRequired>
         </fields>
         <fields>
-            <name>Scenario_Select_Screen_HR</name>
-            <extensionName>c:horizontalRuleFSC</extensionName>
-            <fieldType>ComponentInstance</fieldType>
-            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-            <isRequired>true</isRequired>
-            <storeOutputAutomatically>true</storeOutputAutomatically>
+            <name>Scenario_Select_Screen_Section1</name>
+            <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>Scenario_Select_Screen_Section1_Column1</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>Scenario_Select_Screen_DT_01</name>
+                    <fieldText>&lt;p&gt;&lt;u&gt;Selected Demo Scenario&lt;/u&gt;&lt;/p&gt;&lt;p&gt;&lt;b style=&quot;font-size: 16px;&quot;&gt;{!Get_Demo_Setup_Record.Name}&lt;/b&gt;&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>9</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Scenario_Select_Screen_Section1_Column2</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>Scenario_Select_Screen_DT_02</name>
+                    <fieldText>&lt;p&gt;&lt;u&gt;Current Phase&lt;/u&gt;&lt;/p&gt;&lt;p&gt;&lt;b style=&quot;font-size: 16px;&quot;&gt;{!varTextEstimatedCurrentPhase}&lt;/b&gt;&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>3</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <isRequired>false</isRequired>
         </fields>
         <fields>
-            <name>Scenario_Select_Screen_DT</name>
-            <fieldText>&lt;p&gt;&lt;u&gt;Selected Demo Scenario&lt;/u&gt;&lt;/p&gt;&lt;p&gt;&lt;b style=&quot;font-size: 16px;&quot;&gt;{!Get_Demo_Setup_Record.Name}&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;u&gt;Current Phase&lt;/u&gt;&lt;/p&gt;&lt;p&gt;&lt;b style=&quot;font-size: 16px;&quot;&gt;{!varTextEstimatedCurrentPhase}&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(62, 62, 60);&quot;&gt;What Phase would you like to reset this Demo Setup back too? &lt;/span&gt;&lt;/p&gt;</fieldText>
+            <name>text01a</name>
+            <fieldText>&lt;p&gt;&lt;b style=&quot;background-color: rgb(255, 255, 255); color: rgb(62, 62, 60);&quot;&gt;Which phase would you like to reset to? &lt;/b&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <fields>
@@ -2106,7 +2251,7 @@
         </fields>
         <fields>
             <name>Scenario_Select_Screen_NextDT</name>
-            <fieldText>&lt;p&gt;&lt;b style=&quot;color: rgb(255, 0, 0); background-color: rgb(255, 255, 255);&quot;&gt;REMEMBER: You cannot reset it to a phase later than it currently is and expect great results. When in doubt, reset all the way and work the record to where you want it.&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;b style=&quot;color: rgb(255, 0, 0); background-color: rgb(255, 255, 255);&quot;&gt;&lt;span class=&quot;ql-cursor&quot;&gt;﻿&lt;/span&gt;&lt;/b&gt;&lt;b style=&quot;color: rgb(62, 62, 60); background-color: rgb(255, 255, 255);&quot;&gt;To proceed, click &quot;Next&quot;.&lt;/b&gt;&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;&lt;b style=&quot;color: rgb(255, 0, 0); background-color: rgb(255, 255, 255);&quot;&gt;WARNING: You cannot reset to a later phase and expect great results. When in doubt, reset all the way back to the earliest phase and work up to your desired starting point.&lt;/b&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <showFooter>true</showFooter>
@@ -2136,7 +2281,7 @@
             <inputParameters>
                 <name>subHeading</name>
                 <value>
-                    <stringValue>Use this Flow to quickly reset Demo Scenarios</stringValue>
+                    <stringValue>You are resetting the selected record to the Suitability phase</stringValue>
                 </value>
             </inputParameters>
             <inputParameters>
@@ -2181,27 +2326,62 @@
             <isRequired>true</isRequired>
         </fields>
         <fields>
-            <name>Suitability_Reset_HR</name>
-            <extensionName>c:horizontalRuleFSC</extensionName>
-            <fieldType>ComponentInstance</fieldType>
-            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-            <isRequired>true</isRequired>
-            <storeOutputAutomatically>true</storeOutputAutomatically>
-        </fields>
-        <fields>
             <name>Suitability_Reset_BDT</name>
-            <fieldText>&lt;p&gt;&lt;b&gt;This flow will perform the following changes:&lt;/b&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;b&gt;Runs Employee Services Reset&lt;/b&gt;&lt;/li&gt;&lt;li&gt;&lt;b&gt;Runs Onboarding Reset&lt;/b&gt;&lt;/li&gt;&lt;li&gt;Sets Applicant Stage at &quot;Background Investigation&quot;&lt;/li&gt;&lt;li&gt;Resets Contact Employment Status to Inactive.&lt;/li&gt;&lt;li&gt;Set contact as a &quot;Inactive&quot;&lt;/li&gt;&lt;li&gt;Deletes any non-Suitability related Tasks on Applicant.&lt;/li&gt;&lt;/ul&gt;</fieldText>
+            <fieldText>&lt;p&gt;&lt;b&gt;This flow will perform the following changes:&lt;/b&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Runs Employee Services reset&lt;/li&gt;&lt;li&gt;Runs Onboarding reset&lt;/li&gt;&lt;li&gt;Sets applicant stage to &quot;Background Investigation&quot;&lt;/li&gt;&lt;li&gt;Resets contact employment status to &quot;Inactive&quot;&lt;/li&gt;&lt;li&gt;Sets contact to &quot;Inactive&quot;&lt;/li&gt;&lt;li&gt;Deletes any of the applicant&apos;s non-suitability related tasks&lt;/li&gt;&lt;/ul&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <fields>
-            <name>Suitability_Reset_BDTU</name>
-            <fieldText>&lt;p&gt;&lt;b style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;Affected Applicant: &lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(62, 62, 60); background-color: rgb(255, 255, 255);&quot;&gt;{!Get_Applicant_Record.Name}/ {!Get_Applicant_Record.Id}&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;Affected Contact: &lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;{!Get_Contact_Record.Name}/ {!Get_Contact_Record.Id}&lt;/span&gt;&lt;/p&gt;</fieldText>
-            <fieldType>DisplayText</fieldType>
-        </fields>
-        <fields>
-            <name>Suitability_Reset_NextDT</name>
-            <fieldText>&lt;p&gt;&lt;b style=&quot;background-color: rgb(255, 255, 255); color: rgb(62, 62, 60);&quot;&gt;To proceed, click &quot;Next&quot;.&lt;/b&gt;&lt;/p&gt;</fieldText>
-            <fieldType>DisplayText</fieldType>
+            <name>Suitability_Reset_Section1</name>
+            <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>Suitability_Reset_Section1_Column1</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>text04a</name>
+                    <fieldText>&lt;p&gt;&lt;b style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;Affected Recruit&lt;/b&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;:&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;ql-indent-1&quot;&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;N/A&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>4</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Suitability_Reset_Section1_Column2</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>text04b</name>
+                    <fieldText>&lt;p&gt;&lt;b style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;Affected Applicant&lt;/b&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;:&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;ql-indent-1&quot;&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;{!Get_Applicant_Record.Name}&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;ql-indent-1&quot;&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;recordId:  {!Get_Applicant_Record.Id}&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>4</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Suitability_Reset_Section1_Column3</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>text04c</name>
+                    <fieldText>&lt;p&gt;&lt;b style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;Affected Contact&lt;/b&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;:&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;ql-indent-1&quot;&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;{!Get_Contact_Record.Name}&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;ql-indent-1&quot;&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;recordId:  {!Get_Contact_Record.Id}&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>4</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <isRequired>false</isRequired>
         </fields>
         <showFooter>true</showFooter>
         <showHeader>false</showHeader>
@@ -2224,13 +2404,13 @@
             <inputParameters>
                 <name>heading</name>
                 <value>
-                    <stringValue>Demo Reset Utilty</stringValue>
+                    <elementReference>varScreenHeading</elementReference>
                 </value>
             </inputParameters>
             <inputParameters>
                 <name>subHeading</name>
                 <value>
-                    <stringValue>Use this Flow to quickly reset your Demos</stringValue>
+                    <elementReference>varScreenSubheading</elementReference>
                 </value>
             </inputParameters>
             <inputParameters>
@@ -2275,30 +2455,12 @@
             <isRequired>true</isRequired>
         </fields>
         <fields>
-            <name>Welecome_Screen_HR</name>
-            <extensionName>c:horizontalRuleFSC</extensionName>
-            <fieldType>ComponentInstance</fieldType>
-            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-            <isRequired>true</isRequired>
-            <storeOutputAutomatically>true</storeOutputAutomatically>
-        </fields>
-        <fields>
-            <name>Welcome_Screen_DT</name>
-            <fieldText>&lt;p&gt;This flow will allow you to reset most of the demo scenarios. Just select a Demo Setup, and select how you want to reset it.&lt;/p&gt;</fieldText>
-            <fieldType>DisplayText</fieldType>
-        </fields>
-        <fields>
             <name>SelectedDemoSetup</name>
             <choiceReferences>recChoiceDemoSetupRecords</choiceReferences>
             <dataType>String</dataType>
-            <fieldText>Select Demo Setup</fieldText>
+            <fieldText>Select a Demo Setup record to reset:</fieldText>
             <fieldType>DropdownBox</fieldType>
             <isRequired>true</isRequired>
-        </fields>
-        <fields>
-            <name>Welcome_Screen_NextDT</name>
-            <fieldText>&lt;p&gt;&lt;b style=&quot;background-color: rgb(255, 255, 255); color: rgb(62, 62, 60);&quot;&gt;To proceed, click &quot;Next&quot;.&lt;/b&gt;&lt;/p&gt;</fieldText>
-            <fieldType>DisplayText</fieldType>
         </fields>
         <showFooter>true</showFooter>
         <showHeader>false</showHeader>
@@ -2582,6 +2744,26 @@
         <isCollection>true</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>varScreenHeading</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <stringValue>Demo Reset Utility</stringValue>
+        </value>
+    </variables>
+    <variables>
+        <name>varScreenSubheading</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <stringValue>Use this flow to quickly reset your demo.</stringValue>
+        </value>
     </variables>
     <variables>
         <name>varTextEstimatedCurrentPhase</name>
