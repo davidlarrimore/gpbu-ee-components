@@ -34,15 +34,15 @@
     <processMetadataValues>
         <name>CanvasMode</name>
         <value>
-            <stringValue>FREE_FORM_CANVAS</stringValue>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
         </value>
     </processMetadataValues>
     <processType>Flow</processType>
     <recordCreates>
         <name>New_Record</name>
         <label>New Record</label>
-        <locationX>165</locationX>
-        <locationY>344</locationY>
+        <locationX>176</locationX>
+        <locationY>278</locationY>
         <assignRecordIdToReference>result</assignRecordIdToReference>
         <inputAssignments>
             <field>Competency__c</field>
@@ -61,8 +61,8 @@
     <screens>
         <name>Add_Competencies</name>
         <label>Add Competencies</label>
-        <locationX>166</locationX>
-        <locationY>210</locationY>
+        <locationX>176</locationX>
+        <locationY>158</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -82,7 +82,7 @@
     </screens>
     <start>
         <locationX>50</locationX>
-        <locationY>50</locationY>
+        <locationY>0</locationY>
         <connector>
             <targetReference>Add_Competencies</targetReference>
         </connector>

@@ -4,8 +4,8 @@
     <assignments>
         <name>Set_Mid_Year_Employee_Competency</name>
         <label>Set Mid Year Employee Competency</label>
-        <locationX>438</locationX>
-        <locationY>618</locationY>
+        <locationX>264</locationX>
+        <locationY>1790</locationY>
         <assignmentItems>
             <assignToReference>employeeCompetency.Mid_Year_Rating__c</assignToReference>
             <operator>Assign</operator>
@@ -20,8 +20,8 @@
     <assignments>
         <name>Set_Mid_Year_Employee_Goal_Rating</name>
         <label>Set Mid Year Employee Goal Rating</label>
-        <locationX>807</locationX>
-        <locationY>50</locationY>
+        <locationX>264</locationX>
+        <locationY>878</locationY>
         <assignmentItems>
             <assignToReference>employeeGoal.Mid_Year_Rating__c</assignToReference>
             <operator>Assign</operator>
@@ -36,8 +36,8 @@
     <assignments>
         <name>Set_Year_End_Employee_Goal</name>
         <label>Set Year End Employee Goal</label>
-        <locationX>803</locationX>
-        <locationY>246</locationY>
+        <locationX>528</locationX>
+        <locationY>878</locationY>
         <assignmentItems>
             <assignToReference>employeeGoal.Year_End_Rating__c</assignToReference>
             <operator>Assign</operator>
@@ -52,8 +52,8 @@
     <assignments>
         <name>Set_Year_End_Review_Comp</name>
         <label>Set Year End Review Comp</label>
-        <locationX>436</locationX>
-        <locationY>780</locationY>
+        <locationX>528</locationX>
+        <locationY>1790</locationY>
         <assignmentItems>
             <assignToReference>employeeCompetency.Year_End_Rating__c</assignToReference>
             <operator>Assign</operator>
@@ -73,8 +73,8 @@
     <decisions>
         <name>Is_Med_Year_Review</name>
         <label>Is Med Year Review</label>
-        <locationX>1017</locationX>
-        <locationY>150</locationY>
+        <locationX>396</locationX>
+        <locationY>758</locationY>
         <defaultConnector>
             <targetReference>Set_Year_End_Employee_Goal</targetReference>
         </defaultConnector>
@@ -98,8 +98,8 @@
     <decisions>
         <name>Is_Mid_Year_Review_Comp</name>
         <label>Is Mid Year Review Comp</label>
-        <locationX>710</locationX>
-        <locationY>699</locationY>
+        <locationX>396</locationX>
+        <locationY>1670</locationY>
         <defaultConnector>
             <targetReference>Set_Year_End_Review_Comp</targetReference>
         </defaultConnector>
@@ -135,8 +135,8 @@
     <loops>
         <name>Loop_Through_Competencies</name>
         <label>Loop Through Competencies</label>
-        <locationX>250</locationX>
-        <locationY>514</locationY>
+        <locationX>176</locationX>
+        <locationY>1430</locationY>
         <assignNextValueToReference>employeeCompetency</assignNextValueToReference>
         <collectionReference>employeeCompetencies</collectionReference>
         <iterationOrder>Asc</iterationOrder>
@@ -150,8 +150,8 @@
     <loops>
         <name>Loop_Through_Goals</name>
         <label>Loop Through Goals</label>
-        <locationX>671</locationX>
-        <locationY>349</locationY>
+        <locationX>176</locationX>
+        <locationY>518</locationY>
         <assignNextValueToReference>employeeGoal</assignNextValueToReference>
         <collectionReference>employeeGoals</collectionReference>
         <iterationOrder>Asc</iterationOrder>
@@ -171,15 +171,15 @@
     <processMetadataValues>
         <name>CanvasMode</name>
         <value>
-            <stringValue>FREE_FORM_CANVAS</stringValue>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
         </value>
     </processMetadataValues>
     <processType>Flow</processType>
     <recordLookups>
         <name>Get_Employee_Competencies</name>
         <label>Get Employee Competencies</label>
-        <locationX>250</locationX>
-        <locationY>356</locationY>
+        <locationX>176</locationX>
+        <locationY>1310</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Loop_Through_Competencies</targetReference>
@@ -203,8 +203,8 @@
     <recordLookups>
         <name>Get_Employee_Goals</name>
         <label>Get Employee Goals</label>
-        <locationX>357</locationX>
-        <locationY>175</locationY>
+        <locationX>176</locationX>
+        <locationY>398</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Loop_Through_Goals</targetReference>
@@ -228,8 +228,8 @@
     <recordLookups>
         <name>Get_Employee_Info</name>
         <label>Get Employee Info</label>
-        <locationX>221</locationX>
-        <locationY>175</locationY>
+        <locationX>176</locationX>
+        <locationY>278</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Get_Employee_Goals</targetReference>
@@ -250,8 +250,8 @@
     <recordLookups>
         <name>Get_Plan_Data</name>
         <label>Get Plan Data</label>
-        <locationX>97</locationX>
-        <locationY>176</locationY>
+        <locationX>176</locationX>
+        <locationY>158</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Get_Employee_Info</targetReference>
@@ -274,8 +274,8 @@
     <recordUpdates>
         <name>Set_Competency_Rating</name>
         <label>Set Competency Rating</label>
-        <locationX>250</locationX>
-        <locationY>695</locationY>
+        <locationX>396</locationX>
+        <locationY>2006</locationY>
         <connector>
             <targetReference>Loop_Through_Competencies</targetReference>
         </connector>
@@ -284,8 +284,8 @@
     <recordUpdates>
         <name>Set_Goal_Rating</name>
         <label>Set Goal Rating</label>
-        <locationX>623</locationX>
-        <locationY>146</locationY>
+        <locationX>396</locationX>
+        <locationY>1094</locationY>
         <connector>
             <targetReference>Loop_Through_Goals</targetReference>
         </connector>
@@ -294,8 +294,8 @@
     <screens>
         <name>Performance_Evaluation_Competency</name>
         <label>Performance Evaluation - Competency</label>
-        <locationX>718</locationX>
-        <locationY>512</locationY>
+        <locationX>396</locationX>
+        <locationY>1550</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
@@ -341,8 +341,8 @@
     <screens>
         <name>Performance_Evaluation_Goals</name>
         <label>Performance Evaluation - Goals</label>
-        <locationX>932</locationX>
-        <locationY>351</locationY>
+        <locationX>396</locationX>
+        <locationY>638</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
@@ -389,8 +389,8 @@
     <screens>
         <name>Review_Complete</name>
         <label>Review Complete</label>
-        <locationX>50</locationX>
-        <locationY>513</locationY>
+        <locationX>176</locationX>
+        <locationY>2222</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
@@ -403,8 +403,8 @@
         <showHeader>true</showHeader>
     </screens>
     <start>
-        <locationX>168</locationX>
-        <locationY>51</locationY>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
         <connector>
             <targetReference>Get_Plan_Data</targetReference>
         </connector>

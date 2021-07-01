@@ -279,12 +279,33 @@
         <connector>
             <targetReference>Tasks_Found</targetReference>
         </connector>
-        <filterLogic>and</filterLogic>
+        <filterLogic>1 AND (2 OR 3 OR 4)</filterLogic>
         <filters>
-            <field>WhoId</field>
+            <field>WhatId</field>
             <operator>EqualTo</operator>
             <value>
-                <elementReference>Get_Applicant.Id</elementReference>
+                <elementReference>Get_Applicant.Applicant__c</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Suitability_Task__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>On_Boarding_Task__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Hiring_Tasks__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>true</booleanValue>
             </value>
         </filters>
         <getFirstRecordOnly>true</getFirstRecordOnly>

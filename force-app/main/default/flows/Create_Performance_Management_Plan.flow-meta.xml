@@ -11,8 +11,8 @@
     <decisions>
         <name>Is_Competency_for_Job_Grade</name>
         <label>Is Competency for Job Grade?</label>
-        <locationX>333</locationX>
-        <locationY>357</locationY>
+        <locationX>396</locationX>
+        <locationY>758</locationY>
         <defaultConnector>
             <targetReference>Check_Job_Grade</targetReference>
         </defaultConnector>
@@ -44,8 +44,8 @@
     <loops>
         <name>Check_Job_Grade</name>
         <label>Check Job Grade</label>
-        <locationX>622</locationX>
-        <locationY>356</locationY>
+        <locationX>176</locationX>
+        <locationY>638</locationY>
         <assignNextValueToReference>competency</assignNextValueToReference>
         <collectionReference>competencyList</collectionReference>
         <iterationOrder>Asc</iterationOrder>
@@ -62,15 +62,15 @@
     <processMetadataValues>
         <name>CanvasMode</name>
         <value>
-            <stringValue>FREE_FORM_CANVAS</stringValue>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
         </value>
     </processMetadataValues>
     <processType>AutoLaunchedFlow</processType>
     <recordCreates>
         <name>Assign_Competency_to_Plan</name>
         <label>Assign Competency to Plan</label>
-        <locationX>495</locationX>
-        <locationY>614</locationY>
+        <locationX>264</locationX>
+        <locationY>878</locationY>
         <assignRecordIdToReference>employeeCompetencyId</assignRecordIdToReference>
         <connector>
             <targetReference>Check_Job_Grade</targetReference>
@@ -104,8 +104,8 @@
     <recordCreates>
         <name>Create_Performance_Plan</name>
         <label>Create Performance Plan</label>
-        <locationX>313</locationX>
-        <locationY>195</locationY>
+        <locationX>176</locationX>
+        <locationY>278</locationY>
         <assignRecordIdToReference>PMPlanId</assignRecordIdToReference>
         <connector>
             <targetReference>Get_Employee_Info</targetReference>
@@ -133,8 +133,8 @@
     <recordLookups>
         <name>Get_All_Competencies_for_Job_Grade</name>
         <label>Get All Competencies for Job Grade</label>
-        <locationX>621</locationX>
-        <locationY>195</locationY>
+        <locationX>176</locationX>
+        <locationY>518</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Check_Job_Grade</targetReference>
@@ -149,8 +149,8 @@
     <recordLookups>
         <name>Get_Employee_Info</name>
         <label>Get Employee Info</label>
-        <locationX>467</locationX>
-        <locationY>195</locationY>
+        <locationX>176</locationX>
+        <locationY>398</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Get_All_Competencies_for_Job_Grade</targetReference>
@@ -173,7 +173,7 @@
         <name>Get_PM_Plan_Draft_Record_Type_ID</name>
         <label>Get PM Plan Draft Record Type ID</label>
         <locationX>176</locationX>
-        <locationY>195</locationY>
+        <locationY>158</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Create_Performance_Plan</targetReference>
@@ -194,7 +194,7 @@
     </recordLookups>
     <start>
         <locationX>50</locationX>
-        <locationY>50</locationY>
+        <locationY>0</locationY>
         <connector>
             <targetReference>Get_PM_Plan_Draft_Record_Type_ID</targetReference>
         </connector>

@@ -3,10 +3,13 @@
     <actionCalls>
         <name>Send_New_Hire_Onboarding_Wizard_Email</name>
         <label>Send New Hire Onboarding Wizard Email</label>
-        <locationX>3702</locationX>
+        <locationX>3922</locationX>
         <locationY>1607</locationY>
         <actionName>Contact.New_Hire_Onboarding_Wizard</actionName>
         <actionType>emailAlert</actionType>
+        <connector>
+            <targetReference>Get_Applicant_Task_Records</targetReference>
+        </connector>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
         <inputParameters>
             <name>SObjectRowId</name>
@@ -17,9 +20,34 @@
     </actionCalls>
     <apiVersion>51.0</apiVersion>
     <decisions>
+        <name>Content_Link_Already_Exists</name>
+        <label>Content Link Already Exists?</label>
+        <locationX>4010</locationX>
+        <locationY>2663</locationY>
+        <defaultConnector>
+            <targetReference>Create_Content_Document_Link</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>Content_Link_Already_Exists_Yes</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Document_Link_Lookup</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Content_Document_Link_Loop</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>Demo_Setup_Record_Found</name>
         <label>Demo Setup Record Found?</label>
-        <locationX>3185</locationX>
+        <locationX>3350</locationX>
         <locationY>431</locationY>
         <defaultConnectorLabel>No</defaultConnectorLabel>
         <rules>
@@ -41,6 +69,53 @@
             </conditions>
             <connector>
                 <targetReference>Get_Open_Tasks</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Found_Applicant_Tasks</name>
+        <label>Found Applicant Tasks?</label>
+        <locationX>3922</locationX>
+        <locationY>1847</locationY>
+        <defaultConnector>
+            <targetReference>Get_Content_Document_Link_Records</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>Found_Applicant_Tasks_Yes</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Applicant_Task_Records</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Applicant_Tasks</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Found_Content_Document_Links</name>
+        <label>Found Content Document Links?</label>
+        <locationX>3922</locationX>
+        <locationY>2303</locationY>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>Found_Content_Document_Links_Yes</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Content_Document_Link_Records</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Content_Document_Link_Loop</targetReference>
             </connector>
             <label>Yes</label>
         </rules>
@@ -223,7 +298,7 @@
     <decisions>
         <name>Task_Records_Found_New_Employee_Stage</name>
         <label>Task Records Found</label>
-        <locationX>3702</locationX>
+        <locationX>3922</locationX>
         <locationY>1271</locationY>
         <defaultConnector>
             <targetReference>Send_New_Hire_Onboarding_Wizard_Email</targetReference>
@@ -298,7 +373,7 @@
     <decisions>
         <name>What_Stage_is_the_Opportunity_In</name>
         <label>What Stage is the Opportunity In?</label>
-        <locationX>2096</locationX>
+        <locationX>2206</locationX>
         <locationY>671</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
@@ -498,6 +573,17 @@
     <interviewLabel>Applicant Autolaunch - Applicant Process (After Save) {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Applicant Autolaunch - Applicant Process (After Save)</label>
     <loops>
+        <name>Content_Document_Link_Loop</name>
+        <label>Content Document Link Loop</label>
+        <locationX>3834</locationX>
+        <locationY>2423</locationY>
+        <collectionReference>Get_Content_Document_Link_Records</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Document_Link_Lookup</targetReference>
+        </nextValueConnector>
+    </loops>
+    <loops>
         <name>Interview_Process_Loop</name>
         <label>Interview Process Loop</label>
         <locationX>842</locationX>
@@ -530,6 +616,41 @@
         </value>
     </processMetadataValues>
     <processType>AutoLaunchedFlow</processType>
+    <recordCreates>
+        <name>Create_Content_Document_Link</name>
+        <label>Create Content Document Link</label>
+        <locationX>4098</locationX>
+        <locationY>2783</locationY>
+        <connector>
+            <targetReference>Content_Document_Link_Loop</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>ContentDocumentId</field>
+            <value>
+                <elementReference>Content_Document_Link_Loop.ContentDocumentId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>LinkedEntityId</field>
+            <value>
+                <elementReference>Get_Demo_Setup_Record.Contact__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>ShareType</field>
+            <value>
+                <elementReference>Content_Document_Link_Loop.ShareType</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Visibility</field>
+            <value>
+                <elementReference>Content_Document_Link_Loop.Visibility</elementReference>
+            </value>
+        </inputAssignments>
+        <object>ContentDocumentLink</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
     <recordCreates>
         <name>Create_Generate_Job_Offer_Task</name>
         <label>Create Generate Job Offer Task</label>
@@ -569,6 +690,12 @@
             <field>Subject</field>
             <value>
                 <stringValue>Generate and Extend Job Offer</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Suitability_Task__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -663,6 +790,12 @@
             </value>
         </inputAssignments>
         <inputAssignments>
+            <field>Suitability_Task__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
             <field>WhatId</field>
             <value>
                 <elementReference>$Record.Id</elementReference>
@@ -716,6 +849,12 @@
             <field>Subject</field>
             <value>
                 <stringValue>Schedule Drug Test</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Suitability_Task__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -775,6 +914,12 @@
             </value>
         </inputAssignments>
         <inputAssignments>
+            <field>Suitability_Task__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
             <field>WhatId</field>
             <value>
                 <elementReference>$Record.Id</elementReference>
@@ -804,6 +949,12 @@
             <field>Description</field>
             <value>
                 <stringValue>Schedule Interviews with appropriate team members for applicant</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Hiring_Tasks__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -887,6 +1038,12 @@
             </value>
         </inputAssignments>
         <inputAssignments>
+            <field>Suitability_Task__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
             <field>WhatId</field>
             <value>
                 <elementReference>$Record.Id</elementReference>
@@ -943,6 +1100,12 @@
             </value>
         </inputAssignments>
         <inputAssignments>
+            <field>Suitability_Task__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
             <field>WhatId</field>
             <value>
                 <elementReference>$Record.Id</elementReference>
@@ -958,9 +1121,79 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordCreates>
     <recordLookups>
+        <name>Document_Link_Lookup</name>
+        <label>Document Link Lookup</label>
+        <locationX>4010</locationX>
+        <locationY>2543</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Content_Link_Already_Exists</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>LinkedEntityId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Get_Demo_Setup_Record.Contact__c</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>ContentDocumentId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Content_Document_Link_Loop.ContentDocumentId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>ContentDocumentLink</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Applicant_Task_Records</name>
+        <label>Get Applicant Task Records</label>
+        <locationX>3922</locationX>
+        <locationY>1727</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Found_Applicant_Tasks</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>WhatId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>Task</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Content_Document_Link_Records</name>
+        <label>Get Content Document Link Records</label>
+        <locationX>3922</locationX>
+        <locationY>2183</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Found_Content_Document_Links</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>LinkedEntityId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>ContentDocumentLink</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
         <name>Get_Demo_Setup_Record</name>
         <label>Get Demo Setup Record</label>
-        <locationX>3185</locationX>
+        <locationX>3350</locationX>
         <locationY>311</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -981,7 +1214,7 @@
     <recordLookups>
         <name>Get_Employee_Contact_Record_Type</name>
         <label>Get Employee Contact Record Type</label>
-        <locationX>3702</locationX>
+        <locationX>3922</locationX>
         <locationY>911</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -1051,7 +1284,7 @@
     <recordLookups>
         <name>Get_Open_Tasks</name>
         <label>Get Open Tasks</label>
-        <locationX>2096</locationX>
+        <locationX>2206</locationX>
         <locationY>551</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -1079,7 +1312,7 @@
     <recordLookups>
         <name>Get_Position</name>
         <label>Get Position</label>
-        <locationX>3702</locationX>
+        <locationX>3922</locationX>
         <locationY>791</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -1266,9 +1499,33 @@
         <object>Task</object>
     </recordUpdates>
     <recordUpdates>
+        <name>Update_Applicant_Tasks</name>
+        <label>Update Applicant Tasks</label>
+        <locationX>3790</locationX>
+        <locationY>1967</locationY>
+        <connector>
+            <targetReference>Get_Content_Document_Link_Records</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>WhatId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>WhoId</field>
+            <value>
+                <elementReference>Get_Demo_Setup_Record.Contact__c</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Task</object>
+    </recordUpdates>
+    <recordUpdates>
         <name>Update_Employee_Contact</name>
         <label>Update Employee Contact</label>
-        <locationX>3702</locationX>
+        <locationX>3922</locationX>
         <locationY>1031</locationY>
         <connector>
             <targetReference>Update_User_Record</targetReference>
@@ -1484,7 +1741,7 @@
     <recordUpdates>
         <name>Update_Tasks</name>
         <label>Update Tasks</label>
-        <locationX>3570</locationX>
+        <locationX>3790</locationX>
         <locationY>1391</locationY>
         <connector>
             <targetReference>Send_New_Hire_Onboarding_Wizard_Email</targetReference>
@@ -1508,7 +1765,7 @@
     <recordUpdates>
         <name>Update_User_Record</name>
         <label>Update User Record</label>
-        <locationX>3702</locationX>
+        <locationX>3922</locationX>
         <locationY>1151</locationY>
         <connector>
             <targetReference>Task_Records_Found_New_Employee_Stage</targetReference>
@@ -1530,7 +1787,7 @@
         <object>User</object>
     </recordUpdates>
     <start>
-        <locationX>3059</locationX>
+        <locationX>3224</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>Get_Demo_Setup_Record</targetReference>
@@ -1546,5 +1803,37 @@
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>varRecApplicantTask</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Task</objectType>
+    </variables>
+    <variables>
+        <name>varRecApplicantTasks</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Task</objectType>
+    </variables>
+    <variables>
+        <name>varRecEmailMessage</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>EmailMessage</objectType>
+    </variables>
+    <variables>
+        <name>varRecEmailMessages</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>EmailMessage</objectType>
     </variables>
 </Flow>

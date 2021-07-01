@@ -140,6 +140,12 @@
             </value>
         </inputAssignments>
         <inputAssignments>
+            <field>On_Boarding_Task__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
             <field>Onboarding_Link_Label__c</field>
             <value>
                 <stringValue>Go to FISSA Training Site</stringValue>
@@ -211,6 +217,12 @@
             </value>
         </inputAssignments>
         <inputAssignments>
+            <field>On_Boarding_Task__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
             <field>Onboarding_Task_Type__c</field>
             <value>
                 <stringValue>General Task</stringValue>
@@ -267,6 +279,12 @@
             <field>Description</field>
             <value>
                 <elementReference>PerformancePlanTaskDescription</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>On_Boarding_Task__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -329,6 +347,12 @@
             </value>
         </inputAssignments>
         <inputAssignments>
+            <field>On_Boarding_Task__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
             <field>Onboarding_Task_Type__c</field>
             <value>
                 <stringValue>General Task</stringValue>
@@ -386,6 +410,9 @@
             <value>
                 <stringValue>You must upload a completed I-9 on your first day.</stringValue>
             </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>On_Boarding_Task__c</field>
         </inputAssignments>
         <inputAssignments>
             <field>Onboarding_Flow_Name__c</field>

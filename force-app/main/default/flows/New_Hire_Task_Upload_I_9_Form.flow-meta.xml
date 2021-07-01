@@ -4,8 +4,8 @@
     <decisions>
         <name>decision_Is_CurrentUserId_Blank</name>
         <label>Is CurrentUserId Blank?</label>
-        <locationX>204</locationX>
-        <locationY>385</locationY>
+        <locationX>248</locationX>
+        <locationY>398</locationY>
         <defaultConnector>
             <targetReference>Get_Contact_s_I_9_Upload_Task</targetReference>
         </defaultConnector>
@@ -29,8 +29,8 @@
     <decisions>
         <name>decision_Is_There_an_I9_Task</name>
         <label>Is There an I-9 Task?</label>
-        <locationX>595</locationX>
-        <locationY>386</locationY>
+        <locationX>446</locationX>
+        <locationY>638</locationY>
         <defaultConnector>
             <targetReference>Screen_Upload_I_9_Document</targetReference>
         </defaultConnector>
@@ -67,7 +67,7 @@
     <processMetadataValues>
         <name>CanvasMode</name>
         <value>
-            <stringValue>FREE_FORM_CANVAS</stringValue>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
         </value>
     </processMetadataValues>
     <processMetadataValues>
@@ -80,8 +80,8 @@
     <recordLookups>
         <name>Get_Contact_s_I_9_Upload_Task</name>
         <label>Get Contact&apos;s I-9 Upload Task</label>
-        <locationX>445</locationX>
-        <locationY>384</locationY>
+        <locationX>446</locationX>
+        <locationY>518</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>decision_Is_There_an_I9_Task</targetReference>
@@ -116,8 +116,8 @@
     <recordLookups>
         <name>Get_Current_Users_Contact</name>
         <label>Get Current User&apos;s Contact</label>
-        <locationX>50</locationX>
-        <locationY>383</locationY>
+        <locationX>248</locationX>
+        <locationY>278</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>decision_Is_CurrentUserId_Blank</targetReference>
@@ -147,8 +147,8 @@
     <recordLookups>
         <name>Get_Employee_Contact_Record_Type_Id</name>
         <label>Get Employee Contact Record Type Id</label>
-        <locationX>53</locationX>
-        <locationY>216</locationY>
+        <locationX>248</locationX>
+        <locationY>158</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Get_Current_Users_Contact</targetReference>
@@ -177,8 +177,8 @@
     <recordUpdates>
         <name>update_Mark_Task_as_Complete</name>
         <label>Mark Task as Complete</label>
-        <locationX>982</locationX>
-        <locationY>384</locationY>
+        <locationX>578</locationX>
+        <locationY>878</locationY>
         <connector>
             <targetReference>screen_Complete</targetReference>
         </connector>
@@ -201,8 +201,8 @@
     <screens>
         <name>screen_Complete</name>
         <label>Complete</label>
-        <locationX>1149</locationX>
-        <locationY>384</locationY>
+        <locationX>578</locationX>
+        <locationY>998</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -237,8 +237,8 @@
     <screens>
         <name>Screen_Current_User_is_Blank</name>
         <label>Current User is Blank</label>
-        <locationX>211</locationX>
-        <locationY>615</locationY>
+        <locationX>50</locationX>
+        <locationY>518</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -253,8 +253,8 @@
     <screens>
         <name>screen_No_I_9_Task_Assigned</name>
         <label>No I-9 Task Assigned</label>
-        <locationX>603</locationX>
-        <locationY>624</locationY>
+        <locationX>314</locationX>
+        <locationY>758</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -269,8 +269,8 @@
     <screens>
         <name>Screen_Upload_I_9_Document</name>
         <label>Upload I-9 Document</label>
-        <locationX>826</locationX>
-        <locationY>384</locationY>
+        <locationX>578</locationX>
+        <locationY>758</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -338,8 +338,8 @@
         <showHeader>true</showHeader>
     </screens>
     <start>
-        <locationX>50</locationX>
-        <locationY>50</locationY>
+        <locationX>122</locationX>
+        <locationY>0</locationY>
         <connector>
             <targetReference>Get_Employee_Contact_Record_Type_Id</targetReference>
         </connector>

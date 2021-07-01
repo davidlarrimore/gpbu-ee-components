@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Onboarding_Flow_Name__c</fullName>
+    <externalId>false</externalId>
+    <label>Onboarding Flow Name</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>New_Hire_Task_Update_Contact_Information</fullName>
+                <default>false</default>
+                <label>New_Hire_Task_Update_Contact_Information</label>
+            </value>
+            <value>
+                <fullName>New_Hire_Task_Upload_I_9_Form</fullName>
+                <default>false</default>
+                <label>New_Hire_Task_Upload_I_9_Form</label>
+            </value>
+            <value>
+                <fullName>New_Hire_Task_Upload_Form_OF306</fullName>
+                <default>false</default>
+                <label>New_Hire_Task_Upload_Form_OF306</label>
+            </value>
+            <value>
+                <fullName>Onboarding_Manager_Flow</fullName>
+                <default>false</default>
+                <label>Onboarding_Manager_Flow</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

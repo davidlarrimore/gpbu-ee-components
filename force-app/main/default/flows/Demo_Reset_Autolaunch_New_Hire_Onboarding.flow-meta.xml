@@ -623,7 +623,7 @@
         <connector>
             <targetReference>Tasks_Found_Decision</targetReference>
         </connector>
-        <filterLogic>or</filterLogic>
+        <filterLogic>(1 OR 2 OR 3) AND 4</filterLogic>
         <filters>
             <field>WhatId</field>
             <operator>EqualTo</operator>
@@ -643,6 +643,13 @@
             <operator>EqualTo</operator>
             <value>
                 <elementReference>Get_Contact.User_Record__c</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>On_Boarding_Task__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>true</booleanValue>
             </value>
         </filters>
         <object>Task</object>

@@ -11,12 +11,24 @@
     <description>Sets a Profile for a Contact&apos;s User record that will be used for access</description>
     <interviewLabel>Configure Employee as Retiree {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Configure Employee Profile</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
     <processType>AutoLaunchedFlow</processType>
     <recordLookups>
         <name>Get_Contact_Record_Info</name>
         <label>Get Contact Record Info</label>
-        <locationX>144</locationX>
-        <locationY>150</locationY>
+        <locationX>176</locationX>
+        <locationY>158</locationY>
         <assignNullValuesIfNoRecordsFound>true</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Get_Standard_User_Info</targetReference>
@@ -46,8 +58,8 @@
     <recordLookups>
         <name>Get_Profile_ID</name>
         <label>Get Profile ID</label>
-        <locationX>518</locationX>
-        <locationY>154</locationY>
+        <locationX>176</locationX>
+        <locationY>398</locationY>
         <assignNullValuesIfNoRecordsFound>true</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Set_Employee_Profile</targetReference>
@@ -69,8 +81,8 @@
     <recordLookups>
         <name>Get_Standard_User_Info</name>
         <label>Get Standard User Info</label>
-        <locationX>320</locationX>
-        <locationY>153</locationY>
+        <locationX>176</locationX>
+        <locationY>278</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Get_Profile_ID</targetReference>
@@ -113,8 +125,8 @@
     <recordUpdates>
         <name>Set_Employee_Profile</name>
         <label>Set Employee Profile</label>
-        <locationX>730</locationX>
-        <locationY>157</locationY>
+        <locationX>176</locationX>
+        <locationY>518</locationY>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -131,7 +143,13 @@
         </inputAssignments>
         <object>User</object>
     </recordUpdates>
-    <startElementReference>Get_Contact_Record_Info</startElementReference>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_Contact_Record_Info</targetReference>
+        </connector>
+    </start>
     <status>Active</status>
     <variables>
         <name>contactEmail</name>
