@@ -413,6 +413,9 @@
         </inputAssignments>
         <inputAssignments>
             <field>On_Boarding_Task__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
         </inputAssignments>
         <inputAssignments>
             <field>Onboarding_Flow_Name__c</field>
